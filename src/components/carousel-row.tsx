@@ -17,7 +17,7 @@ const images = [
 
 export function ImageCarousel() {
     return (
-        <div className="container mx-auto px-4 py-12">
+        <div className="bg-heavygreen container mx-auto px-4 py-8 mt-24">
             <Carousel
                 opts={{
                     align: "start",

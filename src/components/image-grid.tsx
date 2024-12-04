@@ -18,7 +18,7 @@ export default function ImageGrid() {
     ]
 
     return (
-        <div className="container mx-auto px-4 -mt-16 relative z-10">
+        <div className="bg-background container mx-auto px-8 -mt-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {items.map((item, i) => (
                     <div key={i} className="flex flex-col">
@@ -26,9 +26,9 @@ export default function ImageGrid() {
                 <div
                     className="absolute inset-0 bg-cover bg-center transform hover:scale-105 transition-transform duration-300"
                 style={{
-        backgroundImage: `url('${item.image}')`,
-    }}
-    />
+                    backgroundImage: `url('${item.image}')`,
+                }}
+        />
     </div>
     <div className="flex items-start">
     <div className="h-1 w-12 bg-purple-600 mt-3 mr-4" />

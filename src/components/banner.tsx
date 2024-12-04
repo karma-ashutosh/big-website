@@ -1,8 +1,5 @@
-
-import { Button } from "@/components/ui/button"
-import {Link} from "lucide-react";
-import {ImageCarousel} from "@/components/carousel-row.tsx";
-import ImageGrid from "@/components/image-grid.tsx";
+import {Button} from "@/components/ui/button"
+import DonationButton from "@/components/DonateButton.tsx";
 
 export default function Banner() {
     return (
@@ -12,34 +9,43 @@ export default function Banner() {
                 <div className="container mx-auto px-4">
                     <div className="flex items-center justify-between h-16">
                         <div className="flex items-center gap-8">
-                            <Link href="/" className="text-white font-semibold">
-                                Logo
-                            </Link>
+                            <Button asChild>
+                                <a href="/" className="text-white font-semibold">
+                                    Logo
+                                </a>
+                            </Button>
                             <div className="hidden md:flex items-center gap-6">
                                 <Button asChild>
                                     <a href="https://google.com" className="text-white hover:text-white/80">
                                         Wildlife
                                     </a>
                                 </Button>
-                                <a href="#" className="text-white hover:text-white/80">
-                                    Our Work
-                                </a>
-                                <a href="#" className="text-white hover:text-white/80">
-                                    Take Action
-                                </a>
-                                <a href="#" className="text-white hover:text-white/80">
-                                    Support
-                                </a>
+                                <Button asChild>
+                                    <a href="#" className="text-white hover:text-white/80">
+                                        Our Work
+                                    </a>
+                                </Button>
+                                <Button asChild>
+                                    <a href="#" className="text-white hover:text-white/80">
+                                        Take Action
+                                    </a>
+                                </Button>
+                                <Button asChild>
+                                    <a href="#" className="text-white hover:text-white/80">
+                                        Support
+                                    </a>
+                                </Button>
                             </div>
                         </div>
                         <div className="flex items-center gap-4">
                             <select className="bg-transparent text-white border-none focus:ring-0">
                                 <option value="en">ENGLISH</option>
-                                <option value="es">ESPAÑOL</option>
+                                <option value="es">हिन्दी</option>
                             </select>
                             <Button className="bg-orange-500 hover:bg-orange-600 text-white">
                                 DONATE
                             </Button>
+                            <DonationButton />
                         </div>
                     </div>
                 </div>
@@ -53,11 +59,11 @@ export default function Banner() {
                         backgroundImage: "url('https://sahjeevan.org/wp-content/uploads/2023/04/Slider6-1-min.png')",
                     }}
                 />
-                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0 bg-black/30"/>
                 <div className="relative h-full flex items-center justify-center text-center">
                     <div className="container mx-auto px-4">
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-wide">
-                            BE A VOICE<br />FOR WILDLIFE
+                            BE A VOICE<br/>FOR WILDLIFE
                         </h1>
                         <p className="text-xl text-white mb-8">
                             Prevent extinction. Protect habitat. Defend nature.
@@ -74,9 +80,8 @@ export default function Banner() {
                 </div>
             </div>
 
-            <ImageGrid/>
-            <ImageCarousel/>
         </div>
+
     )
 }
 
