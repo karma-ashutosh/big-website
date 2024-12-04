@@ -1,9 +1,4 @@
-
-import { Button } from "@/components/ui/button"
-import {Link} from "lucide-react";
-import {ImageCarousel} from "@/components/carousel-row.tsx";
-import ImageGrid from "@/components/image-grid.tsx";
-import Footer from "@/components/footer.tsx";
+import {Button} from "@/components/ui/button"
 
 export default function Banner() {
     return (
@@ -20,7 +15,7 @@ export default function Banner() {
                             </Button>
                             <div className="hidden md:flex items-center gap-6">
                                 <Button asChild>
-                                <a href="https://google.com" className="text-white hover:text-white/80">
+                                    <a href="https://google.com" className="text-white hover:text-white/80">
                                         Wildlife
                                     </a>
                                 </Button>
@@ -44,7 +39,7 @@ export default function Banner() {
                         <div className="flex items-center gap-4">
                             <select className="bg-transparent text-white border-none focus:ring-0">
                                 <option value="en">ENGLISH</option>
-                                <option value="es">ESPAÑOL</option>
+                                <option value="es">हिन्दी</option>
                             </select>
                             <Button className="bg-orange-500 hover:bg-orange-600 text-white">
                                 DONATE
@@ -62,11 +57,11 @@ export default function Banner() {
                         backgroundImage: "url('https://sahjeevan.org/wp-content/uploads/2023/04/Slider6-1-min.png')",
                     }}
                 />
-                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0 bg-black/30"/>
                 <div className="relative h-full flex items-center justify-center text-center">
                     <div className="container mx-auto px-4">
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-wide">
-                            BE A VOICE<br />FOR WILDLIFE
+                            BE A VOICE<br/>FOR WILDLIFE
                         </h1>
                         <p className="text-xl text-white mb-8">
                             Prevent extinction. Protect habitat. Defend nature.
@@ -83,9 +78,6 @@ export default function Banner() {
                 </div>
             </div>
 
-            <ImageGrid/>
-            <ImageCarousel/>
-            <Footer />
         </div>
 
     )
