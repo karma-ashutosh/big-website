@@ -18,7 +18,7 @@ export default function ImageGrid() {
     ]
 
     return (
-        <div className="bg-background container mx-auto px-4 -mt-16 relative z-10">
+        <div className="container mx-auto px-4 -mt-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {items.map((item, i) => (
                     <div key={i} className="flex flex-col">
