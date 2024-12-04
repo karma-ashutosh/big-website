@@ -9,7 +9,9 @@ const DonationButton: React.FC = () => {
 
     return (
         <>
-            <Button onClick={() => setIsOpen(true)}>Open Donation Form</Button>
+            <Button className="bg-orange-500 hover:bg-orange-600 text-white" onClick={() => setIsOpen(true)}>
+                DONATE
+            </Button>
             {isOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
                     <div className="relative bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg shadow-lg">
@@ -19,7 +21,6 @@ const DonationButton: React.FC = () => {
                         >
                             &times;
                         </button>
-                        {/* Call the ProfileForm here */}
                         <ProfileForm />
                     </div>
                 </div>

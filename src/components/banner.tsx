@@ -42,9 +42,6 @@ export default function Banner() {
                                 <option value="en">ENGLISH</option>
                                 <option value="es">हिन्दी</option>
                             </select>
-                            <Button className="bg-orange-500 hover:bg-orange-600 text-white">
-                                DONATE
-                            </Button>
                             <DonationButton />
                         </div>
                     </div>
@@ -72,9 +69,7 @@ export default function Banner() {
                             <Button variant="outline" className="bg-white text-gray-900 hover:bg-gray-100">
                                 JOIN US
                             </Button>
-                            <Button className="bg-orange-500 hover:bg-orange-600 text-white">
-                                DONATE
-                            </Button>
+                            <DonationButton />
                         </div>
                     </div>
                 </div>
