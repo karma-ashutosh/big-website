@@ -1,4 +1,5 @@
 import {Button} from "@/components/ui/button"
+import DonationButton from "@/components/DonateButton.tsx";
 
 export default function Banner() {
     return (
@@ -44,6 +45,7 @@ export default function Banner() {
                             <Button className="bg-orange-500 hover:bg-orange-600 text-white">
                                 DONATE
                             </Button>
+                            <DonationButton />
                         </div>
                     </div>
                 </div>
