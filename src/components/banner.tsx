@@ -6,7 +6,7 @@ import ImageGrid from "@/components/image-grid.tsx";
 
 export default function Banner() {
     return (
-        <div className="relative">
+        <div className="bg-background relative">
             {/* Navigation Bar */}
             <nav className="absolute top-0 left-0 right-0 z-10 bg-black/20">
                 <div className="container mx-auto px-4">
@@ -74,23 +74,7 @@ export default function Banner() {
                 </div>
             </div>
 
-            {/* Featured Cards */}
-            {/*<div className="container mx-auto px-4 -mt-16 relative z-10">*/}
-            {/*    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">*/}
-            {/*        {[1, 2, 3].map((i) => (*/}
-            {/*            <div key={i} className="aspect-[4/3] relative overflow-hidden rounded-lg">*/}
-            {/*                <div*/}
-            {/*                    className="absolute inset-0 bg-cover bg-center transform hover:scale-105 transition-transform duration-300"*/}
-            {/*                    style={{*/}
-            {/*                        backgroundImage: `url('https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png')`,*/}
-            {/*                    }}*/}
-            {/*                >*/}
-            {/*                </div>*/}
-            {/*            </div>*/}
-            {/*        ))}*/}
-            {/*    </div>*/}
-            {/*</div>*/}
-            <ImageGrid />
+            <ImageGrid/>
             <ImageCarousel/>
         </div>
     )

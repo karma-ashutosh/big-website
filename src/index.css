@@ -2,5 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+#root {
+    --background: 228, 227, 214;
+}
 /* ... */
 
