@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button"
 import {Link} from "lucide-react";
+import {ImageCarousel} from "@/components/carousel-row.tsx";
 
 export default function Banner() {
     return (
@@ -88,6 +89,7 @@ export default function Banner() {
                     ))}
                 </div>
             </div>
+            <ImageCarousel />
         </div>
     )
 }
