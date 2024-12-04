@@ -49,7 +49,7 @@ export default function Banner() {
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                        backgroundImage: "url('/placeholder.svg?height=1080&width=1920')",
+                        backgroundImage: "url('https://sahjeevan.org/wp-content/uploads/2023/04/Slider6-1-min.png')",
                     }}
                 />
                 <div className="absolute inset-0 bg-black/30" />
@@ -81,7 +81,7 @@ export default function Banner() {
                             <div
                                 className="absolute inset-0 bg-cover bg-center transform hover:scale-105 transition-transform duration-300"
                                 style={{
-                                    backgroundImage: `url('/placeholder.svg?height=400&width=600')`,
+                                    backgroundImage: `url('https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png')`,
                                 }}
                             />
                         </div>
