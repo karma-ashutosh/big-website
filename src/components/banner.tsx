@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button"
 import {Link} from "lucide-react";
 import {ImageCarousel} from "@/components/carousel-row.tsx";
+import ImageGrid from "@/components/image-grid.tsx";
 
 export default function Banner() {
     return (
@@ -75,21 +76,23 @@ export default function Banner() {
             </div>
 
             {/* Featured Cards */}
-            <div className="container mx-auto px-4 -mt-16 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {[1, 2, 3].map((i) => (
-                        <div key={i} className="aspect-[4/3] relative overflow-hidden rounded-lg">
-                            <div
-                                className="absolute inset-0 bg-cover bg-center transform hover:scale-105 transition-transform duration-300"
-                                style={{
-                                    backgroundImage: `url('https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png')`,
-                                }}
-                            />
-                        </div>
-                    ))}
-                </div>
-            </div>
-            <ImageCarousel />
+            {/*<div className="container mx-auto px-4 -mt-16 relative z-10">*/}
+            {/*    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">*/}
+            {/*        {[1, 2, 3].map((i) => (*/}
+            {/*            <div key={i} className="aspect-[4/3] relative overflow-hidden rounded-lg">*/}
+            {/*                <div*/}
+            {/*                    className="absolute inset-0 bg-cover bg-center transform hover:scale-105 transition-transform duration-300"*/}
+            {/*                    style={{*/}
+            {/*                        backgroundImage: `url('https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png')`,*/}
+            {/*                    }}*/}
+            {/*                >*/}
+            {/*                </div>*/}
+            {/*            </div>*/}
+            {/*        ))}*/}
+            {/*    </div>*/}
+            {/*</div>*/}
+            <ImageGrid />
+            <ImageCarousel/>
         </div>
     )
 }
