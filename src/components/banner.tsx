@@ -16,21 +16,20 @@ export default function Banner() {
                                 Logo
                             </Link>
                             <div className="hidden md:flex items-center gap-6">
-                                <Link href="#" className="text-white hover:text-white/80">
-                                    Wildlife
-                                </Link>
-                                <Link href="#" className="text-white hover:text-white/80">
-                                    Wild Places
-                                </Link>
-                                <Link href="#" className="text-white hover:text-white/80">
+                                <Button asChild>
+                                    <a href="https://google.com" className="text-white hover:text-white/80">
+                                        Wildlife
+                                    </a>
+                                </Button>
+                                <a href="#" className="text-white hover:text-white/80">
                                     Our Work
-                                </Link>
-                                <Link href="#" className="text-white hover:text-white/80">
+                                </a>
+                                <a href="#" className="text-white hover:text-white/80">
                                     Take Action
-                                </Link>
-                                <Link href="#" className="text-white hover:text-white/80">
+                                </a>
+                                <a href="#" className="text-white hover:text-white/80">
                                     Support
-                                </Link>
+                                </a>
                             </div>
                         </div>
                         <div className="flex items-center gap-4">
