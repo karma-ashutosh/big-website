@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import {Link} from "lucide-react";
 import {ImageCarousel} from "@/components/carousel-row.tsx";
 import ImageGrid from "@/components/image-grid.tsx";
+import Footer from "@/components/footer.tsx";
 
 export default function Banner() {
     return (
@@ -12,24 +13,32 @@ export default function Banner() {
                 <div className="container mx-auto px-4">
                     <div className="flex items-center justify-between h-16">
                         <div className="flex items-center gap-8">
-                            <Link href="/" className="text-white font-semibold">
-                                Logo
-                            </Link>
+                            <Button asChild>
+                                <a href="/" className="text-white font-semibold">
+                                    Logo
+                                </a>
+                            </Button>
                             <div className="hidden md:flex items-center gap-6">
                                 <Button asChild>
-                                    <a href="https://google.com" className="text-white hover:text-white/80">
+                                <a href="https://google.com" className="text-white hover:text-white/80">
                                         Wildlife
                                     </a>
                                 </Button>
-                                <a href="#" className="text-white hover:text-white/80">
-                                    Our Work
-                                </a>
-                                <a href="#" className="text-white hover:text-white/80">
-                                    Take Action
-                                </a>
-                                <a href="#" className="text-white hover:text-white/80">
-                                    Support
-                                </a>
+                                <Button asChild>
+                                    <a href="#" className="text-white hover:text-white/80">
+                                        Our Work
+                                    </a>
+                                </Button>
+                                <Button asChild>
+                                    <a href="#" className="text-white hover:text-white/80">
+                                        Take Action
+                                    </a>
+                                </Button>
+                                <Button asChild>
+                                    <a href="#" className="text-white hover:text-white/80">
+                                        Support
+                                    </a>
+                                </Button>
                             </div>
                         </div>
                         <div className="flex items-center gap-4">
@@ -76,7 +85,9 @@ export default function Banner() {
 
             <ImageGrid/>
             <ImageCarousel/>
+            <Footer />
         </div>
+
     )
 }
 
