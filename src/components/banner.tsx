@@ -59,7 +59,7 @@ export default function Banner() {
 
                         {/* Right Side - Video Placeholder with Play Button */}
                         <div className="w-full md:w-1/2 flex justify-center items-center">
-                            <div className="relative group w-48 h-48 rounded-full overflow-hidden flex items-center justify-center shadow-lg">
+                            <div className="relative group w-72 h-72 rounded-full overflow-hidden flex items-center justify-center shadow-lg">
                                 <img
                                     src="https://sahjeevan.org/wp-content/uploads/2023/04/Institutions-2.png"
                                     alt="Video Thumbnail"
