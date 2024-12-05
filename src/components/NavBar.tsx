@@ -2,10 +2,11 @@ import { Component } from "react";
 import { Button } from "@/components/ui/button";
 import DonationButton from "@/components/DonateButton";
 import SearchBarComponent from "@/components/SearchBar";
-import { Menu, X } from "lucide-react"; // Import icons from lucide-react
+import { Menu, X, Instagram, Facebook, YoutubeIcon } from "lucide-react"; // Import icons from lucide-react
 
 interface NavBarState {
     isMobileMenuOpen: boolean;
+    isSocialBannerOpen: boolean;
 }
 
 class NavBar extends Component<{}, NavBarState> {
@@ -13,6 +14,7 @@ class NavBar extends Component<{}, NavBarState> {
         super(props);
         this.state = {
             isMobileMenuOpen: false,
+            isSocialBannerOpen: false,
         };
     }
 
@@ -22,12 +24,14 @@ class NavBar extends Component<{}, NavBarState> {
         }));
     };
 
-    closeMobileMenu = () => {
-        this.setState({ isMobileMenuOpen: false });
+    toggleSocialBanner = () => {
+        this.setState((prevState) => ({
+            isSocialBannerOpen: !prevState.isSocialBannerOpen,
+        }));
     };
 
     render() {
-        const { isMobileMenuOpen } = this.state;
+        const { isMobileMenuOpen, isSocialBannerOpen } = this.state;
 
         return (
             <nav className="absolute top-0 left-0 right-0 z-10 bg-[#2f2f2f] text-white shadow-md">
@@ -83,14 +87,56 @@ class NavBar extends Component<{}, NavBarState> {
                             </div>
                         </div>
 
-                        {/* Language Selector and Donate Button */}
-                        <div className="flex items-center gap-4">
+                        {/* Language Selector, Donate Button, and Social Media Banner */}
+                        <div className="flex items-center gap-4 relative">
                             <select className="bg-transparent text-white border-none focus:ring-0">
                                 <option value="en">ENGLISH</option>
                                 <option value="hi">हिन्दी</option>
                                 <option value="gu">ગુજરાતી</option>
                             </select>
                             <DonationButton />
+
+                            {/* Social Media Icon Toggle */}
+                            <button
+                                onClick={this.toggleSocialBanner}
+                                className="text-white focus:outline-none"
+                            >
+                                <Instagram className="w-6 h-6 hover:text-white/80" />
+                            </button>
+
+                            {/* Social Media Banner */}
+                            {isSocialBannerOpen && (
+                                <div
+                                    className="absolute top-16 right-0 w-40 bg-[#2f2f2f] text-white shadow-lg rounded-md py-4 px-4 flex flex-col gap-2">
+                                    <a
+                                        href="https://www.instagram.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 text-white hover:text-white/80"
+                                    >
+                                        <Instagram className="w-5 h-5"/>
+                                        Instagram
+                                    </a>
+                                    <a
+                                        href="https://www.facebook.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 text-white hover:text-white/80"
+                                    >
+                                        <Facebook className="w-5 h-5"/>
+                                        Facebook
+                                    </a>
+                                    <a
+                                        href="https://www.youtube.com/@sahjeevankutch"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 text-white hover:text-white/80"
+                                    >
+                                        <YoutubeIcon className="w-5 h-5"/>
+                                        YouTube
+                                    </a>
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -101,7 +147,7 @@ class NavBar extends Component<{}, NavBarState> {
                                 <a
                                     href="https://google.com"
                                     className="block py-2 text-white hover:text-white/80"
-                                    onClick={this.closeMobileMenu}
+                                    onClick={this.toggleMobileMenu}
                                 >
                                     Wildlife
                                 </a>
@@ -110,7 +156,7 @@ class NavBar extends Component<{}, NavBarState> {
                                 <a
                                     href="#"
                                     className="block py-2 text-white hover:text-white/80"
-                                    onClick={this.closeMobileMenu}
+                                    onClick={this.toggleMobileMenu}
                                 >
                                     Our Work
                                 </a>
@@ -119,7 +165,7 @@ class NavBar extends Component<{}, NavBarState> {
                                 <a
                                     href="#"
                                     className="block py-2 text-white hover:text-white/80"
-                                    onClick={this.closeMobileMenu}
+                                    onClick={this.toggleMobileMenu}
                                 >
                                     Take Action
                                 </a>
@@ -128,7 +174,7 @@ class NavBar extends Component<{}, NavBarState> {
                                 <a
                                     href="#"
                                     className="block py-2 text-white hover:text-white/80"
-                                    onClick={this.closeMobileMenu}
+                                    onClick={this.toggleMobileMenu}
                                 >
                                     Support
                                 </a>
