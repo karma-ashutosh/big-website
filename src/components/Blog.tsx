@@ -152,6 +152,32 @@ export const WildlifeSanctuaryData: BlogPageProps = {
         "https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png"
     ]
 };
+export const DenseForestData: BlogPageProps = {
+    title: "Dense Forest in Gujarat",
+    paragraphs: [
+        "The dense forests of Gujarat, though limited in extent compared to other regions, play an important role in maintaining the state's ecological balance. These forests are primarily found in the southern regions, including the Dangs and parts of Gir.",
+        "Dense forests support a rich diversity of flora and fauna, including trees like teak, bamboo, and numerous medicinal plants. They are also home to various wildlife species such as leopards, sloth bears, and a variety of bird species.",
+        "Efforts to protect dense forests include the establishment of protected areas and wildlife sanctuaries, as well as encouraging sustainable forestry practices that involve local communities in conservation efforts."
+    ],
+    images: [
+        "https://sahjeevan.org/wp-content/uploads/2023/04/Institutions-2.png",
+        "https://sahjeevan.org/wp-content/uploads/2023/04/Slider6-1-min.png"
+    ]
+};
+
+export const IrrigatedAgricultureData: BlogPageProps = {
+    title: "Irrigated Agriculture",
+    paragraphs: [
+        "Irrigated agriculture is one of the key components of Gujarat's agricultural sector, enabling farmers to cultivate crops even in areas with limited rainfall. The construction of irrigation canals, such as those linked to the Narmada River, has significantly boosted agricultural productivity in the region.",
+        "Irrigation has allowed farmers to grow a variety of crops, including cotton, wheat, and sugarcane, which would not be possible under rain-fed conditions alone. It also supports horticultural crops, such as mangoes and bananas, which are important for both domestic consumption and export.",
+        "However, the overuse of irrigation can lead to soil salinization and waterlogging, threatening long-term soil fertility. Sustainable irrigation practices, such as drip irrigation and efficient water management, are crucial for maintaining the health of agricultural lands in Gujarat."
+    ],
+    images: [
+        "https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png",
+        "https://sahjeevan.org/wp-content/uploads/2023/04/Slider6-1-min.png"
+    ]
+};
+
 export const blogData = [
     WildLifeConservationData,
     GujratInfo,
@@ -162,5 +188,7 @@ export const blogData = [
     WildlifeProtectionData,
     HabitatRestorationData,
     EndageredSpeciesData,
-    WildlifeSanctuaryData
+    WildlifeSanctuaryData,
+    DenseForestData,
+    IrrigatedAgricultureData
 ];

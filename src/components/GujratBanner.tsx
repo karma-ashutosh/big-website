@@ -1,4 +1,11 @@
 import { FC, useState } from "react";
+import {
+    BanniGrasslanData, DenseForestData, IrrigatedAgricultureData,
+    MangrovesData,
+    RainFedAgri,
+    ThornScrubForestData,
+    titleToBlogUrl
+} from "@/components/Blog.tsx";
 
 type IconInfo = {
     name: string;
@@ -47,7 +54,7 @@ const BannerComponent: FC<BannerProps> = ({ title, description, icons }) => {
                         onMouseEnter={() => setHoveredIconIndex(index)}
                         onMouseLeave={() => setHoveredIconIndex(null)}
                         // onClick={() => window.open(icon.linkUrl, "_blank")} // Open the URL in a new tab
-                        onClick={() => window.open(icon.iconUrl, "_blank")} // Open the URL in a new tab
+                        onClick={() => window.open(icon.linkUrl, "_blank")} // Open the URL in a new tab
                     >
                         <img
                             src={icon.iconUrl}
@@ -78,42 +85,42 @@ const iconData: IconInfo[] = [
         description: "Banni Grassland",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/1banni.png",
         hoverText: "Explore the Banni Grassland ecosystem",
-        linkUrl: "https://example.com/banni-grassland",
+        linkUrl: titleToBlogUrl(BanniGrasslanData.title),
     },
     {
         name: "Dense Grassland",
         description: "Dense Grassland",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/2dense.png",
         hoverText: "Learn about Dense Grasslands",
-        linkUrl: "https://example.com/dense-grassland",
+        linkUrl: titleToBlogUrl(DenseForestData.title),
     },
     {
         name: "Thorn-Scrub Forest",
         description: "Thorn-Scrub Forest",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/3thorn.png",
         hoverText: "Discover Thorn-Scrub Forest",
-        linkUrl: "https://example.com/thorn-scrub-forest",
+        linkUrl: titleToBlogUrl(ThornScrubForestData.title),
     },
     {
         name: "Mangroves",
         description: "Mangroves",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/4mangroves.png",
         hoverText: "Learn more about Mangroves",
-        linkUrl: "https://example.com/mangroves",
+        linkUrl: titleToBlogUrl(MangrovesData.title),
     },
     {
         name: "Rain-fed Agriculture",
         description: "Rain-fed Agriculture",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/5rain.png",
         hoverText: "Explore Rain-fed Agriculture",
-        linkUrl: "https://example.com/rain-fed-agriculture",
+        linkUrl: titleToBlogUrl(RainFedAgri.title),
     },
     {
         name: "Irrigated Agriculture",
         description: "Irrigated Agriculture",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/6irrigated.png",
         hoverText: "Learn about Irrigated Agriculture",
-        linkUrl: "https://example.com/irrigated-agriculture",
+        linkUrl: titleToBlogUrl(IrrigatedAgricultureData.title),
     },
 ];
 
