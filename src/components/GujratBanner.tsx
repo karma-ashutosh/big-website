@@ -58,32 +58,32 @@ const iconData: IconInfo[] = [
     {
         name: "Banni Grassland",
         description: "Banni Grassland",
-        iconUrl: "URL_OF_ICON",
+        iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/1banni.png",
     },
     {
         name: "Dense Grassland",
         description: "Dense Grassland",
-        iconUrl: "URL_OF_ICON",
+        iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/2dense.png",
     },
     {
         name: "Thorn-Scrub Forest",
         description: "Thorn-Scrub Forest",
-        iconUrl: "URL_OF_ICON",
+        iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/3thorn.png",
     },
     {
         name: "Mangroves",
         description: "Mangroves",
-        iconUrl: "URL_OF_ICON",
+        iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/4mangroves.png",
     },
     {
         name: "Rain-fed Agriculture",
         description: "Rain-fed Agriculture",
-        iconUrl: "URL_OF_ICON",
+        iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/5rain.png",
     },
     {
         name: "Irrigated Agriculture",
         description: "Irrigated Agriculture",
-        iconUrl: "URL_OF_ICON",
+        iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/6irrigated.png",
     },
 ];
 
