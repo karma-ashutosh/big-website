@@ -27,7 +27,6 @@ const formSchema = z.object({
 })
 
 export function ProfileForm() {
-    // ...
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -35,28 +34,30 @@ export function ProfileForm() {
             email: "your-email@example.com",
             amount: 500,
         },
+
     })
 
-    // 2. Define a submit handler.
     function onSubmit(values: z.infer<typeof formSchema>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
         console.log(values)
     }
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="bg-gray-800 bg-opacity-80 p-2 rounded-lg shadow-lg space-y-6 w-full max-w-lg mx-auto text-white z-50">
                 <FormField
                     control={form.control}
                     name="name"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Donor's Name</FormLabel>
+                            <FormLabel className="text-lg font-semibold">Donor's Name</FormLabel>
                             <FormControl>
-                                <Input placeholder="shadcn" {...field} />
+                                <Input
+                                    className="bg-gray-700 border-none rounded-md text-base p-4 text-white focus:ring-orange-500"
+                                    placeholder="Enter your name"
+                                    {...field}
+                                />
                             </FormControl>
-                            <FormDescription>
+                            <FormDescription className="text-sm text-gray-400 mt-1">
                                 How should we address you
                             </FormDescription>
                             <FormMessage />
@@ -68,11 +69,15 @@ export function ProfileForm() {
                     name="email"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Email Address</FormLabel>
+                            <FormLabel className="text-lg font-semibold">Email Address</FormLabel>
                             <FormControl>
-                                <Input placeholder="shadcn" {...field} />
+                                <Input
+                                    className="bg-gray-700 border-none rounded-md text-base p-4 text-white focus:ring-orange-500"
+                                    placeholder="Enter your email address"
+                                    {...field}
+                                />
                             </FormControl>
-                            <FormDescription>
+                            <FormDescription className="text-sm text-gray-400 mt-1">
                                 To send receipt
                             </FormDescription>
                             <FormMessage />
@@ -84,18 +89,28 @@ export function ProfileForm() {
                     name="amount"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Donation Amount</FormLabel>
+                            <FormLabel className="text-lg font-semibold">Donation Amount</FormLabel>
                             <FormControl>
-                                <Input placeholder="shadcn" {...field} />
+                                <Input
+                                    type="number"
+                                    className="bg-gray-700 border-none rounded-md text-base p-4 text-white focus:ring-orange-500"
+                                    placeholder="Enter donation amount"
+                                    {...field}
+                                />
                             </FormControl>
-                            <FormDescription>
+                            <FormDescription className="text-sm text-gray-400 mt-1">
                                 How much do you care
                             </FormDescription>
                             <FormMessage />
                         </FormItem>
                     )}
                 />
-                <Button type="submit">Submit</Button>
+                <Button
+                    type="submit"
+                    className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-md transition duration-300"
+                >
+                    Submit
+                </Button>
             </form>
         </Form>
     )
