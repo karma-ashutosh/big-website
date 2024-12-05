@@ -53,11 +53,11 @@ export default function Banner() {
 
                     {/* Right Side - Video Placeholder with Play Button */}
                     <div className="w-full md:w-1/2 flex justify-center items-center">
-                        <div className="relative group w-full h-64 md:h-full">
+                        <div className="relative group w-72 h-72 rounded-full overflow-hidden flex items-center justify-center shadow-lg">
                             <img
                                 src="https://sahjeevan.org/wp-content/uploads/2023/04/Institutions-2.png"
                                 alt="Video Thumbnail"
-                                className="w-full h-full rounded-md shadow-lg object-cover cursor-pointer"
+                                className="w-full h-full object-cover cursor-pointer"
                                 onClick={openModal}
                             />
                             <button
