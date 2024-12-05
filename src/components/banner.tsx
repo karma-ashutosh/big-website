@@ -41,15 +41,16 @@ export default function Banner() {
                             <select className="bg-transparent text-white border-none focus:ring-0">
                                 <option value="en">ENGLISH</option>
                                 <option value="es">हिन्दी</option>
+                                <option value="es">ગુજરાતી</option>
                             </select>
-                            <DonationButton />
+                            <DonationButton/>
                         </div>
                     </div>
                 </div>
             </nav>
 
             {/* Hero Section */}
-            <div className="relative h-[85vh] overflow-hidden">
+            <div className="relative h-[75vh] overflow-hidden">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
