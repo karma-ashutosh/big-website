@@ -91,11 +91,12 @@ export default function Banner() {
                 contentLabel="Watch Video"
                 className="fixed inset-0 flex items-center justify-center p-4"
                 overlayClassName="fixed inset-0 bg-black bg-opacity-90"
+                shouldCloseOnOverlayClick={true}
             >
                 <div className="relative w-full max-w-3xl bg-white rounded-md shadow-lg">
                     <button
                         onClick={closeModal}
-                        className="absolute top-0 right-0 m-4 text-black text-3xl font-bold focus:outline-none"
+                        className="absolute top-0 right-0 m-4 text-black text-3xl font-bold focus:outline-none z-50"
                     >
                         &times;
                     </button>
