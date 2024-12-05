@@ -89,7 +89,7 @@ class NavBar extends Component<{}, NavBarState> {
 
                         {/* Language Selector, Donate Button, and Social Media Banner */}
                         <div className="flex items-center gap-4 relative">
-                            <select className="bg-transparent text-white border-none focus:ring-0">
+                            <select className="bg-yellow-800 text-blue border-none focus:ring-0">
                                 <option value="en">ENGLISH</option>
                                 <option value="hi">हिन्दी</option>
                                 <option value="gu">ગુજરાતી</option>
