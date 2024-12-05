@@ -1,11 +1,14 @@
-import './App.css'
-import Banner from "@/components/banner.tsx";
-import ImageGrid from "@/components/image-grid.tsx";
-import {ImageCarousel} from "@/components/carousel-row.tsx";
-import Footer from "@/components/footer.tsx";
-import GujratBanner from "@/components/GujratBanner.tsx";
+import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+import Banner from "@/components/banner";
+import ImageGrid from "@/components/image-grid";
+import { ImageCarousel } from "@/components/carousel-row";
+import Footer from "@/components/footer";
+import GujratBanner from "@/components/GujratBanner";
 
 import { FC, ReactNode } from "react";
+import BlogPage, {blogData, titleToBlogUrl} from "@/components/Blog.tsx";
 
 interface ParallaxBackgroundProps {
     backgroundUrl: string;
@@ -32,19 +35,58 @@ const ParallaxBackground: FC<ParallaxBackgroundProps> = ({ backgroundUrl, childr
 };
 
 function App() {
-  return (
-    <>
-      <div className="bg-footer relative">
-          <Banner />
-          <ParallaxBackground backgroundUrl="https://sahjeevan.org/wp-content/uploads/2023/03/map-marker-1.png">
-              <ImageGrid/>
-              <GujratBanner />
-              <ImageCarousel/>
-          </ParallaxBackground>
-          <Footer />
-      </div>
-    </>
-  )
+    return (
+        <Router>
+            {/* Navigation Bar */}
+            <nav className="bg-[#2f2f2f] text-white p-4">
+                <div className="container mx-auto flex justify-between items-center">
+                    <Link to="/" className="text-lg font-semibold hover:text-orange-500 transition-colors">Home</Link>
+                    <div className="flex items-center gap-4">
+                        {blogData.map((blog, index) => (
+                            <Link
+                                key={index}
+                                to={`${titleToBlogUrl(blog.title)}`}
+                                className="text-base hover:text-orange-500 transition-colors"
+                            >
+                                {blog.title}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </nav>
+
+            {/* Routes */}
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <div className="bg-footer relative">
+                            <Banner />
+                            <ParallaxBackground backgroundUrl="https://sahjeevan.org/wp-content/uploads/2023/03/map-marker-1.png">
+                                <ImageGrid />
+                                <GujratBanner />
+                                <ImageCarousel />
+                            </ParallaxBackground>
+                            <Footer />
+                        </div>
+                    }
+                />
+                {blogData.map((blog, index) => (
+                    <Route
+                        key={index}
+                        path={titleToBlogUrl(blog.title)}
+                        element={
+                            <BlogPage
+                                title={blog.title}
+                                paragraphs={blog.paragraphs}
+                                images={blog.images}
+                            />
+                        }
+                    />
+                ))}
+            </Routes>
+        </Router>
+    );
 }
 
-export default App
+export default App;
