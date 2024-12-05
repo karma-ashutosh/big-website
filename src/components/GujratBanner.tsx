@@ -1,9 +1,11 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 
 type IconInfo = {
     name: string;
     description: string;
     iconUrl: string;
+    hoverText: string; // Added hover text
+    linkUrl: string; // URL to navigate to when clicked
 };
 
 interface BannerProps {
@@ -13,8 +15,10 @@ interface BannerProps {
 }
 
 const BannerComponent: FC<BannerProps> = ({ title, description, icons }) => {
+    const [hoveredIconIndex, setHoveredIconIndex] = useState<number | null>(null);
+
     return (
-        <div className="bg-green-700 w-full h-auto flex justify-center items-center p-10 md:p-20">
+        <div className="bg-green-700 w-full h-auto flex flex-col items-center p-10 md:p-20">
             <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-10">
                 {/* Text Section */}
                 <div className="flex flex-col justify-center items-start space-y-4">
@@ -37,7 +41,14 @@ const BannerComponent: FC<BannerProps> = ({ title, description, icons }) => {
             {/* Icon Section */}
             <div className="w-full mt-8 flex justify-center items-center space-x-8">
                 {icons.map((icon, index) => (
-                    <div key={index} className="flex flex-col items-center">
+                    <div
+                        key={index}
+                        className="flex flex-col items-center relative cursor-pointer"
+                        onMouseEnter={() => setHoveredIconIndex(index)}
+                        onMouseLeave={() => setHoveredIconIndex(null)}
+                        // onClick={() => window.open(icon.linkUrl, "_blank")} // Open the URL in a new tab
+                        onClick={() => window.open(icon.iconUrl, "_blank")} // Open the URL in a new tab
+                    >
                         <img
                             src={icon.iconUrl}
                             alt={icon.name}
@@ -46,6 +57,13 @@ const BannerComponent: FC<BannerProps> = ({ title, description, icons }) => {
                             className="object-contain"
                         />
                         <span className="text-white text-xs mt-2">{icon.description}</span>
+
+                        {/* Hover Text */}
+                        {hoveredIconIndex === index && (
+                            <div className="absolute bottom-full mb-2 px-3 py-2 bg-gray-800 text-white text-xs rounded shadow-md whitespace-nowrap">
+                                {icon.hoverText}
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>
@@ -59,31 +77,43 @@ const iconData: IconInfo[] = [
         name: "Banni Grassland",
         description: "Banni Grassland",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/1banni.png",
+        hoverText: "Explore the Banni Grassland ecosystem",
+        linkUrl: "https://example.com/banni-grassland",
     },
     {
         name: "Dense Grassland",
         description: "Dense Grassland",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/2dense.png",
+        hoverText: "Learn about Dense Grasslands",
+        linkUrl: "https://example.com/dense-grassland",
     },
     {
         name: "Thorn-Scrub Forest",
         description: "Thorn-Scrub Forest",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/3thorn.png",
+        hoverText: "Discover Thorn-Scrub Forest",
+        linkUrl: "https://example.com/thorn-scrub-forest",
     },
     {
         name: "Mangroves",
         description: "Mangroves",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/4mangroves.png",
+        hoverText: "Learn more about Mangroves",
+        linkUrl: "https://example.com/mangroves",
     },
     {
         name: "Rain-fed Agriculture",
         description: "Rain-fed Agriculture",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/5rain.png",
+        hoverText: "Explore Rain-fed Agriculture",
+        linkUrl: "https://example.com/rain-fed-agriculture",
     },
     {
         name: "Irrigated Agriculture",
         description: "Irrigated Agriculture",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/6irrigated.png",
+        hoverText: "Learn about Irrigated Agriculture",
+        linkUrl: "https://example.com/irrigated-agriculture",
     },
 ];
 
@@ -96,3 +126,5 @@ export default function GujratBanner() {
         />
     );
 }
+
+
