@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { useNavigate } from "react-router-dom";
+import {blogData, titleToBlogUrl} from "@/components/Blog.tsx";
 
 interface ISearchService {
     getSuggestions(query: string): string[];
@@ -6,18 +8,7 @@ interface ISearchService {
 
 // Temporary implementation for fuzzy search using a static list of strings
 class StaticSearchService implements ISearchService {
-    allSuggestions: string[] = [
-        "Wildlife Conservation",
-        "Gujarat Map",
-        "Banni Grassland",
-        "Thorn-Scrub Forest",
-        "Rain-fed Agriculture",
-        "Mangroves",
-        "Wildlife Protection",
-        "Habitat Restoration",
-        "Endangered Species",
-        "Wildlife Sanctuary",
-    ];
+    allSuggestions: string[] = blogData.map(b => b.title);
 
     getSuggestions(query: string): string[] {
         return this.allSuggestions.filter((suggestion) =>
@@ -28,6 +19,7 @@ class StaticSearchService implements ISearchService {
 
 interface SearchBarProps {
     searchService: ISearchService;
+    navigate: (path: string) => void;
 }
 interface SearchBarState {
     query: string;
@@ -57,10 +49,23 @@ class SearchBar extends Component<SearchBarProps, SearchBarState> {
     };
 
     handleSuggestionClick = (suggestion: string) => {
+        // Update the query in state and clear suggestions
         this.setState({
             query: suggestion,
             suggestions: [],
         });
+
+        // Navigate to the search results page for the selected suggestion
+        this.props.navigate(titleToBlogUrl(suggestion));
+    };
+
+    handleSearch = () => {
+        const { query } = this.state;
+
+        if (query.trim() !== "") {
+            // Navigate to the search results page for the entered query
+            this.props.navigate(`/search?query=${encodeURIComponent(query)}`);
+        }
     };
 
     render() {
@@ -79,6 +84,7 @@ class SearchBar extends Component<SearchBarProps, SearchBarState> {
 
                 {/* Search Button */}
                 <button
+                    onClick={this.handleSearch}
                     className="absolute top-0 right-0 px-4 py-2 text-white bg-orange-500 rounded-md focus:outline-none hover:bg-orange-600 transition duration-300"
                 >
                     Search
@@ -105,9 +111,12 @@ class SearchBar extends Component<SearchBarProps, SearchBarState> {
     }
 }
 
-// Example usage of SearchBar with StaticSearchService
-const searchService = new StaticSearchService();
+// Wrapper Component to Use useNavigate for Routing
+const SearchBarWithNavigate = () => {
+    const navigate = useNavigate();
+    const searchService = new StaticSearchService();
 
-export default function SearchBarComponent() {
-    return <SearchBar searchService={searchService} />;
-}
+    return <SearchBar searchService={searchService} navigate={navigate} />;
+};
+
+export default SearchBarWithNavigate;
