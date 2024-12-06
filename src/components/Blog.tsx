@@ -1,4 +1,5 @@
 import React from "react";
+import { Leaf, TreePine as Tree } from 'lucide-react'; // Importing icons from lucide-react
 
 interface BlogPageProps {
     title: string;
@@ -8,46 +9,92 @@ interface BlogPageProps {
 
 const BlogPage: React.FC<BlogPageProps> = ({ title, paragraphs, images = [] }) => {
     return (
-        <div className="bg-background container mx-auto px-8 mt-8 mb-16 pt-16">
+        <div className="bg-gradient-to-b from-yellow-100 to-green-50 container mx-auto px-8 mt-8 mb-16 py-16 relative">
+            {/* Decorative Background SVG */}
+            <div className="absolute top-0 left-0 w-full h-full -z-10">
+                <svg
+                    viewBox="0 0 100 100"
+                    className="absolute top-20 right-0 w-64 h-64 opacity-10 text-green-400"
+                >
+                    <circle cx="50" cy="50" r="50" fill="currentColor" />
+                </svg>
+                <svg
+                    viewBox="0 0 100 100"
+                    className="absolute bottom-20 left-0 w-48 h-48 opacity-10 text-yellow-400"
+                >
+                    <polygon points="50,0 100,100 0,100" fill="currentColor" />
+                </svg>
+            </div>
+
             {/* Title Section */}
             <div className="text-center mb-12">
-    <h1 className="text-4xl font-bold text-gray-900">{title}</h1>
-        <div className="h-1 w-24 bg-orange-500 mx-auto mt-4"></div>
-        </div>
-
-    {/* Images Section */}
-    {images.length > 0 && (
-        <div
-            className={`grid ${
-            images.length === 1 ? "grid-cols-1" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-        } gap-8 mb-12`}
-    >
-        {images.slice(0, 3).map((image, index) => (
-            <div key={index} className="aspect-[4/3] relative overflow-hidden rounded-lg">
-        <div
-            className="absolute inset-0 bg-cover bg-center transform hover:scale-105 transition-transform duration-300"
-            style={{
-            backgroundImage: `url('${image}')`,
-        }}
-            />
+                <h1 className="text-5xl font-extrabold text-yellow-800">{title}</h1>
+                <div className="h-1 w-24 bg-green-600 mx-auto mt-4"></div>
             </div>
-        ))}
-        </div>
-    )}
 
-    {/* Paragraphs Section */}
-    <div className="space-y-8">
-        {paragraphs.map((paragraph, index) => (
-                <p key={index} className="text-lg text-gray-800 leading-relaxed">
-            {paragraph}
-            </p>
-))}
-    </div>
-    </div>
-);
+            {/* Images Section */}
+            {images.length > 0 && (
+                <div
+                    className={`grid ${
+                        images.length === 1 ? "grid-cols-1" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                    } gap-8 mb-12`}
+                >
+                    {images.slice(0, 3).map((image, index) => (
+                        <div key={index} className="aspect-[4/3] relative overflow-hidden rounded-lg shadow-lg">
+                            <div
+                                className="absolute inset-0 bg-cover bg-center transform hover:scale-105 transition-transform duration-300"
+                                style={{
+                                    backgroundImage: `url('${image}')`,
+                                }}
+                            />
+                        </div>
+                    ))}
+                </div>
+            )}
+
+            {/* Paragraphs Section */}
+            <div className="space-y-8 bg-white p-8 rounded-md shadow-md">
+                {paragraphs.map((paragraph, index) => (
+                    <div key={index} className="relative">
+                        {/* Drop cap for the first paragraph */}
+                        {index === 0 ? (
+                            <p className="text-lg text-gray-800 leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:text-green-600">
+                                {paragraph}
+                            </p>
+                        ) : (
+                            <p className="text-lg text-gray-800 leading-relaxed">
+                                {paragraph}
+                            </p>
+                        )}
+                        {/* Highlight some important keywords */}
+                        {index === 1 && (
+                            <div className="mt-4 text-base italic text-green-700 border-l-4 border-green-400 pl-4">
+                                <Leaf className="inline-block text-green-600 mr-2" />
+                                Dense forests support a rich diversity of flora and fauna, including <strong>teak, bamboo</strong>, and <strong>medicinal plants</strong>.
+                            </div>
+                        )}
+                    </div>
+                ))}
+
+                {/* Quote Section */}
+                <blockquote className="mt-8 border-l-4 border-yellow-500 pl-4 italic text-yellow-700">
+                    "Efforts to protect dense forests include the establishment of protected areas and wildlife sanctuaries."
+                </blockquote>
+
+                {/* Icon Decoration */}
+                <div className="flex items-center mt-8 text-green-700 font-semibold">
+                    <Tree className="mr-2 text-green-500" />
+                    Protecting forests is essential for ensuring biodiversity.
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default BlogPage;
+
+
+
 export const titleToBlogUrl = (title: string) => {
    return "/blog/" + title.replace(' ', '-').toLowerCase()
 }
