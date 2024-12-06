@@ -8,7 +8,7 @@ interface BlogPageProps {
 
 const BlogPage: React.FC<BlogPageProps> = ({ title, paragraphs, images = [] }) => {
     return (
-        <div className="bg-background container mx-auto px-8 mt-8 mb-16">
+        <div className="bg-background container mx-auto px-8 mt-8 mb-16 pt-16">
             {/* Title Section */}
             <div className="text-center mb-12">
     <h1 className="text-4xl font-bold text-gray-900">{title}</h1>

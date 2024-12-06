@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import DonationButton from "@/components/DonateButton.tsx";
-import NavBar from "@/components/NavBar.tsx";
 import { useState } from "react";
 import Modal from "react-modal";
 
@@ -17,10 +16,6 @@ export default function Banner() {
 
     return (
         <div className="bg-background relative">
-            {/* Navigation Bar with Independent Color */}
-            <div className="w-full fixed top-0 left-0 z-50 bg-[#2f2f2f] text-white shadow-md">
-                <NavBar />
-            </div>
 
             {/* Adding padding to account for the navbar height */}
             <div className="pt-16">

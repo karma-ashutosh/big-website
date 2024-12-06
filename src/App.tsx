@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
 
 import Banner from "@/components/banner";
 import ImageGrid from "@/components/image-grid";
@@ -9,6 +9,7 @@ import GujratBanner from "@/components/GujratBanner";
 
 import { FC, ReactNode } from "react";
 import BlogPage, {blogData, titleToBlogUrl} from "@/components/Blog.tsx";
+import NavBar from "@/components/NavBar.tsx";
 
 interface ParallaxBackgroundProps {
     backgroundUrl: string;
@@ -38,36 +39,23 @@ function App() {
     return (
         <Router>
             {/* Navigation Bar */}
-            <nav className="bg-[#2f2f2f] text-white p-4">
-                <div className="container mx-auto flex justify-between items-center">
-                    <Link to="/" className="text-lg font-semibold hover:text-orange-500 transition-colors">Home</Link>
-                    <div className="flex items-center gap-4">
-                        {blogData.map((blog, index) => (
-                            <Link
-                                key={index}
-                                to={`${titleToBlogUrl(blog.title)}`}
-                                className="text-base hover:text-orange-500 transition-colors"
-                            >
-                                {blog.title}
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            </nav>
-
+            <div className="w-full fixed top-0 left-0 z-50 bg-[#2f2f2f] text-white shadow-md">
+                <NavBar/>
+            </div>
             {/* Routes */}
             <Routes>
                 <Route
                     path="/"
                     element={
                         <div className="bg-footer relative">
-                            <Banner />
-                            <ParallaxBackground backgroundUrl="https://sahjeevan.org/wp-content/uploads/2023/03/map-marker-1.png">
-                                <ImageGrid />
-                                <GujratBanner />
-                                <ImageCarousel />
+                            <Banner/>
+                            <ParallaxBackground
+                                backgroundUrl="https://sahjeevan.org/wp-content/uploads/2023/03/map-marker-1.png">
+                                <ImageGrid/>
+                                <GujratBanner/>
+                                <ImageCarousel/>
                             </ParallaxBackground>
-                            <Footer />
+                            <Footer/>
                         </div>
                     }
                 />
