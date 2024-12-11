@@ -35,13 +35,13 @@ const NavBar = () => {
                         <div className="flex items-center gap-8">
                           <div className="flex items-center">
     <img
-      fetchpriority="high"
+        fetchPriority="high"
       width="auto"
       height="auto"
       src="https://sahjeevan.org/wp-content/uploads/2023/03/logo.png"
       className="h-20 w-auto object-contain"
       alt="Sahjeevan Logo"
-      srcset="https://sahjeevan.org/wp-content/uploads/2023/03/logo.png 245w, https://sahjeevan.org/wp-content/uploads/2023/03/logo-150x150.png 150w, https://sahjeevan.org/wp-content/uploads/2023/03/logo-100x100.png 100w, https://sahjeevan.org/wp-content/uploads/2023/03/logo-200x200.png 200w"
+      srcSet="https://sahjeevan.org/wp-content/uploads/2023/03/logo.png 245w, https://sahjeevan.org/wp-content/uploads/2023/03/logo-150x150.png 150w, https://sahjeevan.org/wp-content/uploads/2023/03/logo-100x100.png 100w, https://sahjeevan.org/wp-content/uploads/2023/03/logo-200x200.png 200w"
       sizes="(max-width: 245px) 100vw, 245px"
     />
   </div>
