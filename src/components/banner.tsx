@@ -4,19 +4,18 @@ import { useState } from "react";
 import Modal from "react-modal";
 
 export default function Banner() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isYoutubeModalOpen, setIsYoutubeModalOpen] = useState(false);
 
-    const openModal = () => {
-        setIsModalOpen(true);
+    const openYoutubeModal = () => {
+        setIsYoutubeModalOpen(true);
     };
 
-    const closeModal = () => {
-        setIsModalOpen(false);
+    const closeYoutubeModal = () => {
+        setIsYoutubeModalOpen(false);
     };
 
     return (
         <div className="bg-background relative">
-
             {/* Adding padding to account for the navbar height */}
             <div className="pt-16">
                 {/* Hero Section */}
@@ -59,10 +58,10 @@ export default function Banner() {
                                     src="https://sahjeevan.org/wp-content/uploads/2023/04/Institutions-2.png"
                                     alt="Video Thumbnail"
                                     className="w-full h-full object-cover cursor-pointer"
-                                    onClick={openModal}
+                                    onClick={openYoutubeModal}
                                 />
                                 <button
-                                    onClick={openModal}
+                                    onClick={openYoutubeModal}
                                     className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orange-500 text-white rounded-full p-4 hover:bg-orange-600 transition duration-300"
                                 >
                                     <svg
@@ -88,8 +87,8 @@ export default function Banner() {
 
             {/* YouTube Video Modal */}
             <Modal
-                isOpen={isModalOpen}
-                onRequestClose={closeModal}
+                isOpen={isYoutubeModalOpen}
+                onRequestClose={closeYoutubeModal}
                 contentLabel="Watch Video"
                 className="fixed inset-0 flex items-center justify-center p-4"
                 overlayClassName="fixed inset-0 bg-black bg-opacity-90"
@@ -97,7 +96,7 @@ export default function Banner() {
             >
                 <div className="relative w-full max-w-3xl bg-white rounded-md shadow-lg">
                     <button
-                        onClick={closeModal}
+                        onClick={closeYoutubeModal}
                         className="absolute top-0 right-0 m-4 text-black text-3xl font-bold focus:outline-none z-50"
                     >
                         &times;
@@ -114,6 +113,7 @@ export default function Banner() {
                     </div>
                 </div>
             </Modal>
+
         </div>
     );
 }

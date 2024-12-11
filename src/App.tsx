@@ -38,11 +38,9 @@ const ParallaxBackground: FC<ParallaxBackgroundProps> = ({ backgroundUrl, childr
 function App() {
     return (
         <Router>
-            {/* Navigation Bar */}
             <div className="w-full fixed top-0 left-0 z-50 bg-[#2f2f2f] text-white shadow-md">
                 <NavBar/>
             </div>
-            {/* Routes */}
             <Routes>
                 <Route
                     path="/"

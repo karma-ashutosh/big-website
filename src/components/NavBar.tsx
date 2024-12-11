@@ -1,53 +1,48 @@
-import { Component } from "react";
+import { useState } from "react";
+import Modal from "react-modal";
 import { Button } from "@/components/ui/button";
 import DonationButton from "@/components/DonateButton";
 import SearchBarComponent from "@/components/SearchBar";
-import { Menu, X, Instagram, Facebook, YoutubeIcon } from "lucide-react"; // Import icons from lucide-react
+import { Menu, X, Instagram, Facebook, YoutubeIcon } from "lucide-react";
+import ZoomableMapDashboard from "./map-ux/zoomable-map-ux";
 
-interface NavBarState {
-    isMobileMenuOpen: boolean;
-    isSocialBannerOpen: boolean;
-}
+const NavBar = () => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isSocialBannerOpen, setIsSocialBannerOpen] = useState(false);
 
-class NavBar extends Component<{}, NavBarState> {
-    constructor(props: {}) {
-        super(props);
-        this.state = {
-            isMobileMenuOpen: false,
-            isSocialBannerOpen: false,
-        };
+    const [isProjectMapOpen, setIsProjectMapOpen] = useState(false);
+    const setProjectMapOpen = () => {
+        setIsProjectMapOpen(true)
+    }
+    const setProjectMapClose = () => {
+        setIsProjectMapOpen(false)
     }
 
-    toggleMobileMenu = () => {
-        this.setState((prevState) => ({
-            isMobileMenuOpen: !prevState.isMobileMenuOpen,
-        }));
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen((prev) => !prev);
     };
 
-    toggleSocialBanner = () => {
-        this.setState((prevState) => ({
-            isSocialBannerOpen: !prevState.isSocialBannerOpen,
-        }));
+    const toggleSocialBanner = () => {
+        setIsSocialBannerOpen((prev) => !prev);
     };
 
-    render() {
-        const { isMobileMenuOpen, isSocialBannerOpen } = this.state;
-
-        return (
+    return (
+        <>
             <nav className="absolute top-0 left-0 right-0 z-10 bg-[#2f2f2f] text-white shadow-md">
                 <div className="container mx-auto px-4">
                     <div className="flex items-center justify-between h-16">
                         {/* Search Bar */}
-                        <SearchBarComponent />
-
-                        {/* Logo */}
                         <div className="flex items-center gap-8">
                             <Button asChild>
                                 <a href="/" className="text-white font-semibold">
                                     Logo
                                 </a>
                             </Button>
+                        </div>
+                        <SearchBarComponent />
 
+                        {/* Logo */}
+                        <div className="flex items-center gap-8">
                             {/* Desktop Menu Items */}
                             <div className="hidden md:flex items-center gap-6">
                                 <Button asChild>
@@ -56,9 +51,9 @@ class NavBar extends Component<{}, NavBarState> {
                                     </a>
                                 </Button>
                                 <Button asChild>
-                                    <a href="#" className="text-white hover:text-white/80">
+                                    <button onClick={setProjectMapOpen}>
                                         Our Work
-                                    </a>
+                                    </button>
                                 </Button>
                                 <Button asChild>
                                     <a href="#" className="text-white hover:text-white/80">
@@ -75,7 +70,7 @@ class NavBar extends Component<{}, NavBarState> {
                             {/* Mobile Hamburger Menu Button */}
                             <div className="md:hidden">
                                 <button
-                                    onClick={this.toggleMobileMenu}
+                                    onClick={toggleMobileMenu}
                                     className="text-white focus:outline-none"
                                 >
                                     {isMobileMenuOpen ? (
@@ -98,7 +93,7 @@ class NavBar extends Component<{}, NavBarState> {
 
                             {/* Social Media Icon Toggle */}
                             <button
-                                onClick={this.toggleSocialBanner}
+                                onClick={toggleSocialBanner}
                                 className="text-white focus:outline-none"
                             >
                                 <Instagram className="w-6 h-6 hover:text-white/80" />
@@ -107,14 +102,15 @@ class NavBar extends Component<{}, NavBarState> {
                             {/* Social Media Banner */}
                             {isSocialBannerOpen && (
                                 <div
-                                    className="absolute top-16 right-0 w-40 bg-[#2f2f2f] text-white shadow-lg rounded-md py-4 px-4 flex flex-col gap-2">
+                                    className="absolute top-16 right-0 w-40 bg-[#2f2f2f] text-white shadow-lg rounded-md py-4 px-4 flex flex-col gap-2"
+                                >
                                     <a
                                         href="https://www.instagram.com"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="flex items-center gap-2 text-white hover:text-white/80"
                                     >
-                                        <Instagram className="w-5 h-5"/>
+                                        <Instagram className="w-5 h-5" />
                                         Instagram
                                     </a>
                                     <a
@@ -123,7 +119,7 @@ class NavBar extends Component<{}, NavBarState> {
                                         rel="noopener noreferrer"
                                         className="flex items-center gap-2 text-white hover:text-white/80"
                                     >
-                                        <Facebook className="w-5 h-5"/>
+                                        <Facebook className="w-5 h-5" />
                                         Facebook
                                     </a>
                                     <a
@@ -132,7 +128,7 @@ class NavBar extends Component<{}, NavBarState> {
                                         rel="noopener noreferrer"
                                         className="flex items-center gap-2 text-white hover:text-white/80"
                                     >
-                                        <YoutubeIcon className="w-5 h-5"/>
+                                        <YoutubeIcon className="w-5 h-5" />
                                         YouTube
                                     </a>
                                 </div>
@@ -147,7 +143,7 @@ class NavBar extends Component<{}, NavBarState> {
                                 <a
                                     href="https://google.com"
                                     className="block py-2 text-white hover:text-white/80"
-                                    onClick={this.toggleMobileMenu}
+                                    onClick={toggleMobileMenu}
                                 >
                                     Wildlife
                                 </a>
@@ -156,7 +152,7 @@ class NavBar extends Component<{}, NavBarState> {
                                 <a
                                     href="#"
                                     className="block py-2 text-white hover:text-white/80"
-                                    onClick={this.toggleMobileMenu}
+                                    onClick={toggleMobileMenu}
                                 >
                                     Our Work
                                 </a>
@@ -165,7 +161,7 @@ class NavBar extends Component<{}, NavBarState> {
                                 <a
                                     href="#"
                                     className="block py-2 text-white hover:text-white/80"
-                                    onClick={this.toggleMobileMenu}
+                                    onClick={toggleMobileMenu}
                                 >
                                     Take Action
                                 </a>
@@ -174,7 +170,7 @@ class NavBar extends Component<{}, NavBarState> {
                                 <a
                                     href="#"
                                     className="block py-2 text-white hover:text-white/80"
-                                    onClick={this.toggleMobileMenu}
+                                    onClick={toggleMobileMenu}
                                 >
                                     Support
                                 </a>
@@ -183,8 +179,29 @@ class NavBar extends Component<{}, NavBarState> {
                     )}
                 </div>
             </nav>
-        );
-    }
-}
+            <Modal
+                isOpen={isProjectMapOpen}
+                onRequestClose={setProjectMapClose}
+                contentLabel="Sahjeevan Work"
+                className="ReactModal__Content fixed inset-0 flex items-center justify-center bg-white z-[2147483647] outline-none"
+                overlayClassName="ReactModal__Overlay fixed inset-0 bg-black bg-opacity-90 z-[2147483646]"
+                shouldCloseOnOverlayClick={true}
+            >
+                <div className="relative w-full h-full">
+                    <button
+                        onClick={setProjectMapClose}
+                        className="absolute top-4 right-4 text-black text-3xl font-bold focus:outline-none z-[2147483647]"
+                    >
+                        &times;
+                    </button>
+                    <div className="absolute inset-0 w-full h-full">
+                        <ZoomableMapDashboard />
+                    </div>
+                </div>
+            </Modal>
+
+        </>
+    );
+};
 
 export default NavBar;

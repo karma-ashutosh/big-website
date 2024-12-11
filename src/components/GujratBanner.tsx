@@ -54,7 +54,7 @@ const BannerComponent: FC<BannerProps> = ({ title, description, icons }) => {
                         onMouseEnter={() => setHoveredIconIndex(index)}
                         onMouseLeave={() => setHoveredIconIndex(null)}
                         // onClick={() => window.open(icon.linkUrl, "_blank")} // Open the URL in a new tab
-                        onClick={() => window.open(icon.linkUrl, "_blank")} // Open the URL in a new tab
+                        onClick={() => window.open(icon.linkUrl, "_self")} // Open the URL in a new tab
                     >
                         <img
                             src={icon.iconUrl}
