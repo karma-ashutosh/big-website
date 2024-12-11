@@ -9,7 +9,7 @@ import { Article, articles, Coordinate, CoordinateProjectSummary } from "./proje
 const ZoomableMapDashboard: React.FC = () => {
   const [projectSummary, setProjectSummary] = useState<CoordinateProjectSummary[]>([]);
   const [visibleCoordinates, setVisibleCoordinates] = useState<CoordinateProjectSummary[]>(projectSummary);
-  const [globalArticles, setGlobalArticles] = useState<Article[]>(articles);
+  const [globalArticles, ] = useState<Article[]>(articles);
   const [articlesOfInterest, setArticlesOfInterest] = useState<Article[]>(articles);
   useEffect(() => {
     const newSummary: CoordinateProjectSummary[] = [];
