@@ -33,11 +33,19 @@ const NavBar = () => {
                     <div className="flex items-center justify-between h-16">
                         {/* Search Bar */}
                         <div className="flex items-center gap-8">
-                            <Button asChild>
-                                <a href="/" className="text-white font-semibold">
-                                    Logo
-                                </a>
-                            </Button>
+                          <div className="flex items-center">
+    <img
+      fetchpriority="high"
+      width="auto"
+      height="auto"
+      src="https://sahjeevan.org/wp-content/uploads/2023/03/logo.png"
+      className="h-20 w-auto object-contain"
+      alt="Sahjeevan Logo"
+      srcset="https://sahjeevan.org/wp-content/uploads/2023/03/logo.png 245w, https://sahjeevan.org/wp-content/uploads/2023/03/logo-150x150.png 150w, https://sahjeevan.org/wp-content/uploads/2023/03/logo-100x100.png 100w, https://sahjeevan.org/wp-content/uploads/2023/03/logo-200x200.png 200w"
+      sizes="(max-width: 245px) 100vw, 245px"
+    />
+  </div>
+  <div className="flex-grow"></div>
                         </div>
                         <SearchBarComponent />
 

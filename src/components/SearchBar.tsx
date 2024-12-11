@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { useNavigate } from "react-router-dom";
 import {blogData, titleToBlogUrl} from "@/components/Blog.tsx";
+import { Search } from "lucide-react";
 
 interface ISearchService {
     getSuggestions(query: string): string[];
@@ -102,9 +103,9 @@ class SearchBar extends Component<SearchBarProps, SearchBarState> {
                 {/* Search Button */}
                 <button
                     onClick={this.handleSearch}
-                    className="absolute top-0 right-0 px-4 py-2 text-white bg-orange-500 rounded-r-md focus:outline-none hover:bg-orange-600 transition duration-300"
+                    className="absolute top-0 right-0 px-2 py-2 rounded-r-md focus:outline-none hover:bg-orange-100 transition duration-300"
                 >
-                    Search
+                    <Search className="h-5 w-5 text-orange-500" />
                 </button>
 
                 {/* Suggestions Dropdown */}
