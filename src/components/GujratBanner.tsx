@@ -6,11 +6,13 @@ import {
     ThornScrubForestData,
     titleToBlogUrl
 } from "@/components/Blog.tsx";
+import {imageNames} from "@/components/constants.ts";
 
 type IconInfo = {
     name: string;
     description: string;
     iconUrl: string;
+    hoverImageUrl: string;
     hoverText: string; // Added hover text
     linkUrl: string; // URL to navigate to when clicked
 };
@@ -84,6 +86,7 @@ const iconData: IconInfo[] = [
         name: "Banni Grassland",
         description: "Banni Grassland",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/1banni.png",
+        hoverImageUrl: imageNames.BANNI_GRASSLAND_1,
         hoverText: "Explore the Banni Grassland ecosystem",
         linkUrl: titleToBlogUrl(BanniGrasslanData.title),
     },
@@ -91,6 +94,7 @@ const iconData: IconInfo[] = [
         name: "Dense Grassland",
         description: "Dense Grassland",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/2dense.png",
+        hoverImageUrl: imageNames.BANNI_GRASSLAND_1,
         hoverText: "Learn about Dense Grasslands",
         linkUrl: titleToBlogUrl(DenseForestData.title),
     },
@@ -98,6 +102,7 @@ const iconData: IconInfo[] = [
         name: "Thorn-Scrub Forest",
         description: "Thorn-Scrub Forest",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/3thorn.png",
+        hoverImageUrl: imageNames.BANNI_GRASSLAND_1,
         hoverText: "Discover Thorn-Scrub Forest",
         linkUrl: titleToBlogUrl(ThornScrubForestData.title),
     },
@@ -105,6 +110,7 @@ const iconData: IconInfo[] = [
         name: "Mangroves",
         description: "Mangroves",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/4mangroves.png",
+        hoverImageUrl: imageNames.BANNI_GRASSLAND_1,
         hoverText: "Learn more about Mangroves",
         linkUrl: titleToBlogUrl(MangrovesData.title),
     },
@@ -112,6 +118,7 @@ const iconData: IconInfo[] = [
         name: "Rain-fed Agriculture",
         description: "Rain-fed Agriculture",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/5rain.png",
+        hoverImageUrl: imageNames.BANNI_GRASSLAND_1,
         hoverText: "Explore Rain-fed Agriculture",
         linkUrl: titleToBlogUrl(RainFedAgri.title),
     },
@@ -119,6 +126,7 @@ const iconData: IconInfo[] = [
         name: "Irrigated Agriculture",
         description: "Irrigated Agriculture",
         iconUrl: "https://sahjeevan.org/wp-content/uploads/2023/01/6irrigated.png",
+        hoverImageUrl: imageNames.BANNI_GRASSLAND_1,
         hoverText: "Learn about Irrigated Agriculture",
         linkUrl: titleToBlogUrl(IrrigatedAgricultureData.title),
     },

@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
+import {imageNames} from "@/components/constants.ts";
 
 export default function ImageGrid() {
     const items = [
         {
-            image: "https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png",
-            title: "We'll never give up on wolves",
+            image: imageNames.SHEEP_OWNER_HAPPY,
+            title: "Helping wildlife and spreading happiness",
             link: "#"
         },
         {
-            image: "https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png",
-            title: "Wildlife and Politics",
+            image: imageNames.COW_LOOKING_DIRECT,
+            title: "Conserving native animal diversity",
             link: "#"
         },
         {

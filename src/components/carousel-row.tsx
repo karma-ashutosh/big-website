@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/carousel"
 
 const images = [
-    "https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png",
+    "src/assets/DSCN3311.webp",
     "https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png",
     "https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png",
     "https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png",

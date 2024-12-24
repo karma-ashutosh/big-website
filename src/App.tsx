@@ -10,6 +10,7 @@ import GujratBanner from "@/components/GujratBanner";
 import { FC, ReactNode } from "react";
 import BlogPage, {blogData, titleToBlogUrl} from "@/components/Blog.tsx";
 import NavBar from "@/components/NavBar.tsx";
+import {imageNames} from "@/components/constants.ts";
 
 interface ParallaxBackgroundProps {
     backgroundUrl: string;
@@ -48,7 +49,7 @@ function App() {
                         <div className="bg-footer relative">
                             <Banner/>
                             <ParallaxBackground
-                                backgroundUrl="https://sahjeevan.org/wp-content/uploads/2023/03/map-marker-1.png">
+                                backgroundUrl={imageNames.HAPPY_WITH_COWS}>
                                 <ImageGrid/>
                                 <GujratBanner/>
                                 <ImageCarousel/>

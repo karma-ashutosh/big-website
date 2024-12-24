@@ -1,0 +1,15 @@
+export const imageNames = {
+   PEOPLE_WALKING_WITH_ANIMALS: "src/assets/DSCN3311.webp",
+    BANNI_GRASSLAND_1: "src/assets/DSCN3574.webp",
+    DENSE_GRASSLAND_1: "src/assets/DSCN3574.webp",
+    THORN_SCRUB_FOREST_1: "src/assets/DSCN3574.webp",
+    MANGROVES_1: "src/assets/DSCN3574.webp",
+    RAIN_FED_AGRICULTURE_1: "src/assets/DSCN3574.webp",
+    IRRIGATED_AGRICULTURE_1: "src/assets/DSCN3574.webp",
+    HERO_LEADING_COWS_1: "src/assets/DSCN3115.webp",
+    SHEEPLINGS_SLEEPING: "src/assets/DSCN3127.webp",
+    SHEEP_GRAZING_GOAT_LOOKING: "src/assets/DSCN3136.webp",
+    SHEEP_OWNER_HAPPY: "src/assets/DSCN3140.webp",
+    COW_LOOKING_DIRECT: "src/assets/DSCN3222.webp",
+   HAPPY_WITH_COWS: "src/assets/DSCN3574.webp",
+}
