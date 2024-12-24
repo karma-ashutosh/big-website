@@ -6,13 +6,17 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
+import {imageNames, imageSet2} from "@/components/constants.ts";
 
 const images = [
-    "src/assets/DSCN3311.webp",
-    "https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png",
-    "https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png",
-    "https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png",
-    "https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png"
+    imageSet2.BANNER_VIKALP_SANGAM,
+    imageSet2.UNCLE_MARCHING_IN_KHET,
+    imageSet2.DUCKS_IN_LAKE,
+    imageSet2.GOAT_CURIOUS,
+    imageSet2.CAMELS_FOOD,
+    imageSet2.LADY_TEACHING_GROUP,
+    imageSet2.MAN_WITH_GOAT_LOOKING_AWAY,
+
 ]
 
 export function ImageCarousel() {
