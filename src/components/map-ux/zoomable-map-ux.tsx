@@ -127,7 +127,7 @@ const ZoomableMapDashboard: React.FC = () => {
                   }}
               >
                 {/* Overlay for readability */}
-                <div className="bg-black bg-opacity-50 h-full p-6 overflow-y-auto">
+                <div className="bg-black bg-opacity-50 backdrop-blur-sm h-full p-6 overflow-y-auto">
                   {/* Header Buttons */}
                   <div className="flex justify-between items-center mb-4">
                     <button
@@ -165,6 +165,7 @@ const ZoomableMapDashboard: React.FC = () => {
               </button>
             </Modal>
         )}
+
 
 
 
