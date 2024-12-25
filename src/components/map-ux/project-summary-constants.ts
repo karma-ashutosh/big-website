@@ -71,30 +71,43 @@ const AHEMDABAD: Coordinate = {
 };
 const ahemdabadArticles: Article[] = [
     {
-        title: "Sabarmati Riverfront Biodiversity Enhancement",
-        description: "Enhancing the biodiversity along the Sabarmati Riverfront through native species plantation and habitat restoration.",
-        blogParts: [],
-        blogBackgroundImg: imageNames.BANNI_GRASSLAND_1,
-        initiative: "Riverfront Biodiversity Project",
-        location: AHEMDABAD,
+        "title": "Sabarmati Riverfront Biodiversity Enhancement",
+        "description": "Enhancing the biodiversity along the Sabarmati Riverfront through native species plantation and habitat restoration.",
+        "blogParts": [
+            "The Sabarmati Riverfront is not just a landmark of urban development but also a critical area for biodiversity conservation. Through this project, we aim to transform the riverfront into a thriving habitat for native species.",
+            "By planting indigenous trees and shrubs, we are creating a natural ecosystem that supports local wildlife, birds, and insects. This approach also helps in improving air quality and reducing urban heat.",
+            "Community participation plays a vital role in this initiative. Workshops and awareness drives are conducted to engage citizens in the plantation and maintenance activities, ensuring long-term sustainability."
+        ],
+        "blogBackgroundImg": imageNames.BANNI_GRASSLAND_1,
+        "initiative": "Riverfront Biodiversity Project",
+        "location": AHEMDABAD
     },
     {
-        title: "Sustainable Urban Mobility Solutions",
-        description: "Implementing eco-friendly public transportation options to reduce carbon emissions and traffic congestion.",
-        blogParts: [],
-        blogBackgroundImg: imageNames.BANNI_GRASSLAND_1,
-        initiative: "Green Mobility Initiative",
-        location: AHEMDABAD,
+        "title": "Sustainable Urban Mobility Solutions",
+        "description": "Implementing eco-friendly public transportation options to reduce carbon emissions and traffic congestion.",
+        "blogParts": [
+            "Urban mobility is at the heart of sustainable cities. Our initiative focuses on introducing electric buses and cycling tracks to encourage eco-friendly commuting options.",
+            "Reducing traffic congestion and carbon emissions are key objectives. By prioritizing shared and green modes of transport, we aim to make Ahmedabad a cleaner and more livable city.",
+            "Citizen feedback is essential in designing efficient public transport systems. Regular surveys and pilot projects help us understand and cater to the mobility needs of the community."
+        ],
+        "blogBackgroundImg": imageNames.BANNI_GRASSLAND_1,
+        "initiative": "Green Mobility Initiative",
+        "location": AHEMDABAD
     },
     {
-        title: "Community Rainwater Harvesting Systems",
-        description: "Installing rainwater harvesting systems in residential areas to address water scarcity and promote sustainable water use.",
-        blogParts: [],
-        blogBackgroundImg: imageNames.BANNI_GRASSLAND_1,
-        initiative: "Water Sustainability Program",
-        location: AHEMDABAD,
-    },
+        "title": "Community Rainwater Harvesting Systems",
+        "description": "Installing rainwater harvesting systems in residential areas to address water scarcity and promote sustainable water use.",
+        "blogParts": [
+            "Water scarcity is a pressing issue in urban areas. Our project focuses on implementing rainwater harvesting systems to capture and store rainwater for everyday use.",
+            "These systems are designed to be easy to maintain and cost-effective, ensuring they can be adopted by a wide range of households and communities.",
+            "Educational campaigns and workshops are organized to raise awareness about the benefits of rainwater harvesting and how it contributes to sustainable water management."
+        ],
+        "blogBackgroundImg": imageNames.BANNI_GRASSLAND_1,
+        "initiative": "Water Sustainability Program",
+        "location": AHEMDABAD
+    }
 ]
+
 const KOLKATATA: Coordinate = {
     name: 'kolkata',
     lat: 22.5726,

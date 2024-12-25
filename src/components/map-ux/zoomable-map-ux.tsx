@@ -116,42 +116,59 @@ const ZoomableMapDashboard: React.FC = () => {
             <Modal
                 isOpen={isModalOpen}
                 onRequestClose={closeModal}
-                className="fixed inset-y-0 right-0 w-1/3 bg-cover bg-center flex flex-col shadow-lg"
+                className="absolute top-0 right-0 h-full w-2/3 flex flex-col shadow-lg"
                 overlayClassName="fixed inset-0 bg-black bg-opacity-50"
-                style={{
-                  content: {
-                    backgroundImage: `url('${selectedArticle.blogBackgroundImg}')`, // Use the dynamic background image
-                  },
-                }}
             >
-              <div className="relative flex-1 p-6 text-white">
-                <button
-                    className="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded"
-                    onClick={closeModal}
-                >
-                  Close
-                </button>
-                <button
-                    className="absolute top-4 right-32 bg-green-500 text-white px-4 py-2 rounded"
-                    onClick={() => alert("Supporting the project!")}
-                >
-                  Support this Project
-                </button>
-                <h2 className="text-2xl font-bold mb-4">{selectedArticle.title}</h2>
-                <div className="text-md space-y-4">
-                  {selectedArticle.blogParts.map((part, index) => (
-                      <p key={index}>{part}</p> // Render each blog paragraph
-                  ))}
+              {/* Modal Content */}
+              <div
+                  className="flex flex-col h-full bg-cover bg-center text-white"
+                  style={{
+                    backgroundImage: `url('${selectedArticle.blogBackgroundImg}')`, // Dynamic background image
+                  }}
+              >
+                {/* Overlay for readability */}
+                <div className="bg-black bg-opacity-50 h-full p-6 overflow-y-auto">
+                  {/* Header Buttons */}
+                  <div className="flex justify-between items-center mb-4">
+                    <button
+                        className="bg-green-500 text-white px-4 py-2 rounded"
+                        onClick={() => alert("Supporting the project!")}
+                    >
+                      Support this Project
+                    </button>
+                    <button
+                        className="bg-red-500 text-white px-4 py-2 rounded"
+                        onClick={closeModal}
+                    >
+                      Close
+                    </button>
+                  </div>
+
+                  {/* Article Title */}
+                  <h2 className="text-3xl font-bold mb-4">{selectedArticle.title}</h2>
+
+                  {/* Article Text */}
+                  <div className="text-lg leading-relaxed space-y-4">
+                    {selectedArticle.blogParts.map((part, index) => (
+                        <p key={index}>{part}</p>
+                    ))}
+                  </div>
                 </div>
               </div>
+
+              {/* Bottom Button */}
               <button
-                  className="bg-green-500 text-white w-full py-4"
+                  className="bg-green-500 text-white w-full py-4 text-center"
                   onClick={() => alert("Supporting the project!")}
               >
                 Support this Project
               </button>
             </Modal>
         )}
+
+
+
+
       </div>
   );
 };
