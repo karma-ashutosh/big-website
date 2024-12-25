@@ -1,21 +1,23 @@
+const baseUrl = `https://storage.googleapis.com/big-website-assets/webp`
 export const imageNames = {
-   PEOPLE_WALKING_WITH_ANIMALS: "src/assets/DSCN3311.webp",
-    BANNI_GRASSLAND_1: "src/assets/DSCN3574.webp",
-    DENSE_GRASSLAND_1: "src/assets/DSCN3574.webp",
-    THORN_SCRUB_FOREST_1: "src/assets/DSCN3574.webp",
-    MANGROVES_1: "src/assets/DSCN3574.webp",
-    RAIN_FED_AGRICULTURE_1: "src/assets/DSCN3574.webp",
-    IRRIGATED_AGRICULTURE_1: "src/assets/DSCN3574.webp",
-    HERO_LEADING_COWS_1: "src/assets/DSCN3115.webp",
-    SHEEPLINGS_SLEEPING: "src/assets/DSCN3127.webp",
-    SHEEP_GRAZING_GOAT_LOOKING: "src/assets/DSCN3136.webp",
-    SHEEP_OWNER_HAPPY: "src/assets/DSCN3140.webp",
-    COW_LOOKING_DIRECT: "src/assets/DSCN3222.webp",
-   HAPPY_WITH_COWS: "src/assets/DSCN3574.webp",
-       GOAT_OPTIMISTIC: "src/assets/DSCN3613.webp",
+   PEOPLE_WALKING_WITH_ANIMALS: `${baseUrl}/DSCN3311.webp`,
+    BANNI_GRASSLAND_1: `${baseUrl}/DSCN3574.webp`,
+    DENSE_GRASSLAND_1: `${baseUrl}/DSCN3574.webp`,
+    THORN_SCRUB_FOREST_1: `${baseUrl}/DSCN3574.webp`,
+    MANGROVES_1: `${baseUrl}/DSCN3574.webp`,
+    RAIN_FED_AGRICULTURE_1: `${baseUrl}/DSCN3574.webp`,
+    IRRIGATED_AGRICULTURE_1: `${baseUrl}/DSCN3574.webp`,
+    HERO_LEADING_COWS_1: `${baseUrl}/DSCN3115.webp`,
+    SHEEPLINGS_SLEEPING: `${baseUrl}/DSCN3127.webp`,
+    SHEEP_GRAZING_GOAT_LOOKING: `${baseUrl}/DSCN3136.webp`,
+    SHEEP_OWNER_HAPPY: `${baseUrl}/DSCN3140.webp`,
+    COW_LOOKING_DIRECT: `${baseUrl}/DSCN3222.webp`,
+   HAPPY_WITH_COWS: `${baseUrl}/DSCN3574.webp`,
+       GOAT_OPTIMISTIC: `${baseUrl}/DSCN3613.webp`,
 }
 
-const imgPath = (imgNum: number) => `src/assets/IMG_${imgNum}.webp`
+const imgPath = (imgNum: number) => `${baseUrl}/IMG_${imgNum}.webp`
+
 export const imageSet2 = {
     BANNER_VIKALP_SANGAM: imgPath(3487),
     GOAT_CURIOUS: imgPath(3306),
