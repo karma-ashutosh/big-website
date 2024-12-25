@@ -119,7 +119,7 @@ const NavBar = () => {
             {/* Vertical Social Media Banner */}
             <div className="fixed right-0 top-1/3 flex flex-col items-center space-y-4 bg-[#2f2f2f] p-2 shadow-lg rounded-l-md">
                 <a
-                    href="https://www.instagram.com"
+                    href="https://www.instagram.com/sahjeevan_/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-white/80"
@@ -127,7 +127,7 @@ const NavBar = () => {
                     <Instagram className="w-6 h-6" />
                 </a>
                 <a
-                    href="https://www.facebook.com"
+                    href="https://www.facebook.com/p/Sahjeevan-100069508025502/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-white/80"
