@@ -72,28 +72,6 @@ const ZoomableMapDashboard: React.FC = () => {
     setSelectedArticle(null);
   };
 
-  const customModalStyles = {
-    content: {
-      right: "0",
-      left: "auto",
-      top: "0",
-      bottom: "0",
-      margin: "0",
-      padding: "0",
-      width: "30%",
-      height: "100%",
-      borderRadius: "0",
-      backgroundImage: `url('${selectedArticle?.blogBackgroundImg}')`, // Dynamic background image
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      display: "flex",
-      flexDirection: "column",
-    },
-    overlay: {
-      backgroundColor: "rgba(0, 0, 0, 0.5)",
-    },
-  };
-
   return (
       <div className="flex h-screen">
         {/* Left sidebar */}
@@ -135,8 +113,18 @@ const ZoomableMapDashboard: React.FC = () => {
 
         {/* Modal */}
         {selectedArticle && (
-            <Modal isOpen={isModalOpen} onRequestClose={closeModal} style={customModalStyles}>
-              <div className="p-6 text-white">
+            <Modal
+                isOpen={isModalOpen}
+                onRequestClose={closeModal}
+                className="fixed inset-y-0 right-0 w-1/3 bg-cover bg-center flex flex-col shadow-lg"
+                overlayClassName="fixed inset-0 bg-black bg-opacity-50"
+                style={{
+                  content: {
+                    backgroundImage: `url('${selectedArticle.blogBackgroundImg}')`, // Use the dynamic background image
+                  },
+                }}
+            >
+              <div className="relative flex-1 p-6 text-white">
                 <button
                     className="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded"
                     onClick={closeModal}
@@ -157,7 +145,7 @@ const ZoomableMapDashboard: React.FC = () => {
                 </div>
               </div>
               <button
-                  className="bg-green-500 text-white w-full py-4 mt-auto"
+                  className="bg-green-500 text-white w-full py-4"
                   onClick={() => alert("Supporting the project!")}
               >
                 Support this Project

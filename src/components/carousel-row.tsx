@@ -6,7 +6,7 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
-import {imageNames, imageSet2} from "@/components/constants.ts";
+import {imageSet2} from "@/components/constants.ts";
 
 const images = [
     imageSet2.BANNER_VIKALP_SANGAM,
