@@ -35,7 +35,7 @@ const NavBar = () => {
                                 />
                             </div>
                         </div>
-                        <SearchBarComponent />
+                        <SearchBarComponent/>
 
                         {/* Menu */}
                         <div className="flex items-center gap-8">
@@ -69,9 +69,9 @@ const NavBar = () => {
                                     className="text-white focus:outline-none"
                                 >
                                     {isMobileMenuOpen ? (
-                                        <X className="w-6 h-6" />
+                                        <X className="w-6 h-6"/>
                                     ) : (
-                                        <Menu className="w-6 h-6" />
+                                        <Menu className="w-6 h-6"/>
                                     )}
                                 </button>
                             </div>
@@ -79,20 +79,26 @@ const NavBar = () => {
 
                         {/* Language Selector and Donate Button */}
                         <div className="flex items-center gap-4">
-                            <select className="bg-yellow-800 text-blue border-none focus:ring-0">
-                                <option value="en">ENGLISH</option>
-                                <option value="hi">हिन्दी</option>
-                                <option value="gu">ગુજરાતી</option>
+                            {/* Language Selector */}
+                            <select
+                                className="bg-gray-200 text-gray-800 border-none rounded-md px-3 py-1 text-sm focus:ring-2 focus:ring-gray-300">
+                                <option className="bg-white text-black" value="en">ENGLISH</option>
+                                <option className="bg-white text-black" value="hi">हिन्दी</option>
+                                <option className="bg-white text-black" value="gu">ગુજરાતી</option>
                             </select>
+
+                            {/* Donate Button */}
                             <DonationButton />
                         </div>
+
                     </div>
 
                     {/* Mobile Dropdown Menu */}
                     {isMobileMenuOpen && (
                         <div className="md:hidden mt-2 bg-[#2f2f2f] text-white shadow-lg rounded-md py-4 px-4">
                             <Button asChild>
-                                <a href="https://google.com" className="block py-2 text-white hover:text-white/80" onClick={toggleMobileMenu}>
+                                <a href="https://google.com" className="block py-2 text-white hover:text-white/80"
+                                   onClick={toggleMobileMenu}>
                                     Wildlife
                                 </a>
                             </Button>

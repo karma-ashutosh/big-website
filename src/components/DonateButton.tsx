@@ -9,7 +9,7 @@ const DonationButton: React.FC = () => {
 
     return (
         <>
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white" onClick={() => setIsOpen(true)}>
+            <Button className="bg-orange-500 text-white font-bold rounded-md px-4 py-2 hover:bg-orange-600 focus:ring-2 focus:ring-orange-300" onClick={() => setIsOpen(true)}>
                 DONATE
             </Button>
             {isOpen && (
