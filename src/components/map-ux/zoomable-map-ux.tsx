@@ -147,6 +147,17 @@ const ZoomableMapDashboard: React.FC = () => {
                   {/* Article Title */}
                   <h2 className="text-3xl font-bold mb-4">{selectedArticle.title}</h2>
 
+                  {/* Optional YouTube Video Component */}
+                  {selectedArticle.videoUrl && (
+                      <div className="mb-6">
+                        <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/VupuiZaCPCw?si=JuDNb3Cx_fwDvUXn"
+                                title="YouTube video player" frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                      </div>
+                  )}
+
                   {/* Article Text */}
                   <div className="text-lg leading-relaxed space-y-4">
                     {selectedArticle.blogParts.map((part, index) => (
@@ -165,6 +176,7 @@ const ZoomableMapDashboard: React.FC = () => {
               </button>
             </Modal>
         )}
+
 
 
 

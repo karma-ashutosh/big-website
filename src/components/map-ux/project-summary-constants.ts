@@ -6,6 +6,7 @@ export interface Article {
   initiative: string;
   location: Coordinate;
   blogParts: string[];
+  videoUrl?: string;
   blogBackgroundImg: string;
 }
 export interface Coordinate {
@@ -240,6 +241,32 @@ const BHUJ: Coordinate = {
     lng: 69.6669
 };
 const bhujArticles: Article[] = [
+        {
+            "title": "Camel Milk and Medicinal Plant Research",
+            videoUrl: "https://www.youtube.com/watch?v=VupuiZaCPCw",
+            "description": "Exploring the medicinal benefits of camel milk and indigenous plants in mitigating health issues while promoting traditional knowledge systems.",
+            "blogParts": [
+                "Camel milk has been a cornerstone of traditional diets in arid regions, offering unique health benefits. Recent studies focus on its therapeutic properties, especially for managing diabetes and autism.",
+                "Indigenous medicinal plants in India, rich in pharmacological potential, are increasingly being studied for their role in modern healthcare. These plants are often overlooked but hold the key to affordable and effective treatments.",
+                "This initiative integrates traditional wisdom with scientific research, aiming to create awareness about the medicinal properties of camel milk and plants while fostering sustainable practices for their use."
+            ],
+            "blogBackgroundImg": imageNames.BANNI_GRASSLAND_1,
+            "initiative": "Traditional Wisdom and Modern Research Initiative",
+            "location": BHUJ
+        },
+        {
+            "title": "Ecological Conservation Through Community Action",
+            "description": "Mobilizing communities to protect and restore local ecosystems, addressing climate change and biodiversity loss.",
+            "blogParts": [
+                "Climate change and habitat destruction are critical global challenges. This initiative empowers communities to take actionable steps toward ecological conservation.",
+                "Activities include reforestation drives, cleanup campaigns, and biodiversity monitoring, with a focus on education and capacity building.",
+                "The program emphasizes local ownership, ensuring that conservation efforts are sustainable and impactful in the long term."
+            ],
+            videoUrl: "https://www.youtube.com/watch?v=dRxOD7W77TM",
+            "blogBackgroundImg": imageNames.BANNI_GRASSLAND_1,
+            "initiative": "Community Conservation Program",
+            "location": BHUJ,
+        },
         {
             "title": "Resilience in Kutch: Water Conservation",
             "description": "Addressing water scarcity in the arid regions of Bhuj through innovative community-led water conservation practices.",
