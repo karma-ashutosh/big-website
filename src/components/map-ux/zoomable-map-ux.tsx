@@ -4,6 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMapEvent } from "react-leafl
 import "leaflet/dist/leaflet.css";
 import { LatLngBounds } from "leaflet";
 import { Article, articles, Coordinate, CoordinateProjectSummary } from "./project-summary-constants";
+import DonationButton from "@/components/DonateButton.tsx";
 
 Modal.setAppElement("#root"); // For accessibility
 
@@ -168,12 +169,11 @@ const ZoomableMapDashboard: React.FC = () => {
               </div>
 
               {/* Bottom Button */}
-              <button
+              <div
                   className="bg-green-500 text-white w-full py-4 text-center"
-                  onClick={() => alert("Supporting the project!")}
               >
-                Support this Project
-              </button>
+                <DonationButton />
+              </div>
             </Modal>
         )}
 
