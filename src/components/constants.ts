@@ -30,3 +30,221 @@ export const imageSet2 = {
     CAMELS_GROUP: imgPath(4783),
     CAMELS_FOOD: imgPath(4827),
 }
+export interface OurPartner {
+    name: string;
+    description: string;
+    url: string;
+    image: string;
+}
+
+// Change this to wherever your partner images actually reside
+const partnerImage = (imgName: string) => `${baseUrl}/partners/${imgName}.webp`;
+
+export const OurPartners: OurPartner[] = [
+    // ------------------------------ Funders: Government ------------------------------
+    {
+        name: "Dept. of Animal Husbandry, Gandhinagar",
+        description: "",
+        url: "https://doah.gujarat.gov.in/",
+        image: partnerImage("dept_of_animal_husbandry")
+    },
+    {
+        name: "Gujarat Forest Department - Kachchh Circle, Bhuj",
+        description: "",
+        url: "https://forests.gujarat.gov.in/",
+        image: partnerImage("gujarat_forest_department_kachchh_circle")
+    },
+
+    // ------------------------------ Funders: Others (Including CSR, National & International) ------------------------------
+    {
+        name: "Ford Foundation",
+        description: "",
+        url: "https://www.fordfoundation.org/",
+        image: partnerImage("ford_foundation")
+    },
+    {
+        name: "AXIS Bank Foundation",
+        description: "",
+        url: "https://www.axisbankfoundation.org/",
+        image: partnerImage("axis_bank_foundation")
+    },
+    {
+        name: "Excel Crop Care Limited",
+        description: "",
+        url: "http://www.excelcropcare.com/",
+        image: partnerImage("excel_crop_care_ltd")
+    },
+    {
+        name: "Agrocel Industries Limited",
+        description: "",
+        url: "http://www.agrocel.co.in/",
+        image: partnerImage("agrocel_industries_ltd")
+    },
+    {
+        name: "Ashoka Trust for Research in Ecology and the Environment (ATREE)",
+        description: "",
+        url: "https://www.atree.org/",
+        image: partnerImage("atree")
+    },
+    {
+        name: "Kranti Guru Shyamji Krishna Kachchh University",
+        description: "",
+        url: "https://www.kskvku.ac.in/",
+        image: partnerImage("kskvku")
+    },
+    {
+        name: "Rohini Nilekani Philanthropies",
+        description: "",
+        url: "https://rohininilekaniphilanthropies.org/",
+        image: partnerImage("rohini_nilekani_philanthropies")
+    },
+    {
+        name: "Azim Premji Philanthropic Initiative Pvt. Ltd",
+        description: "",
+        url: "https://azimpremjifoundation.org/philanthropy",
+        image: partnerImage("azim_premji_philanthropic_initiative")
+    },
+    {
+        name: "Bajaj Alliance General Insurance Co. Ltd",
+        description: "",
+        url: "https://www.bajajallianz.com/",
+        image: partnerImage("bajaj_alliance_general_insurance")
+    },
+    {
+        name: "Dasra",
+        description: "",
+        url: "https://www.dasra.org/",
+        image: partnerImage("dasra")
+    },
+
+    // ------------------------------ Programme Partners: Regional & National ------------------------------
+    {
+        name: "Kutch Mahila Vikas Sangathan (KMVS)",
+        description: "",
+        url: "https://kmvs.org.in/",
+        image: partnerImage("kmvs")
+    },
+    {
+        name: "Arid Communities and Technologies (ACT)",
+        description: "",
+        url: "https://act-india.org/",
+        image: partnerImage("act")
+    },
+    {
+        name: "Setu Abhiyan",
+        description: "",
+        url: "http://setuabhiyan.org",
+        image: partnerImage("setu_abhiyan")
+    },
+    {
+        name: "Urban Setu",
+        description: "",
+        url: "https://urbansetu.wordpress.com",
+        image: partnerImage("urban_setu")
+    },
+    {
+        name: "Anand Agriculture University (AAU)",
+        description: "",
+        url: "http://www.aau.in",
+        image: partnerImage("anand_agriculture_university")
+    },
+    {
+        name: "Sarhad Dairy",
+        description: "",
+        url: "http://www.sarhaddairy.coop",
+        image: partnerImage("sarhad_dairy")
+    },
+    {
+        name: "Amul Dairy",
+        description: "",
+        url: "http://www.amuldairy.com",
+        image: partnerImage("amul_dairy")
+    },
+    {
+        name: "Sahiyaren Jo Sangathan (SJS)",
+        description: "",
+        url: "https://sahjeevan.org/",
+        image: partnerImage("sjs")
+    },
+    {
+        name: "KHAMIR",
+        description: "",
+        url: "http://www.khamir.org",
+        image: partnerImage("khamir")
+    },
+    {
+        name: "Kutch Unth Uchherak Maldhari Sangathan (KUUMS)",
+        description: "",
+        url: "https://kuums.org/",
+        image: partnerImage("kuums")
+    },
+    {
+        name: "Lakhpat Taluka-Sheep and Goat Breeders’ Association",
+        description: "",
+        url: "",
+        image: partnerImage("lakhpat_sheep_goat_breeders_association")
+    },
+    {
+        name: "Urmul Seemant Samiti (Rajasthan)",
+        description: "",
+        url: "https://urmul.org/urmul-family/urmul-seemant/",
+        image: partnerImage("urmul_seemant_samiti")
+    },
+    {
+        name: "Hunnarshala",
+        description: "",
+        url: "http://www.hunnarshala.org/",
+        image: partnerImage("hunnarshala")
+    },
+    {
+        name: "K-link",
+        description: "",
+        url: "https://www.klinkindia.in/",
+        image: partnerImage("k_link")
+    },
+    {
+        name: "Access Livelihoods Consulting India Ltd.",
+        description: "",
+        url: "https://www.alcindia.org/",
+        image: partnerImage("alc_india")
+    },
+    {
+        name: "Banni Pashu Uchherak Maldhari Sangathan (BPUMS)",
+        description: "",
+        url: "http://banni.in",
+        image: partnerImage("bpums")
+    },
+
+    // ------------------------------ International ------------------------------
+    {
+        name: "International Union for Conservation of Nature (IUCN)",
+        description: "",
+        url: "https://www.iucn.org",
+        image: partnerImage("iucn")
+    },
+    {
+        name: "Kutch Navnirman Abhiyan",
+        description: "",
+        url: "http://www.kutchabhiyan.org",
+        image: partnerImage("kutch_navnirman_abhiyan")
+    },
+    {
+        name: "Revitalising Rainfed Agriculture (RRA) Network",
+        description: "",
+        url: "http://www.rainfedindia.org",
+        image: partnerImage("rra_network")
+    },
+    {
+        name: "Watershed Support Services and Activities Network (WASSAN)",
+        description: "",
+        url: "http://www.wassan.org/",
+        image: partnerImage("wassan")
+    },
+    {
+        name: "Pravah",
+        description: "",
+        url: "http://www.pravah-gujarat.org",
+        image: partnerImage("pravah")
+    }
+];
+
