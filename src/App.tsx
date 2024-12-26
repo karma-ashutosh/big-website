@@ -55,8 +55,8 @@ function App() {
                                 {/*<ImageGrid/>*/}
                                 <EventsGrid/>
                                 <GujratBanner/>
-                                <HorizontalInstagramFeed />
                                 <ImageCarousel/>
+                                <HorizontalInstagramFeed />
                             </ParallaxBackground>
                             <Footer/>
                         </div>
