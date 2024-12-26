@@ -1,31 +1,95 @@
-"use client";
-
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import {ProfileForm} from "@/components/donation-form.tsx";
 
-const DonationButton: React.FC = () => {
+const DonationButton = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <>
-            <Button className="bg-orange-500 text-white font-bold rounded-md px-4 py-2 hover:bg-orange-600 focus:ring-2 focus:ring-orange-300" onClick={() => setIsOpen(true)}>
+            {/* Donate Button */}
+            <button
+                className="
+          bg-orange-500
+          text-white
+          font-bold
+          rounded-md
+          px-4
+          py-2
+          hover:bg-orange-600
+          focus:ring-2
+          focus:ring-orange-300
+          transition-colors
+        "
+                onClick={() => setIsOpen(true)}
+            >
                 DONATE
-            </Button>
+            </button>
+
+            {/* Modal */}
             {isOpen && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="relative bg-footer w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg shadow-lg">
+                <div
+                    className="
+            fixed
+            inset-0
+            z-50
+            flex
+            items-center
+            justify-center
+            bg-black
+            bg-opacity-50
+          "
+                >
+                    <div
+                        className="
+              relative
+              w-11/12
+              max-w-md
+              bg-white
+              rounded-lg
+              shadow-lg
+              p-5
+              sm:p-6
+            "
+                    >
+                        {/* Close button (X) */}
                         <button
                             onClick={() => setIsOpen(false)}
-                            className="absolute top-2 right-2 text-xl font-bold text-gray-600 hover:text-gray-800"
+                            className="
+                absolute
+                top-3
+                right-3
+                text-gray-500
+                hover:text-gray-700
+                text-xl
+                font-bold
+              "
                         >
                             &times;
                         </button>
-                        <ProfileForm />
+
+                        {/* Modal Title and Body */}
+                        <div className="flex flex-col items-center">
+                            <h2 className="text-lg font-semibold text-gray-700 mb-4">
+                                Ashutosh Vishwakarma
+                            </h2>
+
+                            <img
+                                src="https://storage.googleapis.com/big-website-assets/payments/payment_upi.webp"
+                                alt="UPI Payment QR Code"
+                                className="w-48 h-48 object-cover rounded-md border border-gray-300"
+                            />
+
+                            <p className="text-sm text-gray-700 mt-4">
+                                <strong>UPI ID:</strong> karmav44990-1@okaxis
+                            </p>
+                            <p className="text-xs text-gray-500">
+                                Scan to pay with any UPI app
+                            </p>
+                        </div>
                     </div>
                 </div>
             )}
         </>
     );
 };
+
 export default DonationButton;
