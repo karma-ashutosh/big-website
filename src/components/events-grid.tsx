@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import {imageNames} from "@/components/constants.ts";
+import { imageNames } from "@/components/constants.ts";
 
-// Example images, titles, and Calendly links
 const events = [
     {
         image: imageNames.SHEEP_OWNER_HAPPY,
@@ -25,11 +24,7 @@ export default function EventsGrid() {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 100) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
+            setIsScrolled(window.scrollY > 100);
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
@@ -41,29 +36,49 @@ export default function EventsGrid() {
                 isScrolled ? "mt-8" : "-mt-4"
             } mb-8 relative z-10 transition-all duration-300`}
         >
+            {/* Section heading */}
+            <div className="mb-6 text-center">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+                    Engage: Upcoming Events
+                </h2>
+                <p className="text-gray-600 mt-2 max-w-xl mx-auto">
+                    Don’t miss these opportunities to learn more about our work and
+                    connect with the community.
+                </p>
+            </div>
+
+            {/* Cards grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {events.map((event, i) => (
-                    <div key={i} className="flex flex-col flex-grow">
-                        {/* Image Container */}
-                        <div className="aspect-[4/3] relative overflow-hidden rounded-lg mb-6">
+                    <div
+                        key={i}
+                        className="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white group"
+                    >
+                        {/* Image container */}
+                        <div className="relative aspect-[4/3] overflow-hidden">
                             <div
-                                className="absolute inset-0 bg-cover bg-center transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+                                className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105 cursor-pointer"
                                 style={{ backgroundImage: `url('${event.image}')` }}
-                                // On click, open Calendly in a new tab
                                 onClick={() => window.open(event.calendlyLink, "_blank")}
                             />
                         </div>
 
-                        {/* Title with Line */}
-                        <div className="flex items-start">
-                            <div className="h-1 w-12 bg-purple-600 mt-3 mr-4" />
+                        {/* Content (title & button) */}
+                        <div className="p-5 flex flex-col flex-grow pb-6">
+                            {/* ↑ Note the extra pb-6 for more bottom padding */}
+
+                            <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                                {event.title}
+                            </h3>
+
+                            {/* Button */}
                             <button
                                 onClick={() => window.open(event.calendlyLink, "_blank")}
-                                className="text-2xl font-bold hover:text-purple-600 transition-colors duration-200 flex items-center group"
+                                className="mt-auto inline-flex items-center px-4 py-2 bg-purple-600 text-white text-sm font-medium rounded hover:bg-purple-700 active:bg-purple-800 transition-colors duration-200"
                             >
-                                {event.title}
+                                Sign Up
                                 <svg
-                                    className="w-6 h-6 ml-2 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-200"
+                                    className="w-5 h-5 ml-2"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"

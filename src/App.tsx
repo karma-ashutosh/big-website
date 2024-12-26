@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
 
 import Banner from "@/components/banner";
-import ImageGrid from "@/components/image-grid";
+// import ImageGrid from "@/components/image-grid";
 import { ImageCarousel } from "@/components/carousel-row";
 import Footer from "@/components/footer";
 import GujratBanner from "@/components/GujratBanner";
