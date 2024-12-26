@@ -36,20 +36,20 @@ export default function EventsGrid() {
                 isScrolled ? "mt-8" : "-mt-4"
             } mb-8 relative z-10 transition-all duration-300`}
         >
-            {/* Heading with an arrow banner */}
+            {/* Heading Section */}
             <div className="mb-6 text-center flex flex-col items-center">
-                <h2 className="relative inline-block text-white font-bold text-3xl md:text-4xl px-8 py-4 bg-purple-700 uppercase tracking-wide">
-                    Upcoming Events
-                    {/* Arrow “poking” out on the left side */}
-                    <span className="hidden sm:block absolute -left-6 top-1/2 -translate-y-1/2 w-0 h-0
-            border-r-[24px] border-r-purple-700
-            border-y-[24px] border-y-transparent" />
-                    {/* Arrow on the right side (optional) */}
-                    <span className="hidden sm:block absolute -right-6 top-1/2 -translate-y-1/2 w-0 h-0
-            border-l-[24px] border-l-purple-700
-            border-y-[24px] border-y-transparent" />
-                </h2>
-                <p className="mt-2 max-w-xl mx-auto text-gray-600 md:text-base px-4">
+                {/* Diagonal / Rotated Banner */}
+                <div className="relative inline-block transform rotate-2 bg-gradient-to-bl from-purple-600 to-purple-700 shadow-lg">
+                    <h2 className="text-white font-bold text-3xl md:text-4xl uppercase px-8 py-4 transform -rotate-1">
+                        Upcoming Events
+                    </h2>
+
+                    {/* Optional diagonal corners: use pseudo-elements or an absolutely positioned <div>
+              but here we keep it simple by letting rotate do the trick */}
+                </div>
+
+                {/* Subheading */}
+                <p className="mt-3 max-w-xl mx-auto text-gray-600 md:text-base px-4">
                     Don’t miss these opportunities to learn more about our work and
                     connect with the community.
                 </p>
