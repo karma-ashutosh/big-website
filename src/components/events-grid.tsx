@@ -32,7 +32,7 @@ export default function EventsGrid() {
 
     return (
         <div
-            className={`bg-background container mx-auto px-8 ${
+            className={`bg-heavygreen container mx-auto px-4 py-8 ${
                 isScrolled ? "mt-8" : "-mt-4"
             } mb-8 relative z-10 transition-all duration-300`}
         >
@@ -43,13 +43,10 @@ export default function EventsGrid() {
                     <h2 className="text-white font-bold text-3xl md:text-4xl uppercase px-8 py-4 transform -rotate-1">
                         Upcoming Events
                     </h2>
-
-                    {/* Optional diagonal corners: use pseudo-elements or an absolutely positioned <div>
-              but here we keep it simple by letting rotate do the trick */}
                 </div>
 
                 {/* Subheading */}
-                <p className="mt-3 max-w-xl mx-auto text-gray-600 md:text-base px-4">
+                <p className="mt-3 max-w-xl mx-auto text-gray-100 md:text-base px-4">
                     Don’t miss these opportunities to learn more about our work and
                     connect with the community.
                 </p>
@@ -76,7 +73,6 @@ export default function EventsGrid() {
                             <h3 className="text-xl font-semibold text-gray-800 mb-3">
                                 {event.title}
                             </h3>
-
                             <button
                                 onClick={() => window.open(event.calendlyLink, "_blank")}
                                 className="mt-auto inline-flex items-center px-4 py-2 bg-purple-600 text-white text-sm font-medium rounded hover:bg-purple-700 active:bg-purple-800 transition-colors duration-200"
