@@ -35,6 +35,7 @@ const BannerComponent: FC<BannerProps> = ({ title, description, icons }) => {
                     <p className="text-md text-white opacity-75">{description}</p>
                 </div>
 
+
                 {/* Map Section */}
                 <div className="flex justify-center items-center">
                     <img

@@ -12,6 +12,7 @@ import BlogPage, {blogData, titleToBlogUrl} from "@/components/Blog.tsx";
 import NavBar from "@/components/NavBar.tsx";
 import {imageNames} from "@/components/constants.ts";
 import EventsGrid from "@/components/events-grid.tsx";
+import HorizontalInstagramFeed from "@/components/InstagramFeed.tsx";
 
 interface ParallaxBackgroundProps {
     backgroundUrl: string;
@@ -54,6 +55,7 @@ function App() {
                                 {/*<ImageGrid/>*/}
                                 <EventsGrid/>
                                 <GujratBanner/>
+                                <HorizontalInstagramFeed />
                                 <ImageCarousel/>
                             </ParallaxBackground>
                             <Footer/>
