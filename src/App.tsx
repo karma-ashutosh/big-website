@@ -11,6 +11,7 @@ import { FC, ReactNode } from "react";
 import BlogPage, {blogData, titleToBlogUrl} from "@/components/Blog.tsx";
 import NavBar from "@/components/NavBar.tsx";
 import {imageNames} from "@/components/constants.ts";
+import EventsGrid from "@/components/events-grid.tsx";
 
 interface ParallaxBackgroundProps {
     backgroundUrl: string;
@@ -50,7 +51,8 @@ function App() {
                             <Banner/>
                             <ParallaxBackground
                                 backgroundUrl={imageNames.HAPPY_WITH_COWS}>
-                                <ImageGrid/>
+                                {/*<ImageGrid/>*/}
+                                <EventsGrid/>
                                 <GujratBanner/>
                                 <ImageCarousel/>
                             </ParallaxBackground>

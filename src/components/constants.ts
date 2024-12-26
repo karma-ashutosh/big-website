@@ -1,10 +1,10 @@
 const baseUrl = `https://storage.googleapis.com/big-website-assets/webp`
 export const imageNames = {
    PEOPLE_WALKING_WITH_ANIMALS: `${baseUrl}/DSCN3311.webp`,
-    BANNI_GRASSLAND_1: `${baseUrl}/DSCN3574.webp`,
+    BANNI_GRASSLAND_1: `${baseUrl}/banni_grassland.webp`,
     DENSE_GRASSLAND_1: `${baseUrl}/DSCN3574.webp`,
     THORN_SCRUB_FOREST_1: `${baseUrl}/DSCN3574.webp`,
-    MANGROVES_1: `${baseUrl}/DSCN3574.webp`,
+    MANGROVES_1: `${baseUrl}/mangrove_forest.webp`,
     RAIN_FED_AGRICULTURE_1: `${baseUrl}/DSCN3574.webp`,
     IRRIGATED_AGRICULTURE_1: `${baseUrl}/DSCN3574.webp`,
     HERO_LEADING_COWS_1: `${baseUrl}/DSCN3115.webp`,
