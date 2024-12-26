@@ -38,7 +38,7 @@ export interface OurPartner {
 }
 
 // Change this to wherever your partner images actually reside
-const partnerImage = (imgName: string) => `${baseUrl}/partners/${imgName}.webp`;
+const partnerImage = (imgName: string) => `https://storage.googleapis.com/big-website-assets/partner_logos/${imgName}.webp`;
 
 export const OurPartners: OurPartner[] = [
     // ------------------------------ Funders: Government ------------------------------
