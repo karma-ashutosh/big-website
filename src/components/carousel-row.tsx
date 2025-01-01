@@ -6,37 +6,57 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
-import {CarouselCustomItem} from "@/components/constants.ts";
 
 /* --------------------------------------------------------------------------
  * Types
  * -------------------------------------------------------------------------- */
+
+export interface CarouselCustomItem {
+    name: string
+    image: string
+    description?: string
+    url?: string
+}
+
+/**
+ * Extra heading design props for advanced styling overrides.
+ */
+export interface SplitBannerClasses {
+    container?: string
+    mainBanner?: string
+    subBanner?: string
+    mainHeading?: string
+    subHeading?: string
+}
 
 export interface ImageCarouselProps {
     /**
      * Array of carousel items that will be rendered in the carousel.
      */
     carouselItems: CarouselCustomItem[]
+
     /**
      * Main heading text displayed above the carousel.
-     * Defaults to "Our Partners".
      */
     heading?: string
+
     /**
      * Subheading text displayed below the main heading.
-     * Defaults to "Learn more about the organizations we collaborate with!".
      */
     subheading?: string
+
     /**
      * Optional container (background) classes for styling.
      * Defaults to "bg-heavygreen container mx-auto px-4 py-8 mt-24".
      */
     containerClassName?: string
+
     /**
      * Show or hide the "Visit Website"/"Know More" link below each item.
      * Defaults to true.
      */
     showWebsiteLink?: boolean
+
     /**
      * Determines which design template to use for the carousel items.
      *  - "classic": original card design (image at top, text below).
@@ -44,22 +64,30 @@ export interface ImageCarouselProps {
      * Defaults to "classic".
      */
     designTemplate?: "classic" | "imageBackground"
+
     /**
      * Determines which design to use for the heading.
      *  - "purpleBanner": your existing style with a purple angled banner.
-     *  - "splitBanner": a big left-side banner with the title and a thinner band below for the subheading.
+     *  - "splitBanner": a big banner for the main heading and a smaller offset
+     *    banner for the subheading.
      * Defaults to "purpleBanner".
      */
-    headingDesign?: "purpleBanner" | "splitBanner"
+    headingDesign?: "purpleBanner" | "splitBanner" | "purple2Banner"
+
+    /**
+     * Optional classes to customize the "splitBanner" heading layout.
+     * Only applied when headingDesign="splitBanner".
+     */
+    splitBannerClasses?: SplitBannerClasses
 }
 
 /* --------------------------------------------------------------------------
- * Sub-components: Heading Designs
+ * Heading Layouts
  * -------------------------------------------------------------------------- */
 
 /**
  * 1) PurpleBannerHeading
- *    Your original heading design with the purple angled banner
+ *    Your original heading design with a purple angled banner.
  */
 function PurpleBannerHeading({
                                  heading,
@@ -86,38 +114,73 @@ function PurpleBannerHeading({
 
 /**
  * 2) SplitBannerHeading
- *    A new design where:
- *     - A large banner extends from the left ~2/3 width with the main title
- *     - Below it, a thinner banner for the subheading
+ *    A refined version of the “split banner” idea, with optional class overrides.
+ *    - Main banner for heading
+ *    - Smaller offset banner for subheading
  */
 function SplitBannerHeading({
                                 heading,
                                 subheading,
+                                classes,
                             }: {
+    heading: string
+    subheading?: string
+    classes: SplitBannerClasses
+}) {
+    const {
+        container = "relative flex flex-col mb-6",
+        // A darker teal for the main banner, so it's still "bluish" but not jarringly bright
+        mainBanner = "bg-teal-700 text-white p-6 md:py-8 md:px-12 w-full md:w-2/3",
+        // A softer teal background for the sub banner; darker text for contrast
+        subBanner = "bg-teal-100 text-teal-800 p-3 md:px-6 md:py-4 w-full md:w-1/2 mt-2 md:mt-4 md:ml-8 shadow-sm",
+        mainHeading = "text-2xl md:text-3xl lg:text-4xl font-bold uppercase",
+        subHeading = "text-sm md:text-base",
+    } = classes
+
+
+    return (
+        <div className={container}>
+            {/* Main Banner */}
+            <div className={mainBanner}>
+                <h2 className={mainHeading}>{heading}</h2>
+            </div>
+
+            {/* Subheading Banner */}
+            {subheading && (
+                <div className={subBanner}>
+                    <p className={subHeading}>{subheading}</p>
+                </div>
+            )}
+        </div>
+    )
+}
+function TonedBlueBannerHeading({
+                                    heading,
+                                    subheading,
+                                }: {
     heading: string
     subheading?: string
 }) {
     return (
-        <div className="flex flex-col mb-6">
-            {/* Large banner for the main heading */}
-            <div className="relative bg-blue-600 text-white p-6 md:w-2/3">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase">
+        <div className="mb-6 text-center flex flex-col items-center">
+            {/* Softer sky-blue gradient instead of vivid blue */}
+            <div className="relative inline-block transform rotate-2 bg-gradient-to-bl from-sky-600 to-sky-700 shadow-lg">
+                <h2 className="text-white font-bold text-3xl md:text-4xl uppercase px-8 py-4 transform -rotate-1">
                     {heading}
                 </h2>
             </div>
 
-            {/* Thinner banner for the subheading */}
             {subheading && (
-                <div className="relative bg-blue-100 text-gray-700 p-3 md:w-1/2">
-                    <p className="text-sm md:text-base">{subheading}</p>
-                </div>
+                <p className="mt-3 max-w-xl mx-auto text-gray-600 md:text-base px-4">
+                    {subheading}
+                </p>
             )}
         </div>
     )
 }
 
 /* --------------------------------------------------------------------------
- * Sub-components: Carousel Item Designs
+ * Carousel Item Layouts
  * -------------------------------------------------------------------------- */
 
 /**
@@ -210,12 +273,22 @@ export function ImageCarousel({
                                   showWebsiteLink = true,
                                   designTemplate = "classic",
                                   headingDesign = "purpleBanner",
+                                  // Custom style overrides for the split banner design
+                                  splitBannerClasses = {},
                               }: ImageCarouselProps) {
     // Decide which heading layout to render
     const renderHeading = () => {
         switch (headingDesign) {
             case "splitBanner":
-                return <SplitBannerHeading heading={heading} subheading={subheading} />
+                return (
+                    <SplitBannerHeading
+                        heading={heading}
+                        subheading={subheading}
+                        classes={splitBannerClasses}
+                    />
+                )
+            case "purple2Banner":
+               return (<TonedBlueBannerHeading heading={heading} subheading={subheading} />)
             case "purpleBanner":
             default:
                 return <PurpleBannerHeading heading={heading} subheading={subheading} />

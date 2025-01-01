@@ -12,7 +12,6 @@ import BlogPage, {blogData, titleToBlogUrl} from "@/components/Blog.tsx";
 import NavBar from "@/components/NavBar.tsx";
 import {imageNames, OurPartners, pressUpdates} from "@/components/constants.ts";
 import EventsGrid from "@/components/events-grid.tsx";
-import ImageGrid from "@/components/image-grid.tsx";
 
 interface ParallaxBackgroundProps {
     backgroundUrl: string;
@@ -59,6 +58,7 @@ function App() {
                                 <ImageCarousel
                                     heading={"Collaborations and Press Updates"}
                                     subheading={"What we up to"}
+                                    // subheading={""}
                                     carouselItems={pressUpdates} designTemplate={"imageBackground"}
                                     headingDesign={"splitBanner"}
                                 />

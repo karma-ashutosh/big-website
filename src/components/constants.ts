@@ -24,10 +24,6 @@ export const pressUpdates: PressUpdate[] = [
         name: "Helping wildlife and spreading happiness",
     },
     {
-        image: imageNames.COW_LOOKING_DIRECT,
-        name: "Conserving native animal diversity",
-    },
-    {
         image: imageNames.MANGROVES_1,
         name: "Saving mangroves",
         description: "Mangroves are important. Hence we're saving them. Ta Ta"
@@ -36,7 +32,11 @@ export const pressUpdates: PressUpdate[] = [
         image: "https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png",
         name: "Make an investment in wildlife!",
         url: "https://news.google.com"
-    }
+    },
+    {
+        image: imageNames.COW_LOOKING_DIRECT,
+        name: "Conserving native animal diversity",
+    },
 ];
 export const imageSet2 = {
     BANNER_VIKALP_SANGAM: imgPath(3487),
