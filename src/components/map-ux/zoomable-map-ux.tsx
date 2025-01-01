@@ -131,18 +131,7 @@ const ZoomableMapDashboard: React.FC = () => {
                 <div className="bg-black bg-opacity-50 backdrop-blur-sm h-full p-6 overflow-y-auto">
                   {/* Header Buttons */}
                   <div className="flex justify-between items-center mb-4">
-                    <button
-                        className="bg-green-500 text-white px-4 py-2 rounded"
-                        onClick={() => alert("Supporting the project!")}
-                    >
-                      Support this Project
-                    </button>
-                    <button
-                        className="bg-red-500 text-white px-4 py-2 rounded"
-                        onClick={closeModal}
-                    >
-                      Close
-                    </button>
+                    <DonationButton donationButtonText="Support this cause"/>
                   </div>
 
                   {/* Article Title */}

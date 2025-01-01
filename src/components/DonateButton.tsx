@@ -1,13 +1,21 @@
 import { useState } from "react";
 
-const DonationButton = () => {
+interface DonationButtonProps {
+    donationButtonText?: string;
+    customClass?: string;
+}
+export const DonationButton: React.FC<DonationButtonProps> = (props: DonationButtonProps) => {
+    const resolvedDonationButton = {
+        customClass: props.customClass ?? "",
+        donationButtonText: props.donationButtonText ?? "DONATE",
+    }
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <>
             {/* Donate Button */}
             <button
-                className="
+                className={`"
           bg-orange-500
           text-white
           font-bold
@@ -18,10 +26,10 @@ const DonationButton = () => {
           focus:ring-2
           focus:ring-orange-300
           transition-colors
-        "
+        ${resolvedDonationButton.customClass}"`}
                 onClick={() => setIsOpen(true)}
             >
-                DONATE
+                {resolvedDonationButton.donationButtonText}
             </button>
 
             {/* Modal */}

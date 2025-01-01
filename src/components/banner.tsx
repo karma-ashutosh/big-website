@@ -47,7 +47,7 @@ export default function Banner() {
                                 >
                                     JOIN US
                                 </Button>
-                                <DonationButton />
+                                <DonationButton donationButtonText="Support Us"/>
                             </div>
                         </div>
 
