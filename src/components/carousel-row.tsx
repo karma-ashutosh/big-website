@@ -6,6 +6,7 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
+import {Component} from "react";
 
 /* --------------------------------------------------------------------------
  * Types
@@ -93,16 +94,19 @@ function PurpleBannerHeading({
                                  heading,
                                  subheading,
                              }: {
-    heading: string
+    heading?: string
     subheading?: string
 }) {
     return (
         <div className="mb-6 text-center flex flex-col items-center">
-            <div className="relative inline-block transform rotate-2 bg-gradient-to-bl from-purple-600 to-purple-700 shadow-lg">
-                <h2 className="text-white font-bold text-3xl md:text-4xl uppercase px-8 py-4 transform -rotate-1">
-                    {heading}
-                </h2>
-            </div>
+            {heading &&
+                <div
+                    className="relative inline-block transform rotate-2 bg-gradient-to-bl from-purple-600 to-purple-700 shadow-lg">
+                    <h2 className="text-white font-bold text-3xl md:text-4xl uppercase px-8 py-4 transform -rotate-1">
+                        {heading}
+                    </h2>
+                </div>
+            }
             {subheading && (
                 <p className="mt-3 max-w-xl mx-auto text-gray-600 md:text-base px-4">
                     {subheading}
@@ -123,7 +127,7 @@ function SplitBannerHeading({
                                 subheading,
                                 classes,
                             }: {
-    heading: string
+    heading?: string
     subheading?: string
     classes: SplitBannerClasses
 }) {
@@ -141,9 +145,9 @@ function SplitBannerHeading({
     return (
         <div className={container}>
             {/* Main Banner */}
-            <div className={mainBanner}>
+            {heading && <div className={mainBanner}>
                 <h2 className={mainHeading}>{heading}</h2>
-            </div>
+            </div>}
 
             {/* Subheading Banner */}
             {subheading && (
@@ -158,17 +162,22 @@ function TonedBlueBannerHeading({
                                     heading,
                                     subheading,
                                 }: {
-    heading: string
+    heading?: string
     subheading?: string
 }) {
     return (
         <div className="mb-6 text-center flex flex-col items-center">
             {/* Softer sky-blue gradient instead of vivid blue */}
-            <div className="relative inline-block transform rotate-2 bg-gradient-to-bl from-sky-600 to-sky-700 shadow-lg">
-                <h2 className="text-white font-bold text-3xl md:text-4xl uppercase px-8 py-4 transform -rotate-1">
-                    {heading}
-                </h2>
-            </div>
+            {
+                heading && (
+                    <div
+                        className="relative inline-block transform rotate-2 bg-gradient-to-bl from-sky-600 to-sky-700 shadow-lg">
+                        <h2 className="text-white font-bold text-3xl md:text-4xl uppercase px-8 py-4 transform -rotate-1">
+                            {heading}
+                        </h2>
+                    </div>
+                )
+            }
 
             {subheading && (
                 <p className="mt-3 max-w-xl mx-auto text-gray-600 md:text-base px-4">
@@ -222,6 +231,36 @@ function ClassicCarouselItem({
     )
 }
 
+class CaouselRigthBanner extends Component<{
+    name: string,
+    description: string | undefined,
+    showWebsiteLink: boolean,
+    url: string | undefined
+}> {
+    render() {
+        return <div
+            className="relative z-10 ml-auto w-full md:w-1/3 h-full bg-blue-100 bg-opacity-90 p-4 flex flex-col">
+
+            {
+                this.props.name && (<h3 className="text-lg font-bold mb-2">{this.props.name}</h3>)
+            }
+            {this.props.description && (
+                <p className="text-sm text-gray-800 mb-2">{this.props.description}</p>
+            )}
+            {this.props.showWebsiteLink && this.props.url && (
+                <a
+                    href={this.props.url}
+                    className="inline-block mt-auto bg-blue-600 text-white px-3 py-1 rounded text-sm self-start hover:bg-blue-700"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Know More
+                </a>
+            )}
+        </div>;
+    }
+}
+
 /**
  * IMAGE-BACKGROUND DESIGN SUB-COMPONENT
  * Renders the item image as a background with a pale blue overlay on the right.
@@ -238,25 +277,13 @@ function BackgroundImageCarouselItem({
             {/* Background Image */}
             <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${item.image})` }}
+                style={{backgroundImage: `url(${item.image})`}}
             />
             {/* Right overlay (1/3 width) */}
-            <div className="relative z-10 ml-auto w-full md:w-1/3 h-full bg-blue-100 bg-opacity-90 p-4 flex flex-col">
-                <h3 className="text-lg font-bold mb-2">{item.name}</h3>
-                {item.description && (
-                    <p className="text-sm text-gray-800 mb-2">{item.description}</p>
-                )}
-                {showWebsiteLink && item.url && (
-                    <a
-                        href={item.url}
-                        className="inline-block mt-auto bg-blue-600 text-white px-3 py-1 rounded text-sm self-start hover:bg-blue-700"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Know More
-                    </a>
-                )}
-            </div>
+            {(item.name || item.description || item.url) && (
+                <CaouselRigthBanner name={item.name} description={item.description} showWebsiteLink={showWebsiteLink}
+                                    url={item.url}/>
+            )}
         </div>
     )
 }
@@ -267,7 +294,7 @@ function BackgroundImageCarouselItem({
 
 export function ImageCarousel({
                                   carouselItems,
-                                  heading = "Our Partners",
+                                  heading,
                                   subheading = "Learn more about the organizations we collaborate with!",
                                   containerClassName = "bg-heavygreen container mx-auto px-4 py-8 mt-24",
                                   showWebsiteLink = true,

@@ -21,7 +21,10 @@ const imgPath = (imgNum: number) => `${baseUrl}/IMG_${imgNum}.webp`
 export const pressUpdates: PressUpdate[] = [
     {
         image: imageNames.SHEEP_OWNER_HAPPY,
-        name: "Helping wildlife and spreading happiness",
+    },
+    {
+        image: imageNames.COW_LOOKING_DIRECT,
+        name: "Conserving native animal diversity",
     },
     {
         image: imageNames.MANGROVES_1,
@@ -32,10 +35,6 @@ export const pressUpdates: PressUpdate[] = [
         image: "https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png",
         name: "Make an investment in wildlife!",
         url: "https://news.google.com"
-    },
-    {
-        image: imageNames.COW_LOOKING_DIRECT,
-        name: "Conserving native animal diversity",
     },
 ];
 export const imageSet2 = {
@@ -52,7 +51,7 @@ export const imageSet2 = {
 }
 
 export interface CarouselCustomItem {
-    name: string;
+    name?: string;
     image: string;
     description?: string;
     url?: string;
