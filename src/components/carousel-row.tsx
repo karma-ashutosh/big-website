@@ -7,17 +7,12 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import {Component} from "react";
+import {CarouselCustomItem} from "@/components/constants.ts";
 
 /* --------------------------------------------------------------------------
  * Types
  * -------------------------------------------------------------------------- */
 
-export interface CarouselCustomItem {
-    name: string
-    image: string
-    description?: string
-    url?: string
-}
 
 /**
  * Extra heading design props for advanced styling overrides.
@@ -232,7 +227,7 @@ function ClassicCarouselItem({
 }
 
 class CaouselRigthBanner extends Component<{
-    name: string,
+    name: string | undefined,
     description: string | undefined,
     showWebsiteLink: boolean,
     url: string | undefined
