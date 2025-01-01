@@ -6,18 +6,17 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
-import {CarouselCustomItem, } from "@/components/constants.ts";
+import {CarouselCustomItem} from "@/components/constants.ts";
 
-/**
- * If you already have this declared elsewhere,
- * just import it from its proper location.
- */
+/* --------------------------------------------------------------------------
+ * Types
+ * -------------------------------------------------------------------------- */
 
 export interface ImageCarouselProps {
     /**
-     * Array of partner objects that will be rendered in the carousel.
+     * Array of carousel items that will be rendered in the carousel.
      */
-    carouselItems: CarouselCustomItem[];
+    carouselItems: CarouselCustomItem[]
     /**
      * Main heading text displayed above the carousel.
      * Defaults to "Our Partners".
@@ -34,44 +33,220 @@ export interface ImageCarouselProps {
      */
     containerClassName?: string
     /**
-     * Additional classes or styling for the heading wrapper.
-     */
-    headingWrapperClassName?: string
-    /**
-     * Additional classes or styling for the heading itself.
-     */
-    headingClassName?: string
-    /**
-     * Additional classes or styling for the subheading.
-     */
-    subheadingClassName?: string
-    /**
-     * Show or hide the "Visit Website" link below each partner item.
+     * Show or hide the "Visit Website"/"Know More" link below each item.
      * Defaults to true.
      */
     showWebsiteLink?: boolean
+    /**
+     * Determines which design template to use for the carousel items.
+     *  - "classic": original card design (image at top, text below).
+     *  - "imageBackground": new design (image as background, text overlay).
+     * Defaults to "classic".
+     */
+    designTemplate?: "classic" | "imageBackground"
+    /**
+     * Determines which design to use for the heading.
+     *  - "purpleBanner": your existing style with a purple angled banner.
+     *  - "splitBanner": a big left-side banner with the title and a thinner band below for the subheading.
+     * Defaults to "purpleBanner".
+     */
+    headingDesign?: "purpleBanner" | "splitBanner"
 }
+
+/* --------------------------------------------------------------------------
+ * Sub-components: Heading Designs
+ * -------------------------------------------------------------------------- */
+
+/**
+ * 1) PurpleBannerHeading
+ *    Your original heading design with the purple angled banner
+ */
+function PurpleBannerHeading({
+                                 heading,
+                                 subheading,
+                             }: {
+    heading: string
+    subheading?: string
+}) {
+    return (
+        <div className="mb-6 text-center flex flex-col items-center">
+            <div className="relative inline-block transform rotate-2 bg-gradient-to-bl from-purple-600 to-purple-700 shadow-lg">
+                <h2 className="text-white font-bold text-3xl md:text-4xl uppercase px-8 py-4 transform -rotate-1">
+                    {heading}
+                </h2>
+            </div>
+            {subheading && (
+                <p className="mt-3 max-w-xl mx-auto text-gray-600 md:text-base px-4">
+                    {subheading}
+                </p>
+            )}
+        </div>
+    )
+}
+
+/**
+ * 2) SplitBannerHeading
+ *    A new design where:
+ *     - A large banner extends from the left ~2/3 width with the main title
+ *     - Below it, a thinner banner for the subheading
+ */
+function SplitBannerHeading({
+                                heading,
+                                subheading,
+                            }: {
+    heading: string
+    subheading?: string
+}) {
+    return (
+        <div className="flex flex-col mb-6">
+            {/* Large banner for the main heading */}
+            <div className="relative bg-blue-600 text-white p-6 md:w-2/3">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase">
+                    {heading}
+                </h2>
+            </div>
+
+            {/* Thinner banner for the subheading */}
+            {subheading && (
+                <div className="relative bg-blue-100 text-gray-700 p-3 md:w-1/2">
+                    <p className="text-sm md:text-base">{subheading}</p>
+                </div>
+            )}
+        </div>
+    )
+}
+
+/* --------------------------------------------------------------------------
+ * Sub-components: Carousel Item Designs
+ * -------------------------------------------------------------------------- */
+
+/**
+ * CLASSIC DESIGN SUB-COMPONENT
+ * Renders the item with an image at the top and text below it.
+ */
+function ClassicCarouselItem({
+                                 item,
+                                 showWebsiteLink,
+                             }: {
+    item: CarouselCustomItem
+    showWebsiteLink: boolean
+}) {
+    return (
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg flex flex-col items-center justify-center p-4 bg-white">
+            <img
+                src={item.image}
+                alt={item.name}
+                className="object-contain w-full h-40 mb-4"
+                sizes="(max-width: 768px) 100vw,
+               (max-width: 1200px) 50vw,
+               33vw"
+            />
+            <h3 className="text-md font-semibold text-center">{item.name}</h3>
+            {item.description && (
+                <p className="text-sm text-center mt-1">{item.description}</p>
+            )}
+            {showWebsiteLink && item.url && (
+                <a
+                    href={item.url}
+                    className="mt-2 text-blue-600 underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Visit Website
+                </a>
+            )}
+        </div>
+    )
+}
+
+/**
+ * IMAGE-BACKGROUND DESIGN SUB-COMPONENT
+ * Renders the item image as a background with a pale blue overlay on the right.
+ */
+function BackgroundImageCarouselItem({
+                                         item,
+                                         showWebsiteLink,
+                                     }: {
+    item: CarouselCustomItem
+    showWebsiteLink: boolean
+}) {
+    return (
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg flex">
+            {/* Background Image */}
+            <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${item.image})` }}
+            />
+            {/* Right overlay (1/3 width) */}
+            <div className="relative z-10 ml-auto w-full md:w-1/3 h-full bg-blue-100 bg-opacity-90 p-4 flex flex-col">
+                <h3 className="text-lg font-bold mb-2">{item.name}</h3>
+                {item.description && (
+                    <p className="text-sm text-gray-800 mb-2">{item.description}</p>
+                )}
+                {showWebsiteLink && item.url && (
+                    <a
+                        href={item.url}
+                        className="inline-block mt-auto bg-blue-600 text-white px-3 py-1 rounded text-sm self-start hover:bg-blue-700"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Know More
+                    </a>
+                )}
+            </div>
+        </div>
+    )
+}
+
+/* --------------------------------------------------------------------------
+ * Main Carousel Component
+ * -------------------------------------------------------------------------- */
 
 export function ImageCarousel({
                                   carouselItems,
                                   heading = "Our Partners",
                                   subheading = "Learn more about the organizations we collaborate with!",
                                   containerClassName = "bg-heavygreen container mx-auto px-4 py-8 mt-24",
-                                  headingWrapperClassName = "mb-6 text-center flex flex-col items-center",
-                                  headingClassName = "text-white font-bold text-3xl md:text-4xl uppercase px-8 py-4 transform -rotate-1",
-                                  subheadingClassName = "mt-3 max-w-xl mx-auto text-gray-600 md:text-base px-4",
                                   showWebsiteLink = true,
+                                  designTemplate = "classic",
+                                  headingDesign = "purpleBanner",
                               }: ImageCarouselProps) {
+    // Decide which heading layout to render
+    const renderHeading = () => {
+        switch (headingDesign) {
+            case "splitBanner":
+                return <SplitBannerHeading heading={heading} subheading={subheading} />
+            case "purpleBanner":
+            default:
+                return <PurpleBannerHeading heading={heading} subheading={subheading} />
+        }
+    }
+
+    // Decide which item layout to render
+    const renderItem = (item: CarouselCustomItem) => {
+        switch (designTemplate) {
+            case "imageBackground":
+                return (
+                    <BackgroundImageCarouselItem
+                        item={item}
+                        showWebsiteLink={showWebsiteLink}
+                    />
+                )
+            case "classic":
+            default:
+                return (
+                    <ClassicCarouselItem
+                        item={item}
+                        showWebsiteLink={showWebsiteLink}
+                    />
+                )
+        }
+    }
+
     return (
         <div className={containerClassName}>
-            {/* Header Section */}
-            <div className={headingWrapperClassName}>
-                <div className="relative inline-block transform rotate-2 bg-gradient-to-bl from-purple-600 to-purple-700 shadow-lg">
-                    <h2 className={headingClassName}>{heading}</h2>
-                </div>
-
-                <p className={subheadingClassName}>{subheading}</p>
-            </div>
+            {/* Render heading based on headingDesign */}
+            {renderHeading()}
 
             {/* Carousel Section */}
             <Carousel
@@ -82,41 +257,12 @@ export function ImageCarousel({
                 className="w-full"
             >
                 <CarouselContent className="-ml-2 md:-ml-4">
-                    {carouselItems.map((partner, index) => (
+                    {carouselItems.map((item, index) => (
                         <CarouselItem
                             key={index}
                             className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3"
                         >
-                            <div
-                                className="relative aspect-[4/3] overflow-hidden rounded-lg flex flex-col items-center justify-center p-4 bg-white"
-                            >
-                                <img
-                                    src={partner.image}
-                                    alt={partner.name}
-                                    className="object-contain w-full h-40 mb-4"
-                                    sizes="(max-width: 768px) 100vw,
-                         (max-width: 1200px) 50vw,
-                         33vw"
-                                />
-                                <h3 className="text-md font-semibold text-center">
-                                    {partner.name}
-                                </h3>
-                                {partner.description && (
-                                    <p className="text-sm text-center mt-1">
-                                        {partner.description}
-                                    </p>
-                                )}
-                                {showWebsiteLink && partner.url && (
-                                    <a
-                                        href={partner.url}
-                                        className="mt-2 text-blue-600 underline"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        Visit Website
-                                    </a>
-                                )}
-                            </div>
+                            {renderItem(item)}
                         </CarouselItem>
                     ))}
                 </CarouselContent>
