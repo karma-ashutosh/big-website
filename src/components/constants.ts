@@ -18,6 +18,32 @@ export const imageNames = {
 
 const imgPath = (imgNum: number) => `${baseUrl}/IMG_${imgNum}.webp`
 
+interface PressUpdate  {
+    image: string,
+    title: string,
+    description?: string,
+    link?: string,
+}
+export const pressUpdates: PressUpdate[] = [
+    {
+        image: imageNames.SHEEP_OWNER_HAPPY,
+        title: "Helping wildlife and spreading happiness",
+    },
+    {
+        image: imageNames.COW_LOOKING_DIRECT,
+        title: "Conserving native animal diversity",
+    },
+    {
+        image: imageNames.MANGROVES_1,
+        title: "Saving mangroves",
+        description: "Mangroves are important. Hence we're saving them. Ta Ta"
+    },
+    {
+        image: "https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png",
+        title: "Make an investment in wildlife!",
+        link: "https://news.google.com"
+    }
+];
 export const imageSet2 = {
     BANNER_VIKALP_SANGAM: imgPath(3487),
     GOAT_CURIOUS: imgPath(3306),
