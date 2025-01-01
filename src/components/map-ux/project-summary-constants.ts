@@ -235,8 +235,8 @@ const kolkataArticles: Article[] = [
     ]
 ;
 
-const BHUJ: Coordinate = {
-    name: 'bhuj',
+export const BHUJ: Coordinate = {
+    name: 'BHUJ',
     lat: 23.2420,
     lng: 69.6669
 };
@@ -556,7 +556,7 @@ const guwahatiArticles: Article[] = [
 ;
 
 const BANGALORE: Coordinate = {
-    name: 'delhi',
+    name: 'Bangalore',
     lat: 12.9716,
     lng: 77.5946
 };

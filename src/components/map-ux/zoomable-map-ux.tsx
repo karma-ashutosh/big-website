@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import { MapContainer, TileLayer, Marker, Popup, useMapEvent } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L, { LatLngBounds } from "leaflet";
-import { Article, articles, Coordinate, CoordinateProjectSummary } from "./project-summary-constants";
+import {Article, articles, BHUJ, Coordinate, CoordinateProjectSummary} from "./project-summary-constants";
 import DonationButton from "@/components/DonateButton.tsx";
 
 Modal.setAppElement("#root"); // For accessibility
@@ -12,6 +12,7 @@ const googleMapsIcon = L.icon({
   iconSize: [30, 40], // Adjust the size to match the appearance
   iconAnchor: [15, 40], // Anchor the icon to its base
   popupAnchor: [0, -40], // Position the popup relative to the marker
+
 });
 
 const ZoomableMapDashboard: React.FC = () => {
@@ -110,7 +111,14 @@ const ZoomableMapDashboard: React.FC = () => {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             />
             {projectSummary.map((summary, index) => (
-                <Marker icon={googleMapsIcon} key={index} position={[summary.coordinate.lat, summary.coordinate.lng]}>
+                <Marker
+                    icon={googleMapsIcon}
+                    key={index}
+                    position={[summary.coordinate.lat, summary.coordinate.lng]}
+                    riseOnHover={true}
+                    title={summary.coordinate.name == BHUJ.name ? "Our Office\n175, Jalaram Society Rd, Vijay Nagar, Bhuj, Gujarat 370001" : undefined }
+                    
+                >
                   <Popup>{`Projects In ${summary.coordinate.name.toUpperCase()}: ${summary.project_count}`}</Popup>
                 </Marker>
             ))}
