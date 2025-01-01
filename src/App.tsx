@@ -10,7 +10,7 @@ import GujratBanner from "@/components/GujratBanner";
 import { FC, ReactNode } from "react";
 import BlogPage, {blogData, titleToBlogUrl} from "@/components/Blog.tsx";
 import NavBar from "@/components/NavBar.tsx";
-import {imageNames} from "@/components/constants.ts";
+import {imageNames, OurPartners} from "@/components/constants.ts";
 import EventsGrid from "@/components/events-grid.tsx";
 import ImageGrid from "@/components/image-grid.tsx";
 
@@ -55,7 +55,7 @@ function App() {
                                 {/*<ImageGrid/>*/}
                                 <EventsGrid/>
                                 <GujratBanner/>
-                                <ImageCarousel/>
+                                <ImageCarousel carouselItems={OurPartners}/>
                                 <ImageGrid />
                             </ParallaxBackground>
                             <Footer/>

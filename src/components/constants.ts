@@ -56,12 +56,14 @@ export const imageSet2 = {
     CAMELS_GROUP: imgPath(4783),
     CAMELS_FOOD: imgPath(4827),
 }
-export interface OurPartner {
+
+export interface CarouselCustomItem {
     name: string;
     description: string;
     url: string;
     image: string;
 }
+export type OurPartner = CarouselCustomItem
 
 // Change this to wherever your partner images actually reside
 const partnerImage = (imgName: string) => `https://storage.googleapis.com/big-website-assets/partner_logos/${imgName}.webp`;
