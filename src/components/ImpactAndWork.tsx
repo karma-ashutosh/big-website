@@ -1,5 +1,6 @@
 import React from "react";
 import Pyramid, {pyramidLayers} from "@/components/HoverablePyramid.tsx";
+import BlogPreview, {DefaultBlogPreview} from "@/components/BlogPreview.tsx";
 
 const HighlightBox = ({ highlight, description }) => {
     return (
@@ -14,11 +15,6 @@ const HighlightBox = ({ highlight, description }) => {
 const ImpactSection = () => {
     const data = [
         {
-            highlight: "75",
-            description:
-                "years of leading efforts to protect and restore wildlife and habitat in North America. The stakes have never been higher, but our experience and expertise have prepared us to face the challenges ahead.",
-        },
-        {
             highlight: "100+",
             description:
                 "collaboration projects to prevent conflicts with grizzly bears and wolves in the West, including range riders, electric fencing, and bear-resistant garbage containers.",
@@ -27,7 +23,7 @@ const ImpactSection = () => {
 
     return (
         <div
-            className="relative bg-cover bg-center bg-no-repeat py-16"
+            className="relative bg-cover bg-center bg-no-repeat py-16 bg-opacity-20"
             style={{
                 backgroundImage:
                     "url('https://path-to-your-image-or-local-background.jpg')",
@@ -41,6 +37,7 @@ const ImpactSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <>
                         <Pyramid key={"custom karka"} layers={pyramidLayers}/>
+                        <BlogPreview allBlogsLink={DefaultBlogPreview.allBlogsLink} featuredBlog={DefaultBlogPreview.featuredBlog} />
                         {data.map((item, index) => (
                             <HighlightBox
                                 key={index}
