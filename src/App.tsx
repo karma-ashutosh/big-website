@@ -61,7 +61,7 @@ function App() {
                                     headingDesign = {"purpleBanner"}
                                 />
                                 <ImageCarousel
-                                    heading={"Collaborations and Press Updates"}
+                                    heading={"Photo Gallery and Press"}
                                     subheading={"This might be our image gallery quote"}
                                     // subheading={""}
                                     carouselItems={pressUpdates} designTemplate={"imageBackground"}

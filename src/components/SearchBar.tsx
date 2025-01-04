@@ -88,7 +88,7 @@ class SearchBar extends Component<SearchBarProps, SearchBarState> {
         const { query, suggestions, isFocused } = this.state;
 
         return (
-            <div className="relative w-full max-w-md">
+            <div className="relative w-full max-w-xs">
                 {/* Search Input */}
                 <input
                     type="text"
