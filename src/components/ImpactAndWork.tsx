@@ -1,4 +1,5 @@
 import React from "react";
+import Pyramid, {pyramidLayers} from "@/components/HoverablePyramid.tsx";
 
 const HighlightBox = ({ highlight, description }) => {
     return (
@@ -12,11 +13,6 @@ const HighlightBox = ({ highlight, description }) => {
 
 const ImpactSection = () => {
     const data = [
-        {
-            highlight: "90%",
-            description:
-                "of old-growth habitat removed from a proposed timber sale in Tongass National Forest after the U.S. Forest Service heeded our objections, protecting thousands of acres of habitat for wolves, bears and more.",
-        },
         {
             highlight: "75",
             description:
@@ -43,13 +39,16 @@ const ImpactSection = () => {
                     Our Work & Impact
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {data.map((item, index) => (
-                        <HighlightBox
-                            key={index}
-                            highlight={item.highlight}
-                            description={item.description}
-                        />
-                    ))}
+                    <>
+                        <Pyramid key={"custom karka"} layers={pyramidLayers}/>
+                        {data.map((item, index) => (
+                            <HighlightBox
+                                key={index}
+                                highlight={item.highlight}
+                                description={item.description}
+                            />
+                        ))}
+                    </>
                 </div>
             </div>
         </div>
