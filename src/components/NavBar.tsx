@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import { Button } from "@/components/ui/button";
 import DonationButton from "@/components/DonateButton";
 import SearchBarComponent from "@/components/SearchBar";
-import { Menu, X, Instagram, Facebook, YoutubeIcon } from "lucide-react";
+import { Menu, X, Instagram, Facebook, YoutubeIcon, Linkedin } from "lucide-react";
 import ZoomableMapDashboard from "./map-ux/zoomable-map-ux";
 
 const NavBar = () => {
@@ -123,14 +123,15 @@ const NavBar = () => {
             </nav>
 
             {/* Vertical Social Media Banner */}
-            <div className="fixed right-0 top-1/3 flex flex-col items-center space-y-4 bg-[#2f2f2f] p-2 shadow-lg rounded-l-md">
+            <div
+                className="fixed right-0 top-1/3 flex flex-col items-center space-y-4 bg-[#2f2f2f] p-2 shadow-lg rounded-l-md">
                 <a
                     href="https://www.instagram.com/sahjeevan_/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-white/80"
                 >
-                    <Instagram className="w-6 h-6" />
+                    <Instagram className="w-6 h-6"/>
                 </a>
                 <a
                     href="https://www.facebook.com/p/Sahjeevan-100069508025502/"
@@ -138,7 +139,7 @@ const NavBar = () => {
                     rel="noopener noreferrer"
                     className="text-white hover:text-white/80"
                 >
-                    <Facebook className="w-6 h-6" />
+                    <Facebook className="w-6 h-6"/>
                 </a>
                 <a
                     href="https://www.youtube.com/@sahjeevankutch"
@@ -146,7 +147,23 @@ const NavBar = () => {
                     rel="noopener noreferrer"
                     className="text-white hover:text-white/80"
                 >
-                    <YoutubeIcon className="w-6 h-6" />
+                    <YoutubeIcon className="w-6 h-6"/>
+                </a>
+                <a
+                    href="https://in.linkedin.com/company/sahjeevan-organization"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-white/80"
+                >
+                    <Linkedin className="w-6 h-6"/>
+                </a>
+                <a
+                    href="https://x.com/sahjeevan_"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-white/80"
+                >
+                    <X className="w-6 h-6"/>
                 </a>
             </div>
 
