@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Autoplay } from "swiper/modules";
 
 import "swiper/css";
+import "swiper/css/effect-coverflow";
 import { imageNames } from "@/components/constants.ts";
 
 const events = [
@@ -29,42 +30,52 @@ export default function EventsSlider() {
     return (
         <div className="bg-darkgreen container mx-auto px-4 py-8 relative z-10">
             {/* Heading Section */}
+            <h2 className="text-center text-white text-4xl font-bold mb-8">
+                Upcoming Events
+            </h2>
 
             {/* Swiper Slider */}
             <Swiper
                 effect="coverflow"
                 grabCursor={true}
                 centeredSlides={true}
-                slidesPerView={2} // Adjust for larger slides
+                slidesPerView="auto" // Dynamically calculates slide width
                 loop={true}
                 autoplay={{
                     delay: 3000,
                     disableOnInteraction: false,
                 }}
                 coverflowEffect={{
-                    rotate: 50,
-                    stretch: 10, // Slight stretch to create space
-                    depth: 150, // Increase depth for perspective
-                    modifier: 2, // Increase modifier for prominent central slide
+                    rotate: 30,
+                    stretch: 0,
+                    depth: 150, // Adjusts distance between slides
+                    modifier: 2, // Enhances the central slide prominence
                     slideShadows: true,
                 }}
                 modules={[EffectCoverflow, Autoplay]}
-                className="w-full max-w-6xl mx-auto" // Wider container for larger slides
+                className="w-full max-w-6xl mx-auto"
             >
                 {events.map((event, i) => (
-                    <SwiperSlide key={i}>
-                        <div className="flex flex-col md:flex-row items-center bg-gradient-to-r from-green-700 to-green-500 p-6 rounded-lg">
+                    <SwiperSlide
+                        key={i}
+                        className="rounded-lg shadow-lg"
+                        style={{
+                            width: "75%", // Central slide takes ~65% of container width
+                            background: "linear-gradient(to right, #1e3a8a, #22c55e)",
+                        }}
+                    >
+                        <div className="flex flex-col md:flex-row items-center p-6 rounded-lg text-white">
                             {/* Text Section */}
-                            <div className="flex-grow md:w-2/3 text-white p-4">
-                                <h3 className="text-2xl font-semibold mb-4">{event.title}</h3>
-                                <p className="mb-6">{event.description}</p>
+                            <div className="flex-grow md:w-2/3 p-4">
+                                <h3 className="text-3xl font-semibold mb-4">{event.title}</h3>
+                                <p className="text-base mb-6">{event.description}</p>
                                 <button
                                     onClick={() => window.open(event.calendlyLink, "_blank")}
-                                    className="inline-flex items-center px-4 py-2 bg-purple-600 text-white text-sm font-medium rounded hover:bg-purple-700 active:bg-purple-800 transition-colors duration-200"
+                                    className="inline-flex items-center px-6 py-2 bg-purple-600 text-white text-base font-medium rounded hover:bg-purple-700 active:bg-purple-800 transition-colors"
                                 >
                                     Sign Up
                                     <svg
-                                        className="w-5 h-5 ml-2"
+                                        className="w-6 h-6 ml-2"
                                         fill="none"
                                         stroke="currentColor"
                                         viewBox="0 0 24 24"
@@ -80,7 +91,12 @@ export default function EventsSlider() {
                             </div>
 
                             {/* Image Section */}
-                            <div className="md:w-1/3 aspect-[4/3] bg-cover bg-center rounded-md shadow-md" style={{ backgroundImage: `url('${event.image}')` }} />
+                            <div
+                                className="md:w-1/3 aspect-[4/3] bg-cover bg-center rounded-md shadow-md"
+                                style={{
+                                    backgroundImage: `url('${event.image}')`,
+                                }}
+                            />
                         </div>
                     </SwiperSlide>
                 ))}
