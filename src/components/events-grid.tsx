@@ -29,16 +29,6 @@ export default function EventsSlider() {
     return (
         <div className="bg-darkgreen container mx-auto px-4 py-8 relative z-10">
             {/* Heading Section */}
-            <div className="mb-6 text-center flex flex-col items-center">
-                <div className="relative inline-block transform rotate-2 bg-gradient-to-bl from-purple-600 to-purple-700 shadow-lg">
-                    <h2 className="text-white font-bold text-3xl md:text-4xl uppercase px-8 py-4 transform -rotate-1">
-                        Upcoming Events
-                    </h2>
-                </div>
-                <p className="mt-3 max-w-xl mx-auto text-gray-100 md:text-base px-4">
-                    Don’t miss these opportunities to learn more about our work and connect with the community.
-                </p>
-            </div>
 
             {/* Swiper Slider */}
             <Swiper

@@ -31,16 +31,19 @@ const Footer: React.FC = () => {
                     {/* Ecosystem and Social Links */}
                     <div className="w-full md:w-1/3 mb-6">
                         <h3 className="text-lg font-semibold">The Sahjeevan Ecosystem:</h3>
-                        <div className="flex items-center space-x-4 mt-4">
+                        <div className="grid grid-cols-2 gap-4 mt-4">
                             {/* Logos here */}
-                            <img src="https://sahjeevan.org/wp-content/uploads/2023/03/Frame-118.png" alt="Centre for Pastoralism" className="h-12" />
-                            <img src="https://sahjeevan.org/wp-content/uploads/2023/03/logo-horizontal-1.png" alt="Ramble" className="h-12" />
-                            <img src="https://sahjeevan.org/wp-content/uploads/2023/03/LL_logo_lowres-1.png" alt="Living Lightly" className="h-12" />
-                            <img src="https://sahjeevan.org/wp-content/uploads/2023/03/DESI-OON-Final-Logo-Brown-11.png" alt="Desi Oon" className="h-12" />
+                            <img src="https://sahjeevan.org/wp-content/uploads/2023/03/Frame-118.png" alt="Centre for Pastoralism" className="h-12 mx-auto" />
+                            <img src="https://sahjeevan.org/wp-content/uploads/2023/03/logo-horizontal-1.png" alt="Ramble" className="h-12 mx-auto" />
+                            <img src="https://sahjeevan.org/wp-content/uploads/2023/03/LL_logo_lowres-1.png" alt="Living Lightly" className="h-12 mx-auto" />
+                            <img src="https://sahjeevan.org/wp-content/uploads/2023/03/DESI-OON-Final-Logo-Brown-11.png" alt="Desi Oon" className="h-12 mx-auto" />
                         </div>
                     </div>
                     {/* Social Media */}
-                    <div className="w-full md:w-1/3 mb-6"></div>
+                    <div className="w-full md:w-1/3 mb-6">
+                        Sahjeevan registered as Society and Trust having registration No. "Guj/245/Kutch" and "F-421/Kutch" respectively and holds an FCRA Registration #042050027. Darpan ID for Sahjeevan is GJ/2017/0159518.
+                        All donations are eligible for 50% tax exemption under section 80G of the Income Tax 1961 vide exemption Approval No. AABTS0379MF20214 dated 28.05.2021. No cash donations are allowed. The PAN for Sahjeevan is AABTS0379M.
+                    </div>
                 </div>
             </div>
         </footer>
