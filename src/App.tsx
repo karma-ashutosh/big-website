@@ -15,6 +15,7 @@ import EventsGrid from "@/components/events-grid.tsx";
 import ConcentricCircles from "@/components/ConcentricCircles.tsx";
 import ImpactSection from "@/components/ImpactAndWork.tsx";
 import SahjeevanWorkThemes from "@/components/SahjeevanThemes.tsx";
+import WildlifeSection from "@/components/Wildlife.tsx";
 
 interface ParallaxBackgroundProps {
     backgroundUrl: string;
@@ -58,6 +59,7 @@ function App() {
                                 <EventsGrid/>
                                 <SahjeevanWorkThemes />
                                 <ImpactSection />
+                                <WildlifeSection />
                                 <ImageCarousel carouselItems={OurPartners}
                                                designTemplate={"classic"}
                                                 heading={"Our Partners"}
