@@ -1,103 +1,57 @@
-import React from "react";
+import {imageNames} from "@/components/constants.ts";
 
-interface ImageCardProps {
-    image: string;
-    credit?: string;
-    title: string;
-    link: string;
-}
+const themes = [
+    {
+        title: "Sustainable Agriculture",
+        description: "Promoting environmentally friendly farming practices for a better tomorrow.",
+        image: imageNames.MANGROVES_1,
+    },
+    {
+        title: "Forest Conservation",
+        description: "Protecting and preserving our forests to maintain ecological balance.",
+        image: imageNames.DENSE_GRASSLAND_1,
+    },
+    {
+        title: "Community Livelihood",
+        description: "Empowering communities with sustainable livelihood opportunities.",
+        image: imageNames.RAIN_FED_AGRICULTURE_1,
+    },
+    {
+        title: "Water Resource Management",
+        description: "Ensuring equitable and sustainable use of water resources.",
+        image: imageNames.SHEEPLINGS_SLEEPING,
+    },
+];
 
-const ImageCard: React.FC<ImageCardProps> = ({ image, credit, title, link }) => {
+export default function ThemeGrid() {
     return (
-        <div className="relative flex flex-col bg-white shadow-lg rounded-lg overflow-hidden group">
-            {/* Image */}
-            <div className="relative w-full h-48">
-                <img
-                    src={image}
-                    alt={title}
-                    className="w-full h-full object-cover transition-transform transform group-hover:scale-105"
-                />
-                {credit && (
-                    <p className="absolute bottom-2 right-2 text-white text-xs bg-black bg-opacity-50 px-2 py-1 rounded">
-                        © {credit}
-                    </p>
-                )}
-            </div>
-
-            {/* Text Above Image */}
-            <div className="absolute inset-x-0 top-0 flex flex-col items-center justify-center h-full bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
-                <a
-                    href={link}
-                    className="text-white text-lg font-bold hover:underline"
-                >
-                    {title}
-                </a>
-                <div className="mt-2 text-purple-500">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M12 4v16m8-8H4"
-                        />
-                    </svg>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-
-interface CardData {
-    image: string;
-    credit?: string;
-    title: string;
-    link: string;
-}
-
-const ImageCardGrid: React.FC = () => {
-    const cards: CardData[] = [
-        {
-            image: "https://via.placeholder.com/300x200",
-            credit: "Sam Farkas/NOAA",
-            title: "Add Your Voice: Expand habitat for manatees",
-            link: "#",
-        },
-        {
-            image: "https://via.placeholder.com/300x200",
-            credit: "Douglas Rissing/iStock",
-            title: "Wildlife and Politics",
-            link: "#",
-        },
-        {
-            image: "https://via.placeholder.com/300x200",
-            credit: "B. Barthelemg/USFS",
-            title: "Make an investment in wildlife!",
-            link: "#",
-        },
-    ];
-
-    return (
-        <div className="py-8 px-4 bg-gray-100">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-                {cards.map((card, index) => (
-                    <ImageCard
+        <div className="bg-gray-100 py-8 px-8">
+            <h2 className="text-center text-gray-800 text-3xl font-bold mb-6">
+                Our Organizational Themes
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {themes.map((theme, index) => (
+                    <div
                         key={index}
-                        image={card.image}
-                        credit={card.credit}
-                        title={card.title}
-                        link={card.link}
-                    />
+                        className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col"
+                    >
+                        {/* Image Section */}
+                        <div
+                            className="h-48 bg-cover bg-center"
+                            style={{
+                                backgroundImage: `url('${theme.image}')`,
+                            }}
+                        ></div>
+                        {/* Text Section */}
+                        <div className="p-4">
+                            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                                {theme.title}
+                            </h3>
+                            <p className="text-gray-600 text-sm">{theme.description}</p>
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>
     );
-};
-
-export default ImageCardGrid;
+}
