@@ -1,25 +1,29 @@
-import {imageNames} from "@/components/constants.ts";
+import {imageNames, imageSet2} from "@/components/constants.ts";
 
 const wildlifeItems = [
     {
-        image: imageNames.MANGROVES_1,
-        title: "Bison",
+        image: imageSet2.CAMELS_GROUP,
+        title: "Kharai Camel",
+        text: "The swimming Kharai camel, essential for Gujarat’s mangroves and local livelihoods, faces extinction. Losing them means erasing a unique ecological and cultural bond.",
         url: "/bison",
     },
     {
         image: imageNames.DENSE_GRASSLAND_1,
-        title: "Great Plains",
+        title: "Indian Grey Wolf",
+        text: "One of the world’s oldest wolf lineages, the Indian Grey Wolf maintains grassland ecosystems. Their extinction threatens biodiversity and disrupts nature's balance.",
         url: "/great-plains",
     },
     {
-        image: "/path/to/owls.jpg",
-        title: "Owls",
+        image: imageSet2.DUCKS_IN_LAKE,
+        title: "Bar-tailed Godwits",
+        text: "Flying over 12,000 km nonstop, these shorebirds inspire awe and signal healthy wetlands. Their loss would mark failing ecosystems critical for water and agriculture.",
         url: "/owls",
     },
     {
-        image: "/path/to/deciduous_forests.jpg",
-        title: "Deciduous Forests",
-        url: "/deciduous-forests",
+      image: imageNames.MANGROVES_1,
+        title: "Kutchi or Kachchh Mangroves",
+        text: "These mangroves protect Gujarat’s coasts and support fisheries. Losing them would mean weaker coastal defenses and jeopardized livelihoods for millions.",
+        url: "/great-plains",
     },
 ];
 
@@ -31,14 +35,22 @@ export default function WildlifeGrid() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {wildlifeItems.map((item, index) => (
-                    <div key={index} className="flex flex-col items-center">
+                    <div key={index} className="relative group">
                         {/* Image Section */}
                         <div
-                            className="w-full h-64 bg-cover bg-center rounded-lg shadow-md"
+                            className="w-full h-64 bg-cover bg-center rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
                             style={{
                                 backgroundImage: `url('${item.image}')`,
                             }}
-                        ></div>
+                        >
+                            {/* Text Overlay */}
+                            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <p className="text-white text-lg font-semibold text-center px-4">
+                                    {item.text}
+                                </p>
+                            </div>
+                        </div>
+
                         {/* Title and Link */}
                         <div className="mt-4 flex items-center space-x-2">
                             <h3 className="text-lg font-bold text-gray-800">{item.title}</h3>
