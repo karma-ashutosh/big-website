@@ -25,7 +25,7 @@ const themes = [
 
 export default function ThemeGrid() {
     return (
-        <div className="bg-gray-100 py-8 px-8">
+        <div className="bg-gray-100 py-8 px-4">
             <h2 className="text-center text-gray-800 text-3xl font-bold mb-6">
                 Our Organizational Themes
             </h2>
@@ -35,6 +35,14 @@ export default function ThemeGrid() {
                         key={index}
                         className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col"
                     >
+                        {/* Title Section */}
+                        <div className="p-4 text-center">
+                            <h3 className="text-lg font-bold text-gray-800 mb-2">
+                                {theme.title}
+                            </h3>
+                            <div className="border-t-2 border-purple-500 w-12 mx-auto mt-2 mb-4"></div>
+                        </div>
+
                         {/* Image Section */}
                         <div
                             className="h-48 bg-cover bg-center"
@@ -42,11 +50,9 @@ export default function ThemeGrid() {
                                 backgroundImage: `url('${theme.image}')`,
                             }}
                         ></div>
-                        {/* Text Section */}
+
+                        {/* Description Section */}
                         <div className="p-4">
-                            <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                                {theme.title}
-                            </h3>
                             <p className="text-gray-600 text-sm">{theme.description}</p>
                         </div>
                     </div>
@@ -55,3 +61,4 @@ export default function ThemeGrid() {
         </div>
     );
 }
+
