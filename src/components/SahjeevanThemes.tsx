@@ -4,21 +4,25 @@ const themes = [
     {
         title: "Sustainable Agriculture",
         description: "Promoting environmentally friendly farming practices for a better tomorrow.",
+        url: "http://google.com",
         image: imageNames.MANGROVES_1,
     },
     {
         title: "Forest Conservation",
         description: "Protecting and preserving our forests to maintain ecological balance.",
+        url: "http://google.com",
         image: imageNames.DENSE_GRASSLAND_1,
     },
     {
         title: "Community Livelihood",
         description: "Empowering communities with sustainable livelihood opportunities.",
+        url: "http://google.com",
         image: imageNames.RAIN_FED_AGRICULTURE_1,
     },
     {
         title: "Water Resource Management",
         description: "Ensuring equitable and sustainable use of water resources.",
+        url: "http://google.com",
         image: imageNames.SHEEPLINGS_SLEEPING,
     },
 ];
@@ -36,12 +40,34 @@ export default function ThemeGrid() {
                         className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col"
                     >
                         {/* Title Section */}
-                        <div className="p-4 text-center">
-                            <h3 className="text-lg font-bold text-gray-800 mb-2">
+                        <div className="p-4 flex items-center justify-between">
+                            <h3 className="text-lg font-bold text-gray-800">
                                 {theme.title}
                             </h3>
-                            <div className="border-t-2 border-purple-500 w-12 mx-auto mt-2 mb-4"></div>
+                            <a
+                                href={theme.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-purple-500 hover:text-purple-700 transition"
+                                aria-label={`Learn more about ${theme.title}`}
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={2}
+                                    stroke="currentColor"
+                                    className="w-5 h-5"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M9 5l7 7-7 7"
+                                    />
+                                </svg>
+                            </a>
                         </div>
+                        <div className="border-t-2 border-purple-500 w-12 mx-auto mb-4"></div>
 
                         {/* Image Section */}
                         <div
@@ -61,4 +87,3 @@ export default function ThemeGrid() {
         </div>
     );
 }
-
