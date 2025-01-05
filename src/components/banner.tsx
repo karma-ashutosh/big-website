@@ -60,10 +60,10 @@ export default function Banner() {
                             {/*rounded-full */}
                             overflow-hidden flex items-center justify-center shadow-lg">
                                 <iframe
-                                    src="https://player.vimeo.com/video/1043997078?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                                    src="https://storage.googleapis.com/big-website-assets/videos/videoplayback.mp4"
                                     width="720" height="405" frameBorder="0"
                                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-                                    title="Sahjeevan ka video"></iframe>
+                                    title="Sahjeevan Thesis"></iframe>
                             </div>
                         </div>
                     </div>

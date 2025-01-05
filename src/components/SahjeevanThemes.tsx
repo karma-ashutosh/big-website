@@ -3,7 +3,7 @@ import {imageNames} from "@/components/constants.ts";
 const themes = [
     {
         title: "Sustainable Livelihood",
-        description: "Promoting environmentally friendly farming practices for a better tomorrow.",
+        description: "Empowering communities with sustainable livelihood opportunities.",
         url: "http://google.com",
         image: imageNames.MANGROVES_1,
     },
@@ -15,7 +15,7 @@ const themes = [
     },
     {
         title: "Breed Conservation",
-        description: "Empowering communities with sustainable livelihood opportunities.",
+        description: "Saving breeds left and right",
         url: "http://google.com",
         image: imageNames.RAIN_FED_AGRICULTURE_1,
     },

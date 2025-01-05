@@ -25,6 +25,9 @@ const BlogPreview: React.FC<BlogPreviewProps> = ({ featuredBlog, allBlogsLink })
     return (
         <div className="flex flex-col items-center text-center px-4 py-6 bg-transparent bg-opacity-65 border-l border-gray-300 last:border-r-0 md:last:border-r-0">
             {/* Blog Image */}
+            <h2>
+                our blog
+            </h2>
             <div className="overflow-hidden rounded-md mb-4">
                 <img
                     src={featuredBlog.imageUrl}
