@@ -2,19 +2,19 @@ import {imageNames} from "@/components/constants.ts";
 
 const themes = [
     {
-        title: "Sustainable Agriculture",
+        title: "Sustainable Livelihood",
         description: "Promoting environmentally friendly farming practices for a better tomorrow.",
         url: "http://google.com",
         image: imageNames.MANGROVES_1,
     },
     {
-        title: "Forest Conservation",
+        title: "Ecosystem Conservation",
         description: "Protecting and preserving our forests to maintain ecological balance.",
         url: "http://google.com",
         image: imageNames.DENSE_GRASSLAND_1,
     },
     {
-        title: "Community Livelihood",
+        title: "Breed Conservation",
         description: "Empowering communities with sustainable livelihood opportunities.",
         url: "http://google.com",
         image: imageNames.RAIN_FED_AGRICULTURE_1,
@@ -30,9 +30,9 @@ const themes = [
 export default function ThemeGrid() {
     return (
         <div className="bg-gray-100 py-8 px-4">
-            <h2 className="text-center text-gray-800 text-3xl font-bold mb-6">
-                Our Organizational Themes
-            </h2>
+            {/*<h2 className="text-center text-gray-800 text-3xl font-bold mb-6">*/}
+            {/*    Our Organizational Themes*/}
+            {/*</h2>*/}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {themes.map((theme, index) => (
                     <div

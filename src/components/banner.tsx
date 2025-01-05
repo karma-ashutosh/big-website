@@ -32,13 +32,14 @@ export default function Banner() {
                     <div className="relative container mx-auto px-4 h-full flex items-center justify-between">
                         {/* Left Side - Text and Buttons */}
                         <div className="flex flex-col items-start space-y-6 text-white">
-                            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-wide">
-                                BE A VOICE
-                                <br />
-                                FOR WILDLIFE
+                            <h1 className="text-4xl
+                            {/*md:text-4xl */}
+                            {/*lg:text-7xl */}
+                            font-bold tracking-wide">
+                                Ecosystem-based Conservation
                             </h1>
                             <p className="text-xl">
-                                Prevent extinction. Protect habitat. Defend nature.
+                                Protect nature, <br/> Defend life.
                             </p>
                             <div className="flex items-center gap-4">
                                 <Button
@@ -52,33 +53,17 @@ export default function Banner() {
                         </div>
 
                         {/* Right Side - Video Placeholder with Play Button */}
-                        <div className="w-full md:w-1/2 flex justify-center items-center">
-                            <div className="relative group w-72 h-72 rounded-full overflow-hidden flex items-center justify-center shadow-lg">
-                                <img
-                                    src="https://sahjeevan.org/wp-content/uploads/2023/04/Institutions-2.png"
-                                    alt="Video Thumbnail"
-                                    className="w-full h-full object-cover cursor-pointer"
-                                    onClick={openYoutubeModal}
-                                />
-                                <button
-                                    onClick={openYoutubeModal}
-                                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orange-500 text-white rounded-full p-4 hover:bg-orange-600 transition duration-300"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                        className="w-8 h-8"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M14.752 11.168l-4.252 2.426V8.82l4.252 2.349z"
-                                        />
-                                    </svg>
-                                </button>
+                        <div className="w-full
+                        {/*md:w-1/2 */}
+                        flex justify-center items-center">
+                            <div className="relative group w-max/2 h-max
+                            {/*rounded-full */}
+                            overflow-hidden flex items-center justify-center shadow-lg">
+                                <iframe
+                                    src="https://player.vimeo.com/video/1043997078?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                                    width="720" height="405" frameBorder="0"
+                                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                                    title="Sahjeevan ka video"></iframe>
                             </div>
                         </div>
                     </div>
