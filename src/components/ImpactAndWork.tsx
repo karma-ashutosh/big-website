@@ -1,6 +1,7 @@
 import Pyramid, {pyramidLayers} from "@/components/HoverablePyramid.tsx";
-import BlogPreview, {DefaultBlogPreview} from "@/components/BlogPreview.tsx";
 import React, {ReactNode} from "react";
+import {DefaultBlogPreview} from "@/components/constants.ts";
+import BlogPreview from "@/components/BlogPreview.tsx";
 
 const HighlightBox = ({ highlight, description, Other }: {highlight: string, description: string, Other?: ReactNode}) => {
     return (

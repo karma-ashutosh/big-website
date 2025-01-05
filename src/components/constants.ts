@@ -270,3 +270,22 @@ export const OurPartners: OurPartner[] = [
     }
 ];
 
+export interface BlogPreviewProps {
+    featuredBlog: {
+        title: string;
+        excerpt: string;
+        imageUrl: string;
+        link: string;
+    };
+    allBlogsLink: string;
+}
+
+export const DefaultBlogPreview: BlogPreviewProps = {
+    featuredBlog: {
+        title: "Save humans",
+        excerpt: "Save humans to create humans",
+        imageUrl: imageNames.SHEEPLINGS_SLEEPING,
+        link: "https://news.google.com/1",
+    },
+    allBlogsLink: "https://news.google.com/2",
+}
