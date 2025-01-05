@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 type PyramidLayer = {
     id: number;
@@ -37,13 +37,26 @@ interface PyramidProps {
 
 const Pyramid: React.FC<PyramidProps> = ({ layers }) => {
     const [hoverText, setHoverText] = useState<string | null>(null);
+    const [showDefaultMessage, setShowDefaultMessage] = useState<boolean>(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowDefaultMessage(false);
+        }, 3000); // 3 seconds
+
+        return () => clearTimeout(timer); // Cleanup on unmount
+    }, []);
 
     return (
         <div className="relative w-full h-96 mx-auto flex flex-col items-center">
             {/* Hover Text Display */}
-            <div className="absolute top-4 text-white font-semibold text-center px-6 py-3 bg-blue-800 rounded shadow-lg z-10">
-                {hoverText || "Hover over a layer to see details."}
-            </div>
+            {
+                (showDefaultMessage || hoverText) &&
+                <div
+                    className="absolute top-4 text-white font-semibold text-center px-6 py-3 bg-blue-800 rounded shadow-lg z-10">
+                    {hoverText || (showDefaultMessage ? "Hover over a layer to see details." : "")}
+                </div>
+            }
 
             {/* Pyramid Layers */}
             <div className="relative w-full h-full flex justify-center items-end">
