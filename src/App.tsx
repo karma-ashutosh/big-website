@@ -12,6 +12,10 @@ import BlogPage, {blogData, titleToBlogUrl} from "@/components/Blog.tsx";
 import NavBar from "@/components/NavBar.tsx";
 import {imageNames, OurPartners, pressUpdates} from "@/components/constants.ts";
 import EventsGrid from "@/components/events-grid.tsx";
+// import ConcentricCircles from "@/components/ConcentricCircles.tsx";
+import ImpactSection from "@/components/ImpactAndWork.tsx";
+import SahjeevanWorkThemes from "@/components/SahjeevanThemes.tsx";
+import WildlifeSection from "@/components/Wildlife.tsx";
 
 interface ParallaxBackgroundProps {
     backgroundUrl: string;
@@ -53,7 +57,9 @@ function App() {
                                 backgroundUrl={imageNames.HAPPY_WITH_COWS}>
                                 {/*<ImageGrid/>*/}
                                 <EventsGrid/>
-                                <GujratBanner/>
+                                <SahjeevanWorkThemes />
+                                <ImpactSection />
+                                <WildlifeSection />
                                 <ImageCarousel carouselItems={OurPartners}
                                                designTemplate={"classic"}
                                                 heading={"Our Partners"}
@@ -67,7 +73,9 @@ function App() {
                                     carouselItems={pressUpdates} designTemplate={"imageBackground"}
                                     headingDesign={"splitBanner"}
                                 />
+                                <GujratBanner/>
                             </ParallaxBackground>
+
                             <Footer/>
                         </div>
                     }
