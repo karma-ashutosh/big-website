@@ -12,7 +12,7 @@ import BlogPage, {blogData, titleToBlogUrl} from "@/components/Blog.tsx";
 import NavBar from "@/components/NavBar.tsx";
 import {imageNames, OurPartners, pressUpdates} from "@/components/constants.ts";
 import EventsGrid from "@/components/events-grid.tsx";
-import ConcentricCircles from "@/components/ConcentricCircles.tsx";
+// import ConcentricCircles from "@/components/ConcentricCircles.tsx";
 import ImpactSection from "@/components/ImpactAndWork.tsx";
 import SahjeevanWorkThemes from "@/components/SahjeevanThemes.tsx";
 import WildlifeSection from "@/components/Wildlife.tsx";

@@ -1,8 +1,7 @@
-import React from "react";
 import Pyramid, {pyramidLayers} from "@/components/HoverablePyramid.tsx";
 import BlogPreview, {DefaultBlogPreview} from "@/components/BlogPreview.tsx";
 
-const HighlightBox = ({ highlight, description }) => {
+const HighlightBox = ({ highlight, description }: {highlight: string, description: string}) => {
     return (
         <div className="flex flex-col items-center text-center px-4 py-6 bg-transparent border-l border-gray-300 last:border-r-0 md:last:border-r-0">
             <h2 className="text-5xl font-bold text-white">{highlight}</h2>

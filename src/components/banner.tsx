@@ -1,18 +1,18 @@
 import { Button } from "@/components/ui/button";
 import DonationButton from "@/components/DonateButton.tsx";
-import { useState } from "react";
-import Modal from "react-modal";
+// import { useState } from "react";
+// import Modal from "react-modal";
 
 export default function Banner() {
-    const [isYoutubeModalOpen, setIsYoutubeModalOpen] = useState(false);
+    // const [isYoutubeModalOpen, setIsYoutubeModalOpen] = useState(false);
 
-    const openYoutubeModal = () => {
-        setIsYoutubeModalOpen(true);
-    };
+    // const openYoutubeModal = () => {
+    //     setIsYoutubeModalOpen(true);
+    // };
 
-    const closeYoutubeModal = () => {
-        setIsYoutubeModalOpen(false);
-    };
+    // const closeYoutubeModal = () => {
+    //     setIsYoutubeModalOpen(false);
+    // };
 
     return (
         <div className="bg-background relative">
@@ -71,33 +71,33 @@ export default function Banner() {
             </div>
 
             {/* YouTube Video Modal */}
-            <Modal
-                isOpen={isYoutubeModalOpen}
-                onRequestClose={closeYoutubeModal}
-                contentLabel="Watch Video"
-                className="fixed inset-0 flex items-center justify-center p-4"
-                overlayClassName="fixed inset-0 bg-black bg-opacity-90"
-                shouldCloseOnOverlayClick={true}
-            >
-                <div className="relative w-full max-w-3xl bg-white rounded-md shadow-lg">
-                    <button
-                        onClick={closeYoutubeModal}
-                        className="absolute top-0 right-0 m-4 text-black text-3xl font-bold focus:outline-none z-50"
-                    >
-                        &times;
-                    </button>
-                    <div className="relative w-full h-0" style={{ paddingBottom: "56.25%" }}>
-                        <iframe
-                            className="absolute top-0 left-0 w-full h-full rounded-md"
-                            src="https://www.youtube.com/embed/VupuiZaCPCw"
-                            title="YouTube video player"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        />
-                    </div>
-                </div>
-            </Modal>
+            {/*<Modal*/}
+            {/*    isOpen={isYoutubeModalOpen}*/}
+            {/*    onRequestClose={closeYoutubeModal}*/}
+            {/*    contentLabel="Watch Video"*/}
+            {/*    className="fixed inset-0 flex items-center justify-center p-4"*/}
+            {/*    overlayClassName="fixed inset-0 bg-black bg-opacity-90"*/}
+            {/*    shouldCloseOnOverlayClick={true}*/}
+            {/*>*/}
+            {/*    <div className="relative w-full max-w-3xl bg-white rounded-md shadow-lg">*/}
+            {/*        <button*/}
+            {/*            onClick={closeYoutubeModal}*/}
+            {/*            className="absolute top-0 right-0 m-4 text-black text-3xl font-bold focus:outline-none z-50"*/}
+            {/*        >*/}
+            {/*            &times;*/}
+            {/*        </button>*/}
+            {/*        <div className="relative w-full h-0" style={{ paddingBottom: "56.25%" }}>*/}
+            {/*            <iframe*/}
+            {/*                className="absolute top-0 left-0 w-full h-full rounded-md"*/}
+            {/*                src="https://www.youtube.com/embed/VupuiZaCPCw"*/}
+            {/*                title="YouTube video player"*/}
+            {/*                frameBorder="0"*/}
+            {/*                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"*/}
+            {/*                allowFullScreen*/}
+            {/*            />*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</Modal>*/}
 
         </div>
     );
