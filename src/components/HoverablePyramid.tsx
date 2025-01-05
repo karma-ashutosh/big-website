@@ -65,14 +65,24 @@ const Pyramid: React.FC<PyramidProps> = ({ layers }) => {
                         key={layer.id}
                         onMouseEnter={() => setHoverText(layer.onHoverTextPart)}
                         onMouseLeave={() => setHoverText(null)}
-                        className={`absolute text-white font-bold py-4 rounded-lg shadow-lg transition-all duration-300 ease-in-out`}
+                        className={`
+    absolute 
+    font-bold 
+    text-white 
+    py-4 
+    rounded-lg 
+    shadow-lg 
+    transition-all 
+    duration-300 
+    ease-in-out
+  `}
                         style={{
                             width: `${100 - index * 20}%`, // Reduce width per layer
-                            left: `${index * 10}%`, // Center each layer horizontally
-                            bottom: `${index * 60}px`, // Stack layers vertically
+                            left: `${index * 10}%`,        // Center each layer horizontally
+                            bottom: `${index * 60}px`,     // Stack layers vertically
                             background: `linear-gradient(135deg, #4f46e5, #3b82f6)`, // Gradient
-                            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)", // Shadow
-                            transform: "scale(1)", // Default scale
+                            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.3)",             // Shadow
+                            transform: "scale(1)",         // Default scale
                             transition: "all 0.3s",
                         }}
                         onMouseOver={(e) => {
@@ -88,9 +98,24 @@ const Pyramid: React.FC<PyramidProps> = ({ layers }) => {
                             e.currentTarget.style.zIndex = "unset";
                         }}
                     >
-                        <div className="text-2xl uppercase tracking-wide">{layer.label}</div>
-                        <div className="italic text-lg">{layer.hoverableTextPart}</div>
+                        {/* Headline */}
+                        <div className="text-2xl uppercase tracking-wide mb-1">
+                            {layer.label}
+                        </div>
+
+                        {/* Subtext (italic) */}
+                        <div className="text-lg italic text-gray-100">
+                            {layer.hoverableTextPart}
+                        </div>
+
+                        {/* "...more" (subtle) */}
+                        {(layer.onHoverTextPart !== hoverText) && (
+                            <p className="mt-1 text-sm text-gray-300 font-normal">
+                                know more
+                            </p>
+                        )}
                     </div>
+
                 ))}
             </div>
         </div>

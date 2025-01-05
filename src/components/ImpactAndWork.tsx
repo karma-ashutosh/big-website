@@ -1,5 +1,5 @@
 import Pyramid, {pyramidLayers} from "@/components/HoverablePyramid.tsx";
-import React, {ReactNode} from "react";
+import {ReactNode} from "react";
 import {DefaultBlogPreview} from "@/components/constants.ts";
 import BlogPreview from "@/components/BlogPreview.tsx";
 
