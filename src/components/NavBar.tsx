@@ -1,4 +1,6 @@
-import { useState } from "react";
+// NavBar.tsx
+
+import { useState, FC } from "react";
 import Modal from "react-modal";
 import DonationButton from "@/components/DonateButton";
 import SearchBarComponent from "@/components/SearchBar";
@@ -7,15 +9,16 @@ import {
     X,
     Instagram,
     Facebook,
-    YoutubeIcon,
+    Youtube as YoutubeIcon,
     Linkedin,
 } from "lucide-react";
 import ZoomableMapDashboard from "./map-ux/zoomable-map-ux";
+import { MenuItem as MenuItemType } from "./types"; // Adjust the path as needed
 
 /**
  * Example nested menu data.
  */
-const menuItems = [
+const menuItems: MenuItemType[] = [
     {
         title: "About",
         subMenus: [
@@ -50,7 +53,10 @@ const menuItems = [
     {
         title: "Discover",
         link: "",
-        action: "openMapModal",
+        action: () => {
+            // Define the action to open the map modal
+            // This will be passed from the NavBar component
+        },
     },
     {
         title: "Resources",
@@ -63,23 +69,29 @@ const menuItems = [
 ];
 
 /**
+ * Props for the MenuItem component.
+ */
+interface MenuItemProps {
+    item: MenuItemType;
+    level?: number;
+    action?: () => void;
+}
+
+/**
  * Recursively renders a single menu item and its (optional) submenus.
  *
- * @param item  The current menu item to render.
- * @param level The nesting level (0 for top-level, 1 for second-level, etc.).
+ * @param props The props for the MenuItem component.
  */
-
-
-function MenuItem({ item, level = 0, action }) {
-    const [isHovered, setIsHovered] = useState(false);
-    const hasSubMenus = item.subMenus && item.subMenus.length > 0;
+const MenuItem: FC<MenuItemProps> = ({ item, level = 0, action }) => {
+    const [isHovered, setIsHovered] = useState<boolean>(false);
+    const hasSubMenus: boolean = !!(item.subMenus && item.subMenus.length > 0);
 
     // Position top-level menus directly below, deeper levels to the right
-    const positionClass =
+    const positionClass: string =
         level === 0 ? "top-full left-0" : "top-0 left-full";
 
     // Add no extra margin between parent & child (omit mt-2)
-    const submenuClasses = `
+    const submenuClasses: string = `
     absolute
     bg-white
     shadow-lg
@@ -110,51 +122,56 @@ function MenuItem({ item, level = 0, action }) {
                         style={{ zIndex: 9999 }} // ensure the submenu appears on top
                     >
                         {item.subMenus.map((child, idx) => (
-                            <MenuItem key={idx} item={child} level={level + 1} action={action} />
+                            <MenuItem
+                                key={idx}
+                                item={child}
+                                level={level + 1}
+                                action={action}
+                            />
                         ))}
                     </ul>
                 </>
+            ) : item.action ? (
+                <button
+                    type="button"
+                    className="hover:text-gray-600 focus:outline-none"
+                    onClick={action}
+                >
+                    {item.title}
+                </button>
             ) : (
-                item.action ? (
-
-                    <button
-                        type="button"
-                        className="hover:text-gray-600 focus:outline-none"
-                        onClick={action}
-                    >
-                        {item.title}
-                    </button>
-                    ): (
-                    <a
-                        href={item.link || "#"}
-                        className="block hover:text-gray-600"
-                    >
-                        {item.title}
-                    </a>
-                )
-            )
-            }
+                <a href={item.link || "#"} className="block hover:text-gray-600">
+                    {item.title}
+                </a>
+            )}
         </li>
     );
-}
+};
 
+/**
+ * Props for the TopLevelMenu component.
+ */
+interface TopLevelMenuProps {
+    items: MenuItemType[];
+    modalAction?: () => void;
+}
 
 /**
  * Renders the top-level menu items in a horizontal row (typical desktop).
  */
-function TopLevelMenu({items, modalAction}, ) {
+const TopLevelMenu: FC<TopLevelMenuProps> = ({ items, modalAction }) => {
     return (
         <ul className="flex items-center gap-6 relative">
             {items.map((item, i) => (
-                <MenuItem item={item} key={i} action={modalAction}/>
+                <MenuItem key={i} item={item} action={modalAction} />
             ))}
         </ul>
     );
-}
+};
 
-const NavBar = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isProjectMapOpen, setIsProjectMapOpen] = useState(false);
+const NavBar: FC = () => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+    const [isProjectMapOpen, setIsProjectMapOpen] = useState<boolean>(false);
 
     const setProjectMapOpen = () => setIsProjectMapOpen(true);
     const setProjectMapClose = () => setIsProjectMapOpen(false);
@@ -185,7 +202,7 @@ const NavBar = () => {
                         </div>
                         {/* Desktop Menu */}
                         <div className="hidden md:flex">
-                            <TopLevelMenu items={menuItems} modalAction={setProjectMapOpen}/>
+                            <TopLevelMenu items={menuItems} modalAction={setProjectMapOpen} />
                         </div>
 
                         {/* Right side: mobile toggle, language selector, donate, etc. */}
@@ -194,13 +211,24 @@ const NavBar = () => {
 
                             {/* Mobile Hamburger Menu */}
                             <div className="md:hidden">
-                                <button onClick={toggleMobileMenu} className="text-black focus:outline-none">
-                                    {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                                <button
+                                    onClick={toggleMobileMenu}
+                                    className="text-black focus:outline-none"
+                                    aria-label="Toggle mobile menu"
+                                >
+                                    {isMobileMenuOpen ? (
+                                        <X className="w-6 h-6" />
+                                    ) : (
+                                        <Menu className="w-6 h-6" />
+                                    )}
                                 </button>
                             </div>
 
                             {/* Language Selector */}
-                            <select className="bg-gray-100 text-black border-none rounded-md px-3 py-1 text-sm focus:ring-2 focus:ring-gray-300">
+                            <select
+                                className="bg-gray-100 text-black border-none rounded-md px-3 py-1 text-sm focus:ring-2 focus:ring-gray-300"
+                                aria-label="Select language"
+                            >
                                 <option className="bg-white text-black" value="en">
                                     ENGLISH
                                 </option>
@@ -222,55 +250,58 @@ const NavBar = () => {
                         <div className="md:hidden bg-white text-black shadow-lg rounded-md py-4 px-4 mt-2">
                             {/* We can reuse the same recursive menu for mobile,
                   but often you might do a simpler, accordion-style layout. */}
-                            <TopLevelMenu items={menuItems} />
-
+                            <TopLevelMenu items={menuItems} modalAction={setProjectMapOpen} />
                         </div>
                     )}
                 </div>
             </nav>
 
             {/* Vertical Social Media Banner */}
-            <div
-                className="fixed right-0 top-1/3 flex flex-col items-center space-y-4 bg-[#2f2f2f] p-2 shadow-lg rounded-l-md">
+            <div className="fixed right-0 top-1/3 flex flex-col items-center space-y-4 bg-[#2f2f2f] p-2 shadow-lg rounded-l-md">
                 <a
                     href="https://www.instagram.com/sahjeevan_/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-white/80"
+                    aria-label="Instagram"
                 >
-                    <Instagram className="w-6 h-6"/>
+                    <Instagram className="w-6 h-6" />
                 </a>
                 <a
                     href="https://www.facebook.com/p/Sahjeevan-100069508025502/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-white/80"
+                    aria-label="Facebook"
                 >
-                    <Facebook className="w-6 h-6"/>
+                    <Facebook className="w-6 h-6" />
                 </a>
                 <a
-                    href="https://www.youtube.com/@sahjeevankutch"
+                    href="https://youtube.com/@sahjeevankutch"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-white/80"
+                    aria-label="YouTube"
                 >
-                    <YoutubeIcon className="w-6 h-6"/>
+                    <YoutubeIcon className="w-6 h-6" />
                 </a>
                 <a
                     href="https://in.linkedin.com/company/sahjeevan-organization"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-white/80"
+                    aria-label="LinkedIn"
                 >
-                    <Linkedin className="w-6 h-6"/>
+                    <Linkedin className="w-6 h-6" />
                 </a>
                 <a
                     href="https://x.com/sahjeevan_"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-white/80"
+                    aria-label="X"
                 >
-                    <X className="w-6 h-6"/>
+                    <X className="w-6 h-6" />
                 </a>
             </div>
 
@@ -282,11 +313,13 @@ const NavBar = () => {
                 className="ReactModal__Content fixed inset-0 flex items-center justify-center bg-white z-[2147483647] outline-none"
                 overlayClassName="ReactModal__Overlay fixed inset-0 bg-black bg-opacity-90 z-[2147483646]"
                 shouldCloseOnOverlayClick={true}
+                ariaHideApp={false} // You might want to set this based on your app's requirements
             >
                 <div className="relative w-full h-full">
                     <button
                         onClick={setProjectMapClose}
                         className="absolute top-4 right-4 text-black text-3xl font-bold focus:outline-none z-[2147483647]"
+                        aria-label="Close modal"
                     >
                         &times;
                     </button>
