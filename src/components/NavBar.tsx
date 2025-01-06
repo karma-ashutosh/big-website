@@ -13,8 +13,13 @@ import {
     Linkedin,
 } from "lucide-react";
 import ZoomableMapDashboard from "./map-ux/zoomable-map-ux";
-import { MenuItem as MenuItemType } from "./types"; // Adjust the path as needed
 
+interface MenuItemType {
+    title: string;
+    link?: string;
+    action?: () => void;
+    subMenus?: MenuItemType[];
+}
 /**
  * Example nested menu data.
  */
@@ -121,7 +126,7 @@ const MenuItem: FC<MenuItemProps> = ({ item, level = 0, action }) => {
                         className={submenuClasses}
                         style={{ zIndex: 9999 }} // ensure the submenu appears on top
                     >
-                        {item.subMenus.map((child, idx) => (
+                        {item.subMenus?.map((child, idx) => (
                             <MenuItem
                                 key={idx}
                                 item={child}
