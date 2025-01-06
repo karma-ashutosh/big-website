@@ -1,5 +1,6 @@
 import React from "react";
-import { Leaf, TreePine as Tree } from 'lucide-react'; // Importing icons from lucide-react
+import { Leaf, TreePine as Tree } from 'lucide-react';
+import {imageNames} from "@/components/constants.ts"; // Importing icons from lucide-react
 
 interface BlogPageProps {
     title: string;
@@ -157,7 +158,7 @@ export const MangrovesData: BlogPageProps = {
         "Efforts to conserve mangroves include afforestation initiatives, involving local communities in planting efforts, and preventing unsustainable harvesting of mangrove resources."
     ],
     images: [
-        "https://sahjeevan.org/wp-content/uploads/2023/04/Slider6-1-min.png"
+        imageNames.KUTCH_MANGROVES
     ]
 };
 export const WildlifeProtectionData: BlogPageProps = {

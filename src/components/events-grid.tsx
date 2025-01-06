@@ -10,19 +10,29 @@ const events = [
         image: imageNames.SHEEP_OWNER_HAPPY,
         title: "Income Generation for Sheep Farmers",
         description: "Learn how sheep farming can become a source of sustainable income and contribute to community well-being.",
-        calendlyLink: "https://calendly.com/karmav44990/sahjeevan-employment-program",
+        calendlyLink: "https://calendly.com/gdsahjeevan/income-generation-for-sheep-farmers",
+        actionButtonName: "Sign Up"
     },
     {
         image: imageNames.MANGROVES_1,
         title: "Understanding Mangroves Forest",
         description: "Explore the importance of mangroves in maintaining ecological balance and protecting coastal areas.",
-        calendlyLink: "https://calendly.com/karmav44990/understanding-mangroves-forest",
+        calendlyLink: "/blog/mangroves",
+        actionButtonName: "Know More"
     },
     {
         image: imageNames.BANNI_GRASSLAND_1,
         title: "Banni Grassland and Future of 14 native animals",
         description: "Dive into the future of the Banni Grassland and learn about the efforts to preserve native animal species.",
         calendlyLink: "https://calendly.com/karmav44990/understanding-mangroves-forest",
+        actionButtonName: "Learn More"
+    },
+    {
+        image: imageNames.ACTION_IN_PROGRESS,
+        title: "Action In Progress",
+        description: "We've plenty of projects in progress.",
+        calendlyLink: "https://grove.rainmatter.org/u/sahjeevan/activity",
+        actionButtonName: "See Action In Progress"
     },
 ];
 
@@ -67,7 +77,7 @@ export function EventSliderOnly() {
                                onClick={() => window.open(event.calendlyLink, "_blank")}
                                className="inline-flex items-center px-6 py-2 bg-purple-600 text-white text-base font-medium rounded hover:bg-purple-700 active:bg-purple-800 transition-colors"
                            >
-                               Sign Up
+                               {event.actionButtonName}
                                <svg
                                    className="w-6 h-6 ml-2"
                                    fill="none"

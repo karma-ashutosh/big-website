@@ -22,7 +22,8 @@ export const imageNames = {
     WATER_RESOURCE_CONSERVATION: imgNamePath("IMG_3866"),
     INDIAN_GREY_WOLF: imgNamePath("DSCN3613"),
     KUTCH_MANGROVES: imgNamePath("IMG_3288"),
-    SAVE_HUMANS: imgNamePath("IMG_3487")
+    SAVE_HUMANS: imgNamePath("IMG_3487"),
+    ACTION_IN_PROGRESS: imgNamePath("IMG_4703"),
 
 
 }
@@ -37,9 +38,9 @@ export const pressUpdates: PressUpdate[] = [
         name: "Conserving native animal diversity",
     },
     {
-        image: imageNames.MANGROVES_1,
-        name: "Saving mangroves",
-        description: "Mangroves are important. Hence we're saving them. Ta Ta"
+        image: imageNames.SHEEP_GRAZING_GOAT_LOOKING,
+        name: "Educating",
+        description: "Educating about importance of cultivating variety of farm animals in harmony"
     },
     {
         image: "https://sahjeevan.org/wp-content/uploads/2023/04/Slider3-en-4.png",
