@@ -16,6 +16,7 @@ import EventsGrid from "@/components/events-grid.tsx";
 import ImpactSection from "@/components/ImpactAndWork.tsx";
 import SahjeevanWorkThemes from "@/components/SahjeevanThemes.tsx";
 import WildlifeSection from "@/components/Wildlife.tsx";
+import ImageList, {allImgPaths} from "@/components/all_image_names.tsx";
 
 interface ParallaxBackgroundProps {
     backgroundUrl: string;
@@ -93,6 +94,12 @@ function App() {
                         }
                     />
                 ))}
+                <Route
+                path="/all-images"
+                element={
+                    <ImageList imageUrls={allImgPaths} />
+                }
+                />
             </Routes>
         </Router>
     );

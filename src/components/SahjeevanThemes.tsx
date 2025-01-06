@@ -5,25 +5,25 @@ const themes = [
         title: "Sustainable Livelihood",
         description: "Empowering communities with sustainable livelihood opportunities.",
         url: "http://google.com",
-        image: imageNames.MANGROVES_1,
+        image: imageNames.SUSTAINABLE_LIVELIHOOD,
     },
     {
         title: "Ecosystem Conservation",
         description: "Protecting and preserving our forests to maintain ecological balance.",
         url: "http://google.com",
-        image: imageNames.DENSE_GRASSLAND_1,
+        image: imageNames.ECOSYSTEM_CONSERVATION,
     },
     {
         title: "Breed Conservation",
         description: "Saving breeds left and right",
         url: "http://google.com",
-        image: imageNames.RAIN_FED_AGRICULTURE_1,
+        image: imageNames.BREED_CONSERVATION,
     },
     {
         title: "Water Resource Management",
         description: "Ensuring equitable and sustainable use of water resources.",
         url: "http://google.com",
-        image: imageNames.SHEEPLINGS_SLEEPING,
+        image: imageNames.WATER_RESOURCE_CONSERVATION,
     },
 ];
 

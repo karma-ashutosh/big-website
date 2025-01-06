@@ -1,4 +1,6 @@
 const baseUrl = `https://storage.googleapis.com/big-website-assets/webp`
+const imgPath = (imgNum: number) => `${baseUrl}/IMG_${imgNum}.webp`
+const imgNamePath = (imgName: string) => `${baseUrl}/${imgName}.webp`
 export const imageNames = {
    PEOPLE_WALKING_WITH_ANIMALS: `${baseUrl}/DSCN3311.webp`,
     BANNI_GRASSLAND_1: `${baseUrl}/banni_grassland.webp`,
@@ -14,9 +16,17 @@ export const imageNames = {
     COW_LOOKING_DIRECT: `${baseUrl}/DSCN3222.webp`,
    HAPPY_WITH_COWS: `${baseUrl}/DSCN3574.webp`,
        GOAT_OPTIMISTIC: `${baseUrl}/DSCN3613.webp`,
+    ECOSYSTEM_CONSERVATION: imgNamePath("DSCN3503"),
+    SUSTAINABLE_LIVELIHOOD: imgNamePath("IMG_3895"),
+    BREED_CONSERVATION: imgNamePath("DSCN3492"),
+    WATER_RESOURCE_CONSERVATION: imgNamePath("IMG_3866"),
+    INDIAN_GREY_WOLF: imgNamePath("DSCN3613"),
+    KUTCH_MANGROVES: imgNamePath("IMG_3288"),
+    SAVE_HUMANS: imgNamePath("IMG_3487")
+
+
 }
 
-const imgPath = (imgNum: number) => `${baseUrl}/IMG_${imgNum}.webp`
 
 export const pressUpdates: PressUpdate[] = [
     {
@@ -284,7 +294,7 @@ export const DefaultBlogPreview: BlogPreviewProps = {
     featuredBlog: {
         title: "Save humans",
         excerpt: "Save humans to create humans",
-        imageUrl: imageNames.SHEEPLINGS_SLEEPING,
+        imageUrl: imageNames.SAVE_HUMANS,
         link: "https://news.google.com/1",
     },
     allBlogsLink: "https://news.google.com/2",

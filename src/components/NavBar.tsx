@@ -42,22 +42,22 @@ const NavBar = () => {
                             <div className="hidden md:flex items-center gap-6">
                                 <Button asChild>
                                     <a href="https://google.com" className="text-white hover:text-white/80">
-                                        Wildlife
+                                        About
                                     </a>
                                 </Button>
                                 <Button asChild>
                                     <button onClick={setProjectMapOpen}>
-                                        Our Work
+                                        Discover
                                     </button>
                                 </Button>
                                 <Button asChild>
                                     <a href="#" className="text-white hover:text-white/80">
-                                        Take Action
+                                        Resources
                                     </a>
                                 </Button>
                                 <Button asChild>
                                     <a href="#" className="text-white hover:text-white/80">
-                                        Support
+                                        Updates
                                     </a>
                                 </Button>
                             </div>

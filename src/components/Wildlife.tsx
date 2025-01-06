@@ -8,7 +8,7 @@ const wildlifeItems = [
         url: "/bison",
     },
     {
-        image: imageNames.DENSE_GRASSLAND_1,
+        image: imageNames.INDIAN_GREY_WOLF,
         title: "Indian Grey Wolf",
         text: "One of the world’s oldest wolf lineages, the Indian Grey Wolf maintains grassland ecosystems. Their extinction threatens biodiversity and disrupts nature's balance.",
         url: "/great-plains",
@@ -20,7 +20,7 @@ const wildlifeItems = [
         url: "/owls",
     },
     {
-      image: imageNames.MANGROVES_1,
+      image: imageNames.KUTCH_MANGROVES,
         title: "Kutchi or Kachchh Mangroves",
         text: "These mangroves protect Gujarat’s coasts and support fisheries. Losing them would mean weaker coastal defenses and jeopardized livelihoods for millions.",
         url: "/great-plains",
