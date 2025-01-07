@@ -20,7 +20,7 @@ export const imageNames = {
     SUSTAINABLE_LIVELIHOOD: imgNamePath("IMG_3895"),
     BREED_CONSERVATION: imgNamePath("DSCN3492"),
     WATER_RESOURCE_CONSERVATION: imgNamePath("IMG_3866"),
-    INDIAN_GREY_WOLF: imgNamePath("DSCN3613"),
+    INDIAN_GREY_WOLF: imgNamePath("indian_grey_wolf"),
     KUTCH_MANGROVES: imgNamePath("IMG_3288"),
     SAVE_HUMANS: imgNamePath("IMG_3487"),
     ACTION_IN_PROGRESS: imgNamePath("IMG_4703"),
@@ -297,10 +297,36 @@ export interface BlogPreviewProps {
 
 export const DefaultBlogPreview: BlogPreviewProps = {
     featuredBlog: {
-        title: "Save humans",
-        excerpt: "Save humans to create humans",
+        title: "Save Nature",
+        excerpt: "Save Nature to Save Humans",
         imageUrl: imageNames.SAVE_HUMANS,
         link: "https://news.google.com/1",
     },
     allBlogsLink: "https://news.google.com/2",
 }
+export const sahJeevanThemes = [
+    {
+        title: "Sustainable Livelihood",
+        description: "Empowering communities with sustainable livelihood opportunities.",
+        url: "http://google.com",
+        image: imageNames.SUSTAINABLE_LIVELIHOOD,
+    },
+    {
+        title: "Ecosystem Conservation",
+        description: "Protecting and preserving our forests to maintain ecological balance.",
+        url: "http://google.com",
+        image: imageNames.ECOSYSTEM_CONSERVATION,
+    },
+    {
+        title: "Breed Conservation",
+        description: "Save Breeds, save culture",
+        url: "http://google.com",
+        image: imageNames.BREED_CONSERVATION,
+    },
+    {
+        title: "Water Resource Management",
+        description: "Ensuring equitable and sustainable use of water resources.",
+        url: "http://google.com",
+        image: imageNames.WATER_RESOURCE_CONSERVATION,
+    },
+];

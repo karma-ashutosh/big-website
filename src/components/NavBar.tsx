@@ -13,6 +13,7 @@ import {
     Linkedin,
 } from "lucide-react";
 import ZoomableMapDashboard from "./map-ux/zoomable-map-ux";
+import {sahJeevanThemes} from "@/components/constants.ts";
 
 interface MenuItemType {
     title: string;
@@ -51,36 +52,29 @@ const menuItems: MenuItemType[] = [
                             { title: "Our Partners", link: "#" },
                         ],
                     },
-                ],
+                ]        // link: "",
+        // action: () => {
+        //     // Define the action to open the map modal
+        //     // This will be passed from the NavBar component
+        // },
+,
             },
             { title: "Our Mission & Vision", link: "#", },
         ],
     },
     {
         title: "Issues We Work on",
-        subMenus: [
-            { title: "Our Team", link: "#" },
-            { title: "Board Members", link: "#" },
-            { title: "Our Partners", link: "#" },
-            { title: "Donors", link: "#" },
-        ]
+        subMenus: sahJeevanThemes.map(value => {
+            return {
+                title: value.title,
+                link: "#"
+            }
+        })
         // link: "",
         // action: () => {
         //     // Define the action to open the map modal
         //     // This will be passed from the NavBar component
         // },
-    },
-    {
-        title: "Resources",
-        subMenus: [
-            //, , Blog, , ,
-            { title: "News", link: "#" },
-            { title: "Publications", link: "#" },
-            { title: "Blog", link: "#" },
-            { title: "Statutory Documents", link: "#" },
-            { title: "Photo Gallery", link: "#" },
-            { title: "Archive", link: "#" },
-        ]
     },
     {
         title: "Take Action",
@@ -92,6 +86,28 @@ const menuItems: MenuItemType[] = [
             { title: "Attend an Event", link: "#" },
             { title: "Get Email Alerts", link: "#" },
             { title: "Contact Us", link: "#" },
+        ]
+    },
+    {
+      title: "Discover",
+        subMenus: [
+            { title: "Our Team", link: "#" },
+            { title: "Board Members", link: "#" },
+            { title: "Our Partners", link: "#" },
+            { title: "Donors", link: "#" },
+        ]
+
+    },
+    {
+        title: "Resources",
+        subMenus: [
+            //, , Blog, , ,
+            { title: "News", link: "#" },
+            { title: "Publications", link: "#" },
+            { title: "Blog", link: "#" },
+            { title: "Statutory Documents", link: "#" },
+            { title: "Photo Gallery", link: "#" },
+            { title: "Archive", link: "#" },
         ]
     },
 ];
@@ -224,10 +240,6 @@ const NavBar: FC = () => {
                             />
                         </a>
 
-                        {/* Optionally, put a mobile search bar here */}
-                        <div className="mt-0">
-                            <SearchBarComponent />
-                        </div>
                         {/* Desktop Menu */}
                         <div className="hidden md:flex">
                             <TopLevelMenu items={menuItems} modalAction={setProjectMapOpen} />
@@ -252,6 +264,8 @@ const NavBar: FC = () => {
                                 </button>
                             </div>
 
+                            {/* Donate Button */}
+                            <DonationButton />
                             {/* Language Selector */}
                             <select
                                 className="bg-gray-100 text-black border-none rounded-md px-3 py-1 text-sm focus:ring-2 focus:ring-gray-300"
@@ -268,8 +282,11 @@ const NavBar: FC = () => {
                                 </option>
                             </select>
 
-                            {/* Donate Button */}
-                            <DonationButton />
+                        </div>
+
+                        {/* Optionally, put a mobile search bar here */}
+                        <div className="mt-0">
+                            <SearchBarComponent />
                         </div>
                     </div>
 

@@ -31,7 +31,7 @@ export default function WildlifeGrid() {
     return (
         <div className="bg-gray-100 py-12 px-6">
             <h2 className="text-center text-gray-900 text-3xl font-bold mb-8">
-                Wildlife & Wild Places
+                Species & Wildlife
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {wildlifeItems.map((item, index) => (

@@ -1,31 +1,5 @@
-import {imageNames} from "@/components/constants.ts";
+import {sahJeevanThemes as themes} from "@/components/constants.ts";
 
-const themes = [
-    {
-        title: "Sustainable Livelihood",
-        description: "Empowering communities with sustainable livelihood opportunities.",
-        url: "http://google.com",
-        image: imageNames.SUSTAINABLE_LIVELIHOOD,
-    },
-    {
-        title: "Ecosystem Conservation",
-        description: "Protecting and preserving our forests to maintain ecological balance.",
-        url: "http://google.com",
-        image: imageNames.ECOSYSTEM_CONSERVATION,
-    },
-    {
-        title: "Breed Conservation",
-        description: "Saving breeds left and right",
-        url: "http://google.com",
-        image: imageNames.BREED_CONSERVATION,
-    },
-    {
-        title: "Water Resource Management",
-        description: "Ensuring equitable and sustainable use of water resources.",
-        url: "http://google.com",
-        image: imageNames.WATER_RESOURCE_CONSERVATION,
-    },
-];
 
 export default function ThemeGrid() {
     return (
