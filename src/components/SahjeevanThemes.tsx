@@ -1,19 +1,28 @@
 import {sahJeevanThemes as themes} from "@/components/constants.ts";
-
-
 export default function ThemeGrid() {
     return (
         <div className="bg-gray-100 py-8 px-4">
-            {/*<h2 className="text-center text-gray-800 text-3xl font-bold mb-6">*/}
-            {/*    Our Organizational Themes*/}
-            {/*</h2>*/}
+            {/* Title & Subtitle Section */}
+            <h2 className="text-center text-3xl font-bold text-gray-800 mb-4">
+                The issues we work on
+            </h2>
+            {/*<p className="text-center text-lg text-gray-700 max-w-3xl mx-auto mb-8">*/}
+            {/*    Imagine a world where forests flourish and oceans are full of life.*/}
+            {/*    Where energy is as clean as a mountain stream. Where everyone has*/}
+            {/*    security, dignity, and joy. We can’t build this future alone,*/}
+            {/*    but we can build it together.*/}
+            {/*</p>*/}
+
+            <p className="text-center text-lg text-gray-700 max-w-3xl mx-auto mb-8"/>
+
+            {/* Theme Cards Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {themes.map((theme, index) => (
                     <div
                         key={index}
                         className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col"
                     >
-                        {/* Title Section */}
+                        {/* Card Title Section */}
                         <div className="p-4 flex items-center justify-between">
                             <h3 className="text-lg font-bold text-gray-800">
                                 {theme.title}
@@ -43,7 +52,7 @@ export default function ThemeGrid() {
                         </div>
                         <div className="border-t-2 border-purple-500 w-12 mx-auto mb-4"></div>
 
-                        {/* Image Section */}
+                        {/* Card Image Section */}
                         <div
                             className="h-48 bg-cover bg-center"
                             style={{
@@ -51,7 +60,7 @@ export default function ThemeGrid() {
                             }}
                         ></div>
 
-                        {/* Description Section */}
+                        {/* Card Description Section */}
                         <div className="p-4">
                             <p className="text-gray-600 text-sm">{theme.description}</p>
                         </div>
