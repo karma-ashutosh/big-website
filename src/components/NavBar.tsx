@@ -53,23 +53,46 @@ const menuItems: MenuItemType[] = [
                     },
                 ],
             },
+            { title: "Our Mission & Vision", link: "#", },
         ],
     },
     {
-        title: "Discover",
-        link: "",
-        action: () => {
-            // Define the action to open the map modal
-            // This will be passed from the NavBar component
-        },
+        title: "Issues We Work on",
+        subMenus: [
+            { title: "Our Team", link: "#" },
+            { title: "Board Members", link: "#" },
+            { title: "Our Partners", link: "#" },
+            { title: "Donors", link: "#" },
+        ]
+        // link: "",
+        // action: () => {
+        //     // Define the action to open the map modal
+        //     // This will be passed from the NavBar component
+        // },
     },
     {
         title: "Resources",
-        link: "#",
+        subMenus: [
+            //, , Blog, , ,
+            { title: "News", link: "#" },
+            { title: "Publications", link: "#" },
+            { title: "Blog", link: "#" },
+            { title: "Statutory Documents", link: "#" },
+            { title: "Photo Gallery", link: "#" },
+            { title: "Archive", link: "#" },
+        ]
     },
     {
-        title: "Join Us",
-        link: "#",
+        title: "Take Action",
+        subMenus: [
+            { title: "Join Us", link: "#" },
+            { title: "Support Us", link: "#" },
+            { title: "Become a Volunteer", link: "#" },
+            { title: "Attend an Event", link: "#" },
+            { title: "Attend an Event", link: "#" },
+            { title: "Get Email Alerts", link: "#" },
+            { title: "Contact Us", link: "#" },
+        ]
     },
 ];
 
