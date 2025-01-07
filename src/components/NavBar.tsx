@@ -83,7 +83,6 @@ const menuItems: MenuItemType[] = [
             { title: "Support Us", link: "#" },
             { title: "Become a Volunteer", link: "#" },
             { title: "Attend an Event", link: "#" },
-            { title: "Attend an Event", link: "#" },
             { title: "Get Email Alerts", link: "#" },
             { title: "Contact Us", link: "#" },
         ]
