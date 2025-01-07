@@ -17,6 +17,7 @@ import ImpactSection from "@/components/ImpactAndWork.tsx";
 import SahjeevanWorkThemes from "@/components/SahjeevanThemes.tsx";
 import WildlifeSection from "@/components/Wildlife.tsx";
 import ImageList, {allImgPaths} from "@/components/all_image_names.tsx";
+import TeamInAction from "@/components/TeamInAction.tsx";
 
 interface ParallaxBackgroundProps {
     backgroundUrl: string;
@@ -68,12 +69,13 @@ function App() {
                                     carouselItems={pressUpdates} designTemplate={"imageBackground"}
                                     headingDesign={"splitBanner"}
                                 />
-                                <ImageCarousel carouselItems={OurPartners}
-                                               designTemplate={"classic"}
-                                               heading={"Our Partners"}
-                                               subheading = {"Learn more about the organizations we collaborate with!"}
-                                               headingDesign = {"purpleBanner"}
-                                />
+                                {/*<ImageCarousel carouselItems={OurPartners}*/}
+                                {/*               designTemplate={"classic"}*/}
+                                {/*               heading={"Our Partners"}*/}
+                                {/*               subheading = {"Learn more about the organizations we collaborate with!"}*/}
+                                {/*               headingDesign = {"purpleBanner"}*/}
+                                {/*/>*/}
+                                <TeamInAction />
                                 <GujratBanner/>
                             </ParallaxBackground>
 

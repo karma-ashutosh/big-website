@@ -75,8 +75,7 @@ export type PressUpdate = CarouselCustomItem
 // Change this to wherever your partner images actually reside
 const partnerImage = (imgName: string) => `https://storage.googleapis.com/big-website-assets/partner_logos/${imgName}.webp`;
 
-export const OurPartners: OurPartner[] = [
-    // ------------------------------ Funders: Government ------------------------------
+export const Funders: OurPartner[] = [
     {
         name: "Dept. of Animal Husbandry, Gandhinagar",
         description: "",
@@ -155,6 +154,8 @@ export const OurPartners: OurPartner[] = [
         image: partnerImage("dasra")
     },
 
+]
+export const ProgramPartners: OurPartner[] = [
     // ------------------------------ Programme Partners: Regional & National ------------------------------
     {
         name: "Kutch Mahila Vikas Sangathan (KMVS)",
@@ -252,7 +253,6 @@ export const OurPartners: OurPartner[] = [
         url: "http://banni.in",
         image: partnerImage("bpums")
     },
-
     // ------------------------------ International ------------------------------
     {
         name: "International Union for Conservation of Nature (IUCN)",
@@ -284,6 +284,10 @@ export const OurPartners: OurPartner[] = [
         url: "http://www.pravah-gujarat.org",
         image: partnerImage("pravah")
     }
+]
+export const OurPartners: OurPartner[] = [
+    ...Funders,
+    ...ProgramPartners,
 ];
 
 export interface BlogPreviewProps {
