@@ -10,7 +10,9 @@ import GujratBanner from "@/components/GujratBanner";
 import { FC, ReactNode } from "react";
 import BlogPage, {blogData, titleToBlogUrl} from "@/components/Blog.tsx";
 import NavBar from "@/components/NavBar.tsx";
-import {imageNames, OurPartners, pressUpdates} from "@/components/constants.ts";
+import {imageNames,
+    // OurPartners,
+    pressUpdates} from "@/components/constants.ts";
 // import EventsGrid from "@/components/events-grid.tsx";
 // import ConcentricCircles from "@/components/ConcentricCircles.tsx";
 import ImpactSection from "@/components/ImpactAndWork.tsx";

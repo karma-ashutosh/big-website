@@ -61,10 +61,10 @@ const TeamInAction: React.FC = () => {
                                 Board Members
                             </li>
                             <li className="border-b border-gray-200 px-4 py-2 text-gray-700 last:border-none">
-                                Tech Team
+                                Team
                             </li>
                             <li className="border-b border-gray-200 px-4 py-2 text-gray-700 last:border-none">
-                                Full-stack Devs
+                                Field Associates
                             </li>
                         </ul>
                     </div>
