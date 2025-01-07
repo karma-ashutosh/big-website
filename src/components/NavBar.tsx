@@ -235,7 +235,7 @@ const NavBar: FC = () => {
                                 width="auto"
                                 height="auto"
                                 src="https://sahjeevan.org/wp-content/uploads/2023/03/logo.png"
-                                className="h-14 w-auto object-contain"
+                                className="mt-10 h-24 w-auto object-contain"
                                 alt="Sahjeevan Logo"
                             />
                         </a>
