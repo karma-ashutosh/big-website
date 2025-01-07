@@ -55,6 +55,7 @@ export const imageSet2 = {
     GOAT_FOLLOWING_MAN: imgPath(3292),
     DUCKS_IN_POND: imgPath(3847),
     DUCKS_IN_LAKE: imgPath(3934),
+    BAR_TAILED_GODWITS: imgNamePath("bar_tailed_godwit"),
     UNCLE_MARCHING_IN_KHET: imgPath(4016),
     LADY_TEACHING_GROUP: imgPath(4751),
     CAMELS_GROUP: imgPath(4783),

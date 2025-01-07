@@ -14,7 +14,7 @@ const wildlifeItems = [
         url: "/great-plains",
     },
     {
-        image: imageSet2.DUCKS_IN_LAKE,
+        image: imageSet2.BAR_TAILED_GODWITS,
         title: "Bar-tailed Godwits",
         text: "Flying over 12,000 km nonstop, these shorebirds inspire awe and signal healthy wetlands. Their loss would mark failing ecosystems critical for water and agriculture.",
         url: "/owls",
