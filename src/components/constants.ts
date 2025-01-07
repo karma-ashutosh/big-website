@@ -66,6 +66,7 @@ export interface CarouselCustomItem {
     image: string;
     description?: string;
     url?: string;
+    tag?: string;
 }
 export type OurPartner = CarouselCustomItem
 export type PressUpdate = CarouselCustomItem
@@ -79,13 +80,15 @@ export const OurPartners: OurPartner[] = [
         name: "Dept. of Animal Husbandry, Gandhinagar",
         description: "",
         url: "https://doah.gujarat.gov.in/",
-        image: partnerImage("dept_of_animal_husbandry")
+        image: partnerImage("dept_of_animal_husbandry"),
+        tag: "Gov"
     },
     {
         name: "Gujarat Forest Department - Kachchh Circle, Bhuj",
         description: "",
         url: "https://forests.gujarat.gov.in/",
-        image: partnerImage("gujarat_forest_department_kachchh_circle")
+        image: partnerImage("gujarat_forest_department_kachchh_circle"),
+        tag: "Gov"
     },
 
     // ------------------------------ Funders: Others (Including CSR, National & International) ------------------------------
@@ -93,7 +96,8 @@ export const OurPartners: OurPartner[] = [
         name: "Ford Foundation",
         description: "",
         url: "https://www.fordfoundation.org/",
-        image: partnerImage("ford_foundation")
+        image: partnerImage("ford_foundation"),
+        tag: "Funders"
     },
     {
         name: "AXIS Bank Foundation",

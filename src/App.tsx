@@ -61,18 +61,18 @@ function App() {
                                 <SahjeevanWorkThemes />
                                 <ImpactSection />
                                 <WildlifeSection />
-                                <ImageCarousel carouselItems={OurPartners}
-                                               designTemplate={"classic"}
-                                                heading={"Our Partners"}
-                                    subheading = {"Learn more about the organizations we collaborate with!"}
-                                    headingDesign = {"purpleBanner"}
-                                />
                                 <ImageCarousel
                                     heading={"Photo Gallery and Press"}
                                     subheading={"This might be our image gallery quote"}
                                     // subheading={""}
                                     carouselItems={pressUpdates} designTemplate={"imageBackground"}
                                     headingDesign={"splitBanner"}
+                                />
+                                <ImageCarousel carouselItems={OurPartners}
+                                               designTemplate={"classic"}
+                                               heading={"Our Partners"}
+                                               subheading = {"Learn more about the organizations we collaborate with!"}
+                                               headingDesign = {"purpleBanner"}
                                 />
                                 <GujratBanner/>
                             </ParallaxBackground>

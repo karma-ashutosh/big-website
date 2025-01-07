@@ -9,7 +9,7 @@ export default function Banner() {
             {/* Hero Section - two columns side by side */}
             <div className="flex flex-col md:flex-row h-[75vh]">
                 {/* Left Half: White (or near-white) background, text content */}
-                <div className="w-full md:w-1/2 flex flex-col justify-center px-8 bg-[#f9f9f9] text-gray-900">
+                <div className="w-full md:w-1/3 flex flex-col justify-center px-8 bg-[#f9f9f9] text-gray-900">
                     <h1 className="text-2xl font-bold tracking-wide mb-4">
                         We Thrive for
                     </h1>
@@ -32,7 +32,8 @@ export default function Banner() {
                                     .start();
                             }}
                             options={{
-
+                                cursor: "",
+                                delay: 50,
                             }}
                         />
                     </p>
@@ -48,7 +49,7 @@ export default function Banner() {
                 </div>
 
                 {/* Right Half: Slider with full height */}
-                <div className="w-full md:w-1/2 h-full">
+                <div className="w-full md:w-2/3 h-full">
                     <EventSliderOnly/>
                 </div>
             </div>
